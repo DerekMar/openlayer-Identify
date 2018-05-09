@@ -1,0 +1,50 @@
+.identify .infoWindow table.altrowstable {
+    font-family: verdana, arial, sans-serif;
+    font-size: 11px;
+    color: #333333;
+    border-width: 1px;
+    border-color: #a9c6c9;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.identify .infoWindow table.altrowstable th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #d0d1d6;
+}
+.identify .infoWindow table.altrowstable .title {
+    text-align: left;
+    font-size: 12px;
+}
+
+.identify .infoWindow table.altrowstable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #d0d1d6;
+}
+
+.identify .infoWindow table.altrowstable .oddrowcolor {
+    background-color: #ffffff;
+}
+
+.identify .infoWindow table.altrowstable .evenrowcolor {
+    background-color: #eef2f6;
+}
+/*滚动条样式*/
+.featureAttrTable::-webkit-scrollbar {
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+.featureAttrTable::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background: #EDEDED;
+}
+.featureAttrTable::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: rgba(83, 83, 83, 0.59);
+}

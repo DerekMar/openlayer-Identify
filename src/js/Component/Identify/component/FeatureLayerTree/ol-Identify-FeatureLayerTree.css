@@ -1,0 +1,51 @@
+
+.identify .infoWindow ul {
+    padding-left: 1em;
+    list-style: none;
+}
+
+.identify .infoWindow li.group {
+    padding-top: 5px;
+    text-align: left;
+}
+
+.identify .infoWindow li.group > label {
+    font-weight: bold;
+    text-align: left !important;
+}
+
+.identify .infoWindow li.layer {
+    display: table;
+    width: 100%;
+    margin: 5px 0 5px 0;
+}
+
+.identify .infoWindow li.group ul {
+    margin: 5px 16px 0 0;
+}
+
+.identify .infoWindow li.group li.layer:focus,
+.identify .infoWindow li.group li.layer:hover,
+.identify .infoWindow .select{
+    background-color: #00b0f0;
+    color: white;
+}
+
+.identify .infoWindow label.disabled {
+    opacity: 0.4;
+}
+/*滚动条样式*/
+.featureTreeContainer::-webkit-scrollbar {
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+.featureTreeContainer::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background: #EDEDED;
+}
+.featureTreeContainer::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: rgba(83, 83, 83, 0.59);
+}

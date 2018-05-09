@@ -1,0 +1,13 @@
+/**
+ * OpenLayers Feature Identify Control. Base Component Class
+ * @constructor
+ * @param {Object} element, the component renderby:
+ */
+export default class IdentifyBaseComponent{
+    constructor(element){
+        this.element = element;
+    }
+    initComponent(){
+        return this;
+    }
+}
