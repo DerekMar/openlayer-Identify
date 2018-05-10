@@ -1,0 +1,25 @@
+.identify .infoWindow .toolbarContanier{
+    height: 40px;
+    border-radius: 5px;
+    /*box-shadow: 0 0 2px #ccc;*/
+    position: relative;
+    padding-left: 15px;
+    text-align: left;
+}
+
+.identify .infoWindow a.toolContanier{
+    background-position: center 50%;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    background-size: 20px 20px;
+    transform: translateY(-50%);
+    position: relative;
+    display:inline-block;
+    margin-right: 10px;
+}
+
+.identify .infoWindow a.toolContanier:hover, .identify .infoWindow a.toolContanier:focus{
+    background-color: #e6e6e6;
+}

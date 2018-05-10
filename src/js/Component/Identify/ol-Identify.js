@@ -1,11 +1,14 @@
 import "./ol-Identify.css";
 import Control from 'ol/control/control';
 import Observable from 'ol/observable';
-import FeatureHighLight from './utils/ol-FeatureHighLight-Utils';
-import FeatureLayerHelper from './utils/ol-FeatureLayer-Utils';
+import FeatureHighLight from './utils/FeatureHighLight/ol-FeatureHighLight-Utils';
+import FeatureLayerHelper from './utils/FeatureLayerHelper/ol-FeatureLayer-Utils';
+import MapDrawHelper from './utils/MapSelection/ol-MapSelection-Utils';
 import IdentifyLayerTypeSelect from './component/TypeSelect/ol-Identify-TypeSelect';
-import IdentifyFeatureLayerTree from './component/FeatureLayerTree/ol-Identify-FeatureLayerTree';
-import IdentifyFeatureAttrTable from './component/FeatureAttrTable/ol-Identify-FeatureAttrTable';
+import IdentifyFeatureLayerTree from './component/LayerTree/ol-Identify-FeatureLayerTree';
+import IdentifyFeatureAttrTable from './component/AttrTable/ol-Identify-FeatureAttrTable';
+import IdentifyFeatureToolbar from './component/ToolBar/ol-Identify-Toolbar';
+import IdentifyFeatureTitlePanel from './component/TitlePanel/ol-Identify-TitlePanel';
 /**
  * OpenLayers Feature Identify Control.
  * @constructor
@@ -43,14 +46,16 @@ export default class identify extends Control{
         this.button = null;     //entry button
         this.infoWindow = null; //result infowindow
         this.highlight = null;  // control the feature highlight
+        this._mapDrawHelper = null; //map select region control
 
+        this._toolbarContanier = null;// toolbar element
         this._layerTypeSelect = null;// layer type 's select element
         this._layerFeatureTree = null;// layer feature component
-        this._featureAttrTable = null;//feature Attribute table component
+        this._featureAttrTable = null;// feature Attribute table component
 
         this.featureSelectedTree = null;// the tree for feature which has selected
         this.featureSelectedTreeContainer = null;// the tree container for feature which has selected
-        this.featureAttributeTable = null;// thre feature Attribute table element
+        this.featureAttributeTable = null;// the feature Attribute table element
         this.featureAttributeContainer = null;// thre feature Attribute container element
 
         //create the entry Button
@@ -82,6 +87,7 @@ export default class identify extends Control{
         this.infoWindow.className = 'infoWindow';
         element.appendChild(this.infoWindow);
         this._enableTouchScroll(this.infoWindow);
+
         this._renderInfoWindowBase(this.infoWindow);
     }
     /**
@@ -138,29 +144,12 @@ export default class identify extends Control{
         this.highlight.startup();
         //add Map click listener for select the region for features
         // open the result infoWindows
-        this.mapListeners.push(this.map_.on("singleclick", (evt)=> {
-            let condition = this._layerTypeSelect.getLayerTypeSelectValue();
-            //According to Enum optionEnum , get the collection;
-            if(condition === this._layerTypeSelect.optionEnum.ALLLAYER){
-                let features = this.map_.getFeaturesAtPixel(evt.pixel);
-                if(!! features){
-                    let collection = this._getLayerByFeature(features);
-                    this.renderInfoWindow(collection);
-                }
-            }else if(condition === this._layerTypeSelect.optionEnum.TOPMOST){
-                let feature = this.map_.forEachFeatureAtPixel(evt.pixel, (_feature, _layer)=>{
-                    return _feature
-                });
-                let collection = this._getLayerByFeature([feature]);
-                this.renderInfoWindow(collection);
-            }else if(condition === this._layerTypeSelect.optionEnum.VISIBLE){
-                let features = this.map_.getFeaturesAtPixel(evt.pixel);
-                if(!! features){
-                    let collection = this._getLayerByFeature(features, true);
-                    this.renderInfoWindow(collection);
-                }
-            }
-        }));
+        this.mapListeners.push(this.map_.on("singleclick", (evt)=>this. _mapSingleClickHandle(evt)));
+        //bind draw polygon select feature
+        this._mapDrawHelper = new MapDrawHelper(this.map_);
+        this._mapDrawHelper.startDrawRectangle((element)=>{
+            console.log(element);
+        });
     }
     /**
      * @private
@@ -169,23 +158,51 @@ export default class identify extends Control{
     _cancleSelectFeatures(){
         //reset the cursor to identify
         let mapElement = this.map_.getTargetElement();
-        mapElement.style.cursor="default";
-
+        mapElement.style.cursor = "default";
+        //close the highlight layer
         this.highlight.close();
-
+        //close the DrawRectangle Event
+        this._mapDrawHelper.closeDrawRectangle();
+        //remove the featureSelectedTree
         this.featureSelectedTreeContainer
             =  this._destroySpecificContainer(this.featureSelectedTreeContainer);
-
         this.featureSelectedTree
             =  this._destroySpecificContainer(this.featureSelectedTree);
-
+        //remove the featureAttributeTable
         this.featureAttributeContainer
             =  this._destroySpecificContainer(this.featureAttributeContainer);
-
         this.featureAttributeTable
             =  this._destroySpecificContainer(this.featureAttributeTable);
 
         this._destroyMapListener();
+    }
+    /**
+     * SingleClick EventHandle
+     * @param evt
+     * @private
+     */
+    _mapSingleClickHandle(evt){
+        let condition = this._layerTypeSelect.getLayerTypeSelectValue();
+        //According to Enum optionEnum , get the collection;
+        if(condition === this._layerTypeSelect.optionEnum.ALLLAYER){
+            let features = this.map_.getFeaturesAtPixel(evt.pixel);
+            if(!! features){
+                let collection = this._getLayerByFeature(features);
+                this.renderInfoWindow(collection);
+            }
+        }else if(condition === this._layerTypeSelect.optionEnum.TOPMOST){
+            let feature = this.map_.forEachFeatureAtPixel(evt.pixel, (_feature, _layer)=>{
+                return _feature
+            });
+            let collection = this._getLayerByFeature([feature]);
+            this.renderInfoWindow(collection);
+        }else if(condition === this._layerTypeSelect.optionEnum.VISIBLE){
+            let features = this.map_.getFeaturesAtPixel(evt.pixel);
+            if(!! features){
+                let collection = this._getLayerByFeature(features, true);
+                this.renderInfoWindow(collection);
+            }
+        }
     }
     /**
      * @public
@@ -350,15 +367,14 @@ export default class identify extends Control{
     _renderInfoWindowBase(element){
         let mainContainer = element;
         //create Title
-        let titleContainer = document.createElement("div");
-        let titleContent = document.createElement("h3");
-        titleContent.innerText = "Identify";
-        titleContainer.appendChild(titleContent);
-        mainContainer.appendChild(titleContainer);
-
+        let titlepanelContainer = new IdentifyFeatureTitlePanel(mainContainer, { title: "Identify"});
+        titlepanelContainer.initComponent();
         //create layer type selected options
         let optionsContainer = this._layerTypeSelect = new IdentifyLayerTypeSelect(mainContainer);
         optionsContainer.initComponent();
+        //create toolbar
+        let toolbarContanier = this._toolbarContanier = new IdentifyFeatureToolbar(mainContainer, {});
+        toolbarContanier.initComponent();
     }
 
     /**

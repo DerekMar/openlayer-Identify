@@ -1,0 +1,9 @@
+.mapSelectDiv{
+    border: 2px dashed #0000c4;
+    background: #5a72f8;
+    position: absolute;
+    width: 0;
+    height: 0;
+    filter: alpha(opacity:10);
+    opacity: 0.2
+}
