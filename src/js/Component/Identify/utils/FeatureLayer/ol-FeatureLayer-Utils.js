@@ -117,22 +117,48 @@ class FeatureIdentifyUtils extends Base{
      * @param extent
      * @return {Array}
      */
-    getFeatureByExtent(layers, extent){
-        let features = [];
-        for(let i = 0; i < layers.length; i++){
-            let layer = layers[i]
+    getFeatureByExtent(layers, extent, options){
+        let features = [], _options = options || {};
+        for(let i = layers.length - 1; i >= 0; i--){
+            let layer = layers[i];
+            if(_options.visible && !layer.getVisible()) continue;
+
             if(layer instanceof LayerGroup){
-                let _features = this.getFeatureByExtent(layer.getLayers().array_, extent);
+                let _features = this.getFeatureByExtent(layer.getLayers().array_, extent, _options);
                 features = features.concat(_features);
+                if(_options.topmost && features.length > 0) break;
             }else{
                 let source = layer.getSource && layer.getSource();
                 if(source instanceof VectorSource) {
                     let _features = source.getFeaturesInExtent(extent);
                     features = features.concat(_features);
+                    if(_options.topmost && features.length > 0) break;
                 }
             }
         }
         return features;
+    }
+
+    /**
+     * get the topmost layer from all of the layer
+     * @param layers
+     * @return {ol/layer/layer}
+     */
+    geTopMostLayer(layers){
+        let _layer = null;
+        for(let i = layers.length - 1; i >= 0; i--){
+            let layer = layers[i];
+            if(layer instanceof LayerGroup){
+                _layer = this.geTopMostLayer(layer.getLayers().array_);
+            }else{
+                let source = layer.getSource && layer.getSource();
+                if(source instanceof VectorSource) {
+                    _layer = layer;
+                    break;
+                }
+            }
+        }
+        return _layer;
     }
 }
 export default FeatureIdentifyUtils;

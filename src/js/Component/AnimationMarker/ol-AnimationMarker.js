@@ -7,15 +7,9 @@ export default class AnimationMarker extends Overlay{
     constructor(opt_options) {
 
         let options = opt_options || {};
-
+        /* don't making the map panning*/
         if (options.autoPan === undefined) {
-            options.autoPan = true;
-        }
-
-        if (options.autoPanAnimation === undefined) {
-            options.autoPanAnimation = {
-                duration: 250
-            };
+            options.autoPan = false;
         }
 
         let element = document.createElement('div');

@@ -118,6 +118,8 @@ export default class MapSelectionUtils extends Base{
 
         this.selectRegionElement = this._renderDynamicDiv(posx, posy);
         mainContanier.appendChild(this.selectRegionElement);
+        //禁止地图拖动
+        this._disableMapDrag();
         //注册容器点击时的鼠标移动事件
         mainContanier.onmousemove = (ev)=> {
             //计算div的尺寸

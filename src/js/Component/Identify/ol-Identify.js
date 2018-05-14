@@ -184,19 +184,20 @@ export default class identify extends Control{
      * @private
      */
     _mapSingleClickHandle(evt){
-        let features, condition = this._layerTypeSelect.getLayerTypeSelectValue();
+        let features, options, condition = this._layerTypeSelect.getLayerTypeSelectValue();
         //According to Enum optionEnum , get the collection;
         if(condition === this._layerTypeSelect.optionEnum.ALLLAYER){
             features = this.map_.getFeaturesAtPixel(evt.pixel);
         }else if(condition === this._layerTypeSelect.optionEnum.TOPMOST){
-            features = this.map_.forEachFeatureAtPixel(evt.pixel, (_feature, _layer)=>{
+            features = [this.map_.forEachFeatureAtPixel(evt.pixel, (_feature, _layer)=>{
                 return _feature
-            });
+            })];
         }else if(condition === this._layerTypeSelect.optionEnum.VISIBLE){
             features = this.map_.getFeaturesAtPixel(evt.pixel);
+            options.visible = true;
         }
         if(!! features){
-            let collection = this._getLayerByFeature(features, true);
+            let collection = this._getLayerByFeature(features, options);
             this.renderInfoWindow(collection);
         }
     }
@@ -345,12 +346,12 @@ export default class identify extends Control{
      * @desc get the layer which own by specific feature
      * @return
      */
-    _getLayerByFeature(features, isVisible){
-        let flCollection = [];
+    _getLayerByFeature(features, options){
+        let flCollection = [], _options = options || {};
         let layerHelper = new FeatureLayerHelper(this.map_);
 
         for (let i = 0, length = features.length; i < length; i++){
-            let layer = !isVisible
+            let layer = !_options.visible
                 ? layerHelper.getLayerByFeature(features[i])
                 : layerHelper.getVisibleLayerByFeature(features[i]);
             flCollection.push([layer, features[i]]);
@@ -391,9 +392,20 @@ export default class identify extends Control{
                 let mapCoordinateHelper = new MapCoordinateHelper(this.map_);
                 let extent = mapCoordinateHelper.getExtendByElement(element);
 
-                let layers = this.map_.getLayers();
+                let targetLayer, layers = this.map_.getLayers();
                 let layerHelper = new FeatureLayerHelper(this.map_);
-                let features = layerHelper.getFeatureByExtent(layers.array_, extent);
+                let options = {}, condition = this._layerTypeSelect.getLayerTypeSelectValue();
+                //According to Enum optionEnum , get the collection;
+                if(condition === this._layerTypeSelect.optionEnum.ALLLAYER){
+                    targetLayer = layers.array_;
+                }else if(condition === this._layerTypeSelect.optionEnum.TOPMOST){
+                    targetLayer = layers.array_;
+                    options.topmost = true;
+                }else if(condition === this._layerTypeSelect.optionEnum.VISIBLE){
+                    targetLayer = layers.array_;
+                    options.visible = true;
+                }
+                let features = layerHelper.getFeatureByExtent(targetLayer, extent, options);
 
                 if(!! features && features.length > 0){
                     let collection = this._getLayerByFeature(features, true);
