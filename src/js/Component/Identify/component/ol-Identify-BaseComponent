@@ -10,4 +10,10 @@ export default class IdentifyBaseComponent{
     initComponent(){
         return this;
     }
+    _extend(destination, source){
+        for( let property in source ){
+            destination[property] = source[property];
+        }
+        return destination;
+    }
 }

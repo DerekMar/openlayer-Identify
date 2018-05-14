@@ -1,4 +1,3 @@
-import './highlight-marker.png';
 import VectorLayer from 'ol/layer/vector';
 import VectorSource from 'ol/source/vector';
 import SymbolStyle from 'ol/style/style';
@@ -7,11 +6,10 @@ import StrokeSymbol from 'ol/style/stroke';
 import FillSymbol from 'ol/style/fill';
 import Base from '../ol-Base-Utils';
 import Observable from 'ol/observable';
-import Icon from 'ol/style/icon';
 import Point from 'ol/geom/point';
 import Feature from 'ol/feature';
 
-const markerUrl = require('./highlight-marker.png');
+import AnimationMarker  from '../../../AnimationMarker/ol-AnimationMarker';
 
 /**
  * OpenLayers Feature HighLighg Utils. convenent to highlight feature;
@@ -47,8 +45,7 @@ class FeatureFeatureHighLightUtils extends Base{
             style: this.originalStyle
         });
         this.highlighfeature = null;
-        this.highlightPointFeature = null;
-        this.highlightPointFeatureInterval = null;
+        this.animationMarker = null;
         this.highlightOtherFeature = null;
     }
     startup(){
@@ -160,10 +157,10 @@ class FeatureFeatureHighLightUtils extends Base{
      * @private
      */
     _clearhighlightFeature(){
-        if (!!this.highlightPointFeature) {
-            this.highlightlayerforspecific.getSource().removeFeature(this.highlightPointFeature);
-            this.highlightPointFeatureInterval && window.clearInterval(this.highlightPointFeatureInterval);
-            this.highlightPointFeature = null;
+        if(this.animationMarker && this.animationMarker.isOpened()){
+            this.animationMarker.clearAnimation();
+            this.map.removeOverlay(this.animationMarker);
+            this.animationMarker = null;
         }
         if (!!this.highlightOtherFeature) {
             this.highlightlayerforspecific.getSource().removeFeature(this.highlightOtherFeature);
@@ -177,99 +174,13 @@ class FeatureFeatureHighLightUtils extends Base{
      * @private
      */
     _highlightPointWithAnimate(point){
-        let centerPoint = point.getGeometry().getCoordinates();
         //this.map.getView().fit(point.getGeometry(), { duration: 500, maxZoom: 17 });
+        let animationMarker = this.animationMarker =  new AnimationMarker();
+        this.map.addOverlay(animationMarker);
 
-        let copyPoint = new Point(centerPoint);
-        let copyFeature= this.highlightPointFeature = new Feature({
-            geometry: copyPoint,
-            labelPoint: copyPoint,
-        });
-        //create Animation Marker
-        let iconStyle = new SymbolStyle({
-            image: new Icon(/** @type {olx.style.IconOptions} */ ({
-                anchor: [0.5, 1],
-                src: markerUrl
-            }))
-        });
-        copyFeature.setStyle(iconStyle);
-        this.highlightlayerforspecific.getSource().addFeature(copyFeature);
-
-        let mapSize = this._getMapSize();
-        let curPixel = this._getScreenXYByCoordinate(centerPoint);
-        /**
-         * 这里只需要修改 totalTime 的值可以改变动画的渲染时间，其他不要改动
-         * @type {number}
-         */
-        let totalTime = 600, //动画的总时间 单位是毫秒
-            heightPower = 4, //高度衰减的倍率
-            dValue = mapSize[1] / 10, //marker的最大高度，像素为单位
-            dTime = 10; //动画每一帧的时间
-
-        let totalSecondTime = totalTime/ 1000;
-        let acceleration = 2 * dValue / Math.pow(totalSecondTime * Math.sqrt(heightPower) /( 1 + Math.sqrt(heightPower)), 2); // 单位像素 / 秒
-
-        let iHeight = dValue,//能量衰减后的高度
-            iTime = totalTime;//剩余时间
-
-        //根据时间计算当前高度的方法
-        let getHeight = (ivalue, time)=>/* time second*/{
-            if(time <= 0) return 0;//如果时间已经少于0，则直接返回0
-            let _height = ivalue - acceleration * time * time / 2;
-
-            if( _height <= 0){
-                iHeight = iHeight / heightPower;
-                totalTime = totalTime - time * 1000;
-            }
-            return  _height;
-        }
-        let timeIntervalu = this.highlightPointFeatureInterval = window.setInterval(()=>{
-            iTime = iTime - dTime;
-
-            let dHeight = getHeight(iHeight, (totalTime - iTime) / 1000);
-
-            let piexl = [curPixel[0], curPixel[1] - dHeight];
-            let coor = this._getCoordinateFromScreenXY(piexl);
-            copyPoint.setCoordinates(coor);
-
-            if(point.getGeometry().getCoordinates()[0] != centerPoint[0]){
-                copyPoint.setCoordinates(centerPoint);
-                window.clearInterval(timeIntervalu);
-            }
-
-            if(iTime <= 0) {
-                copyPoint.setCoordinates(centerPoint);
-                timeIntervalu && window.clearInterval(timeIntervalu);
-            }
-        }, dTime)
+        animationMarker.show(point);
     }
 
-    /**
-     * 通过地理坐标获取屏幕坐标
-     * @param coor
-     * @private
-     */
-    _getScreenXYByCoordinate(coor){
-       return this.map.getPixelFromCoordinate(coor);
-    }
-
-    /**
-     * 从屏幕坐标获取地理坐标
-     * @param pixel
-     * @returns {ol.Coordinate}
-     * @private
-     */
-    _getCoordinateFromScreenXY(pixel){
-        return this.map.getCoordinateFromPixel(pixel);
-    }
-
-    /**
-     * 获取地图的尺寸
-     * @returns {ol.Size}
-     */
-    _getMapSize(){
-        return this.map.getSize();
-    }
     /**
      * 高亮鼠标经过的要素
      * @param evt {MouseEvent}
@@ -313,12 +224,7 @@ class FeatureFeatureHighLightUtils extends Base{
         }
         this.mapListeners.length = 0;
 
-        if (!!this.highlightOtherFeature) {
-            this.highlightlayerforspecific.getSource().removeFeature(this.highlightOtherFeature);
-        }
-        if (!!this.highlightPointFeature) {
-            this.highlightlayerforspecific.getSource().removeFeature(this.highlightPointFeature);
-        }
+        this._clearhighlightFeature();
     }
 }
 

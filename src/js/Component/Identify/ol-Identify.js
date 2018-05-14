@@ -1,14 +1,17 @@
 import "./ol-Identify.css";
 import Control from 'ol/control/control';
 import Observable from 'ol/observable';
+
 import FeatureHighLight from './utils/FeatureHighLight/ol-FeatureHighLight-Utils';
-import FeatureLayerHelper from './utils/FeatureLayerHelper/ol-FeatureLayer-Utils';
+import FeatureLayerHelper from './utils/FeatureLayer/ol-FeatureLayer-Utils';
 import MapDrawHelper from './utils/MapSelection/ol-MapSelection-Utils';
+import MapCoordinateHelper from './utils/MapCoordinate/ol-MapCoordinate-Utils';
 import IdentifyLayerTypeSelect from './component/TypeSelect/ol-Identify-TypeSelect';
 import IdentifyFeatureLayerTree from './component/LayerTree/ol-Identify-FeatureLayerTree';
 import IdentifyFeatureAttrTable from './component/AttrTable/ol-Identify-FeatureAttrTable';
 import IdentifyFeatureToolbar from './component/ToolBar/ol-Identify-Toolbar';
 import IdentifyFeatureTitlePanel from './component/TitlePanel/ol-Identify-TitlePanel';
+
 /**
  * OpenLayers Feature Identify Control.
  * @constructor
@@ -39,7 +42,7 @@ export default class identify extends Control{
 
         element.className = this.closeClassName + " " + this.position;
 
-        //Evented Listeners Conventent to register and unregister
+        //Map Evented Listeners Conventent to register and unregister
         this.mapListeners = [];
 
         //declare other variance
@@ -62,6 +65,7 @@ export default class identify extends Control{
         this._initEntryBtnElement(element);
         //create the result infoWindow
         this._initResultInfoWindow(element);
+
     }
     /**
      * @private
@@ -144,12 +148,8 @@ export default class identify extends Control{
         this.highlight.startup();
         //add Map click listener for select the region for features
         // open the result infoWindows
-        this.mapListeners.push(this.map_.on("singleclick", (evt)=>this. _mapSingleClickHandle(evt)));
-        //bind draw polygon select feature
         this._mapDrawHelper = new MapDrawHelper(this.map_);
-        this._mapDrawHelper.startDrawRectangle((element)=>{
-            console.log(element);
-        });
+        this.mapListeners.push(this.map_.on("singleclick", (evt)=>this._mapSingleClickHandle(evt)));
     }
     /**
      * @private
@@ -161,8 +161,6 @@ export default class identify extends Control{
         mapElement.style.cursor = "default";
         //close the highlight layer
         this.highlight.close();
-        //close the DrawRectangle Event
-        this._mapDrawHelper.closeDrawRectangle();
         //remove the featureSelectedTree
         this.featureSelectedTreeContainer
             =  this._destroySpecificContainer(this.featureSelectedTreeContainer);
@@ -173,6 +171,10 @@ export default class identify extends Control{
             =  this._destroySpecificContainer(this.featureAttributeContainer);
         this.featureAttributeTable
             =  this._destroySpecificContainer(this.featureAttributeTable);
+        //setUnActive toolbar
+        this._toolbarContanier.resetTool();
+
+        this._mapDrawHelper.isOpen() && this._mapDrawHelper.closeDrawRectangle();
 
         this._destroyMapListener();
     }
@@ -182,26 +184,20 @@ export default class identify extends Control{
      * @private
      */
     _mapSingleClickHandle(evt){
-        let condition = this._layerTypeSelect.getLayerTypeSelectValue();
+        let features, condition = this._layerTypeSelect.getLayerTypeSelectValue();
         //According to Enum optionEnum , get the collection;
         if(condition === this._layerTypeSelect.optionEnum.ALLLAYER){
-            let features = this.map_.getFeaturesAtPixel(evt.pixel);
-            if(!! features){
-                let collection = this._getLayerByFeature(features);
-                this.renderInfoWindow(collection);
-            }
+            features = this.map_.getFeaturesAtPixel(evt.pixel);
         }else if(condition === this._layerTypeSelect.optionEnum.TOPMOST){
-            let feature = this.map_.forEachFeatureAtPixel(evt.pixel, (_feature, _layer)=>{
+            features = this.map_.forEachFeatureAtPixel(evt.pixel, (_feature, _layer)=>{
                 return _feature
             });
-            let collection = this._getLayerByFeature([feature]);
-            this.renderInfoWindow(collection);
         }else if(condition === this._layerTypeSelect.optionEnum.VISIBLE){
-            let features = this.map_.getFeaturesAtPixel(evt.pixel);
-            if(!! features){
-                let collection = this._getLayerByFeature(features, true);
-                this.renderInfoWindow(collection);
-            }
+            features = this.map_.getFeaturesAtPixel(evt.pixel);
+        }
+        if(!! features){
+            let collection = this._getLayerByFeature(features, true);
+            this.renderInfoWindow(collection);
         }
     }
     /**
@@ -351,8 +347,9 @@ export default class identify extends Control{
      */
     _getLayerByFeature(features, isVisible){
         let flCollection = [];
+        let layerHelper = new FeatureLayerHelper(this.map_);
+
         for (let i = 0, length = features.length; i < length; i++){
-            let layerHelper = new FeatureLayerHelper(this.map_);
             let layer = !isVisible
                 ? layerHelper.getLayerByFeature(features[i])
                 : layerHelper.getVisibleLayerByFeature(features[i]);
@@ -373,8 +370,38 @@ export default class identify extends Control{
         let optionsContainer = this._layerTypeSelect = new IdentifyLayerTypeSelect(mainContainer);
         optionsContainer.initComponent();
         //create toolbar
-        let toolbarContanier = this._toolbarContanier = new IdentifyFeatureToolbar(mainContainer, {});
+        let toolbarContanier = this._toolbarContanier = new IdentifyFeatureToolbar(mainContainer);
         toolbarContanier.initComponent();
+        //bind draw polygon select feature
+        let tool = toolbarContanier.registerExtraTool({
+            name: "boxSelect", handle: ()=> this._boxSelectHandler(tool), image: "boxSelect"
+        });
+    }
+
+    /**
+     * boxSelect tool handler
+     * @private
+     */
+    _boxSelectHandler(tool){
+        if(this._mapDrawHelper.isOpen()){
+            this._mapDrawHelper.closeDrawRectangle();
+            tool.setActive(false);
+        }else{
+            this._mapDrawHelper.startDrawRectangle((element)=>{
+                let mapCoordinateHelper = new MapCoordinateHelper(this.map_);
+                let extent = mapCoordinateHelper.getExtendByElement(element);
+
+                let layers = this.map_.getLayers();
+                let layerHelper = new FeatureLayerHelper(this.map_);
+                let features = layerHelper.getFeatureByExtent(layers.array_, extent);
+
+                if(!! features && features.length > 0){
+                    let collection = this._getLayerByFeature(features, true);
+                    this.renderInfoWindow(collection);
+                }
+            });
+            tool.setActive(true);
+        }
     }
 
     /**

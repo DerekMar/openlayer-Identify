@@ -44,7 +44,7 @@
 
 .identify .infoWindow .featureTreeContainer {
     width: 100%;
-    height: 180px;
+    height: 160px;
     border-radius: 5px;
     position: relative;
     overflow-y: auto;
@@ -57,7 +57,7 @@
 
 .identify .infoWindow .featureAttrTable {
     width: 100%;
-    height: 280px;
+    height: 260px;
     border-radius: 5px;
     position: relative;
     overflow-y: auto;

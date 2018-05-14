@@ -20,6 +20,8 @@
     margin-right: 10px;
 }
 
-.identify .infoWindow a.toolContanier:hover, .identify .infoWindow a.toolContanier:focus{
+.identify .infoWindow a.toolContanier:hover,
+.identify .infoWindow a.toolContanier:focus,
+.identify .infoWindow .toolContanier.select{
     background-color: #e6e6e6;
 }

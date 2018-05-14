@@ -55,6 +55,7 @@ class FeatureIdentifyUtils extends Base{
                 //indincate the layer type
                 if(layer instanceof LayerGroup){
                     result = this._getLayerByFeature(layer.getLayers(), feature);
+                    if(result) break;
                 }else{
                     let source = layer.getSource && layer.getSource();
                     if(source instanceof VectorSource) {
@@ -109,5 +110,29 @@ class FeatureIdentifyUtils extends Base{
         return isIndex == true ? rIndex : (rIndex === -1 ? false : true);
     }
 
+    /**
+     *
+     * search all of the features inside extent in all layers
+     * @param layers
+     * @param extent
+     * @return {Array}
+     */
+    getFeatureByExtent(layers, extent){
+        let features = [];
+        for(let i = 0; i < layers.length; i++){
+            let layer = layers[i]
+            if(layer instanceof LayerGroup){
+                let _features = this.getFeatureByExtent(layer.getLayers().array_, extent);
+                features = features.concat(_features);
+            }else{
+                let source = layer.getSource && layer.getSource();
+                if(source instanceof VectorSource) {
+                    let _features = source.getFeaturesInExtent(extent);
+                    features = features.concat(_features);
+                }
+            }
+        }
+        return features;
+    }
 }
 export default FeatureIdentifyUtils;

@@ -63,6 +63,14 @@ export default class MapSelectionUtils extends Base{
     }
 
     /**
+     * 是否打开了功能
+     * @return {boolean}
+     */
+    isOpen(){
+        return this.targetElement.onmousedown !== null;
+    }
+
+    /**
      * 禁止地图拖动
      * @private
      */
