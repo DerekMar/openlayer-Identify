@@ -38,7 +38,6 @@ export default class AnimationMarker extends Overlay{
 
         let coord = point.getGeometry().getCoordinates();
 
-        this.setPosition(coord);
         this._clearAnimation();
         this._animationShow(coord);
         return this;
@@ -78,19 +77,22 @@ export default class AnimationMarker extends Overlay{
             }
             return  _height;
         }
+
         let timeIntervalu = this.timeInterval = window.setInterval(()=>{
-            this._disableMapDrag();
             iTime = iTime - dTime;
 
             let dHeight = getHeight(iHeight, (totalTime - iTime) / 1000);
-
+            //current piexl
             let piexl = [curPixel[0], curPixel[1] - dHeight];
             let coor = this._getCoordinateFromScreenXY(piexl);
             this.setCoordinates(coor);
 
+            let postion = this.getPosition();
+            if(postion[0] != coor[0] || postion[1] != coor[1]){
+                timeIntervalu && window.clearInterval(timeIntervalu);
+            }
             if(iTime <= 0) {
                 this.setCoordinates(coord);
-                this._enableMapDrag();
                 timeIntervalu && window.clearInterval(timeIntervalu);
             }
         }, dTime)
@@ -142,7 +144,6 @@ export default class AnimationMarker extends Overlay{
      * @private
      */
     _clearAnimation(){
-        this._enableMapDrag();
         if(this.timeInterval){
             window.clearInterval(this.timeInterval);
             this.timeInterval = null;

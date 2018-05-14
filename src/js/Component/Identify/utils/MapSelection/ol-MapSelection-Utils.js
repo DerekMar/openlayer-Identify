@@ -77,7 +77,7 @@ export default class MapSelectionUtils extends Base{
     _disableMapDrag(){
         this.map.getInteractions().forEach(function(element,index,array){
             if(element instanceof DragPan)
-                element.setActive(false);
+                element.getActive() && element.setActive(false);
         });
     }
 
@@ -88,7 +88,7 @@ export default class MapSelectionUtils extends Base{
     _enableMapDrag(){
         this.map.getInteractions().forEach(function(element,index,array){
             if(element instanceof DragPan){}
-                element.setActive(true);
+                !element.getActive() && element.setActive(true);
         });
     }
 
@@ -118,8 +118,7 @@ export default class MapSelectionUtils extends Base{
 
         this.selectRegionElement = this._renderDynamicDiv(posx, posy);
         mainContanier.appendChild(this.selectRegionElement);
-        //禁止地图拖动
-        this._disableMapDrag();
+
         //注册容器点击时的鼠标移动事件
         mainContanier.onmousemove = (ev)=> {
             //计算div的尺寸
