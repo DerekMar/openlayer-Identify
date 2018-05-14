@@ -62,7 +62,7 @@
     position: relative;
     overflow-y: auto;
     display: none;
-    box-shadow: 0 0 2px #ccc;
+    /*box-shadow: 0 0 2px #ccc;*/
 }
 
 .identify .infoWindow .featureAttrTable.shown {

@@ -184,7 +184,7 @@ export default class identify extends Control{
      * @private
      */
     _mapSingleClickHandle(evt){
-        let features, options, condition = this._layerTypeSelect.getLayerTypeSelectValue();
+        let features, options = {}, condition = this._layerTypeSelect.getLayerTypeSelectValue();
         //According to Enum optionEnum , get the collection;
         if(condition === this._layerTypeSelect.optionEnum.ALLLAYER){
             features = this.map_.getFeaturesAtPixel(evt.pixel);
@@ -216,7 +216,7 @@ export default class identify extends Control{
             ? this.featureSelectedTree
             : this._renderContainer(featureTreeContainer, { className: "featureTreeContainer shown"});
 
-        this._renderSizeMizeButton(featureTreeContainer, featureTree);
+        //this._renderSizeMizeButton(featureTreeContainer, featureTree);
 
         let dataTreeNode = IdentifyFeatureLayerTree.createTreeNodeData(flCollection);
         this._layerFeatureTree = new IdentifyFeatureLayerTree(featureTree, dataTreeNode);
@@ -245,7 +245,7 @@ export default class identify extends Control{
             ? this.featureAttributeTable
             : this._renderContainer(attrTableContainer, {className: "featureAttrTable shown"});
 
-        this._renderSizeMizeButton(attrTableContainer, attrTable);
+        //this._renderSizeMizeButton(attrTableContainer, attrTable);
 
         let featureAttrTable = this._featureAttrTable = new IdentifyFeatureAttrTable(attrTable);
         featureAttrTable.initComponent(item.layerSource);
@@ -374,8 +374,11 @@ export default class identify extends Control{
         let toolbarContanier = this._toolbarContanier = new IdentifyFeatureToolbar(mainContainer);
         toolbarContanier.initComponent();
         //bind draw polygon select feature
-        let tool = toolbarContanier.registerExtraTool({
-            name: "boxSelect", handle: ()=> this._boxSelectHandler(tool), image: "boxSelect"
+        let boxSelectTool = toolbarContanier.registerExtraTool({
+            name: "boxSelect", handle: ()=> this._boxSelectHandler(boxSelectTool), image: "boxSelect"
+        });
+        let treeClearTool = toolbarContanier.registerExtraTool({
+            name: "clearTree", handle: ()=> this._treeClearHandle(treeClearTool), image: "clearTree"
         });
     }
 
@@ -416,6 +419,23 @@ export default class identify extends Control{
         }
     }
 
+    /**
+     * treeClear tool handler
+     * @param tool
+     * @private
+     */
+    _treeClearHandle(tool){
+        if(this.featureSelectedTreeContainer){
+            this.featureSelectedTreeContainer.parentNode.removeChild(this.featureSelectedTreeContainer);
+            this.featureSelectedTreeContainer = null;
+            this.featureSelectedTree = null;
+        }
+        if(this.featureAttributeContainer){
+            this.featureAttributeContainer.parentNode.removeChild(this.featureAttributeContainer);
+            this.featureAttributeContainer = null;
+            this.featureAttributeTable = null;
+        }
+    }
     /**
      * @private
      * @desc destroy the Event Added on Map

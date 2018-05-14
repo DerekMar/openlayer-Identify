@@ -1,6 +1,7 @@
 import IdentifyBaseComponent from "../ol-Identify-BaseComponent";
 import IdentifyTool from './ol_Identify-Tool';
 const boxSelectImagePath = require("./img/box-select.png");
+const treeClearImagePath = require("./img/tree-clear.png");
 
 export default  class IdentifyToolbar extends IdentifyBaseComponent{
     constructor(element){
@@ -20,7 +21,7 @@ export default  class IdentifyToolbar extends IdentifyBaseComponent{
         };
         this.defaultImageEmun = {
             boxSelect: boxSelectImagePath,
-            clearTree: boxSelectImagePath
+            clearTree: treeClearImagePath
         };
     }
     initComponent(){

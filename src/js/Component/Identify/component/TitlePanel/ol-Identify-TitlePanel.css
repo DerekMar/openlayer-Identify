@@ -1,7 +1,11 @@
 .identify .infoWindow .titlePanel{
     width: 100%;
     text-align: center;
+    background-color: #31718d;
+    height: 40px;
+    line-height: 40px;
 }
 .identify .infoWindow h3 {
-    margin: 10px auto;
+    margin: 0 auto;
+    color: white;
 }

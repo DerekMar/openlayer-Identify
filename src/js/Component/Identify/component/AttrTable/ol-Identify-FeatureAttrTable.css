@@ -1,9 +1,9 @@
 .identify .infoWindow table.altrowstable {
     font-family: verdana, arial, sans-serif;
     font-size: 11px;
-    color: #333333;
+    color: #31718d;
     border-width: 1px;
-    border-color: #a9c6c9;
+    border-color: #d6e3e9;
     border-collapse: collapse;
     width: 100%;
 }
@@ -12,7 +12,7 @@
     border-width: 1px;
     padding: 8px;
     border-style: solid;
-    border-color: #d0d1d6;
+    border-color: #d6e3e9;
 }
 .identify .infoWindow table.altrowstable .title {
     text-align: left;
@@ -23,7 +23,7 @@
     border-width: 1px;
     padding: 8px;
     border-style: solid;
-    border-color: #d0d1d6;
+    border-color: #e9f0f3;
 }
 
 .identify .infoWindow table.altrowstable .oddrowcolor {
@@ -31,7 +31,7 @@
 }
 
 .identify .infoWindow table.altrowstable .evenrowcolor {
-    background-color: #eef2f6;
+    background-color: #e9f0f3;
 }
 /*滚动条样式*/
 .featureAttrTable::-webkit-scrollbar {
@@ -39,12 +39,12 @@
     height: 1px;
 }
 .featureAttrTable::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    -webkit-box-shadow: inset 0 0 5px rgba(18,66,87,0.2);
     border-radius: 10px;
     background: #EDEDED;
 }
 .featureAttrTable::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-    background: rgba(83, 83, 83, 0.59);
+    -webkit-box-shadow: inset 0 0 5px rgba(18,66,87,0.2);
+    background: rgba(49, 113, 141, 0.59);
 }

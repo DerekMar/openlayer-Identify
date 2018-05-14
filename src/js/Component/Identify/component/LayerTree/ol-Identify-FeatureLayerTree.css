@@ -2,22 +2,36 @@
 .identify .infoWindow ul {
     padding-left: 1em;
     list-style: none;
+    margin: 0 auto;
+}
+
+.identify .infoWindow ul .hidden{
+    display: none;
 }
 
 .identify .infoWindow li.group {
     padding-top: 5px;
     text-align: left;
 }
+.identify .infoWindow li.folding{
+    list-style: square inside url("./img/tree-maximize.png");
+}
 
 .identify .infoWindow li.group > label {
     font-weight: bold;
     text-align: left !important;
+    color: #31718d;
 }
 
 .identify .infoWindow li.layer {
     display: table;
     width: 100%;
     margin: 5px 0 5px 0;
+}
+.identify .infoWindow li.layer > label{
+    text-align: left !important;
+    color: #31718d;
+    font-size: 15px;
 }
 
 .identify .infoWindow li.group ul {
@@ -27,7 +41,7 @@
 .identify .infoWindow li.group li.layer:focus,
 .identify .infoWindow li.group li.layer:hover,
 .identify .infoWindow .select{
-    background-color: #00b0f0;
+    background-color: #e9f0f3;
     color: white;
 }
 
@@ -40,12 +54,12 @@
     height: 1px;
 }
 .featureTreeContainer::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    -webkit-box-shadow: inset 0 0 5px rgba(18,66,87,0.2);
     border-radius: 10px;
     background: #EDEDED;
 }
 .featureTreeContainer::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-    background: rgba(83, 83, 83, 0.59);
+    -webkit-box-shadow: inset 0 0 5px rgba(18,66,87,0.2);
+    background: rgba(49, 113, 141, 0.59);
 }

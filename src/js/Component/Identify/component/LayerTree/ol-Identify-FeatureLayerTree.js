@@ -87,17 +87,31 @@ export default  class IdentifyFeatureLayerTree extends IdentifyBaseComponent{
         for (let i = 0, length = dataNode.length; i < length; i++){
             let layerGroupNode = dataNode[i];
             let li = document.createElement("li"), label = document.createElement('label');
+            let ul_ChildNode = this._renderTreeNode_(layerGroupNode.layerData);
 
             li.className = 'group';
             label.innerHTML = layerGroupNode.layerGroup;
+            label.onclick = (e)=>this._treeGroupClickHandle(e, ul_ChildNode);
+
             li.appendChild(label);
-
-            let ul_ChildNode = this._renderTreeNode_(layerGroupNode.layerData);
             li.appendChild(ul_ChildNode);
-
             ul.appendChild(li);
         }
         return ul;
+    }
+    /**
+     * 树的组节点被点击处理事件
+     * @param evt
+     * @private
+     */
+    _treeGroupClickHandle(evt, ul){
+        if(ul.classList.contains("hidden")){
+            ul.classList.remove("hidden");
+            ul.parentNode.classList.remove("folding");
+        }else{
+            ul.classList.add("hidden");
+            ul.parentNode.classList.add("folding");
+        }
     }
     /**
      *
