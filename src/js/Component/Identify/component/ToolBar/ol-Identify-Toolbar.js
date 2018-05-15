@@ -2,6 +2,9 @@ import IdentifyBaseComponent from "../ol-Identify-BaseComponent";
 import IdentifyTool from './ol_Identify-Tool';
 const boxSelectImagePath = require("./img/box-select.png");
 const treeClearImagePath = require("./img/tree-clear.png");
+const treeHiddenImagePath = require("./img/tree-hidden.png");
+const tableHiddenImagePath = require("./img/table-hidden.png");
+const featureFitImagePath = require("./img/feature-fitbound.png");
 
 export default  class IdentifyToolbar extends IdentifyBaseComponent{
     constructor(element){
@@ -12,16 +15,19 @@ export default  class IdentifyToolbar extends IdentifyBaseComponent{
         this.toolbarClassName = "toolbarContanier";
         //TODO 完善更多的功能
         this.defaultOptions = {
-            name: null,
-            handle: null,
+            name:  null,
             image: null,
-            imageUrl: null,
+            handle: null,
+            imageUrl:   null,
             imageFocus: null,
             className: ""
         };
         this.defaultImageEmun = {
-            boxSelect: boxSelectImagePath,
-            clearTree: treeClearImagePath
+            boxSelect:  boxSelectImagePath,
+            clearTree:  treeClearImagePath,
+            hideTree:   treeHiddenImagePath,
+            hideTable:  tableHiddenImagePath,
+            fitFeature: featureFitImagePath
         };
     }
     initComponent(){

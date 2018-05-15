@@ -55,7 +55,7 @@ export default class AnimationMarker extends Overlay{
          * 这里只需要修改 totalTime 的值可以改变动画的渲染时间，其他不要改动
          * @type {number}
          */
-        let totalTime = 600, //动画的总时间 单位是毫秒
+        let totalTime = 400, //动画的总时间 单位是毫秒
             heightPower = 4, //高度衰减的倍率
             dValue = mapSize[1] / 10, //marker的最大高度，像素为单位
             dTime = 10; //动画每一帧的时间

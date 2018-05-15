@@ -6,6 +6,7 @@
     border-color: #d6e3e9;
     border-collapse: collapse;
     width: 100%;
+    table-layout: fixed;
 }
 
 .identify .infoWindow table.altrowstable th {
@@ -17,6 +18,7 @@
 .identify .infoWindow table.altrowstable .title {
     text-align: left;
     font-size: 12px;
+    width: 35%;
 }
 
 .identify .infoWindow table.altrowstable td {
@@ -24,6 +26,7 @@
     padding: 8px;
     border-style: solid;
     border-color: #e9f0f3;
+    word-wrap: break-word;
 }
 
 .identify .infoWindow table.altrowstable .oddrowcolor {

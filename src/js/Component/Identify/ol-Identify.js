@@ -35,8 +35,6 @@ export default class identify extends Control{
         if (this._isTouchDevice()) {
             this.closeClassName += ' touch';
         }
-        this.minimizeClassName = "minimizeBtn";
-        this.maximizeClassName = "maxmizeBtn";
         //declare the container positon
         this.position = !! options.position? options.position : "top";
 
@@ -54,6 +52,7 @@ export default class identify extends Control{
         this._toolbarContanier = null;// toolbar element
         this._layerTypeSelect = null;// layer type 's select element
         this._layerFeatureTree = null;// layer feature component
+        this._featureSelected =  null;// feature which feature tree has selected
         this._featureAttrTable = null;// feature Attribute table component
 
         this.featureSelectedTree = null;// the tree for feature which has selected
@@ -61,11 +60,12 @@ export default class identify extends Control{
         this.featureAttributeTable = null;// the feature Attribute table element
         this.featureAttributeContainer = null;// thre feature Attribute container element
 
+        this.featureTreeHiddenTool = null;  //featureTreeHiddenTool,which control the featureTree hidden
+        this.featureAttrTableHiddenTool = null; //featureAttrTableHiddenTool, which control the featureAttrTabl hidden
         //create the entry Button
         this._initEntryBtnElement(element);
         //create the result infoWindow
         this._initResultInfoWindow(element);
-
     }
     /**
      * @private
@@ -211,18 +211,24 @@ export default class identify extends Control{
             ? this.featureSelectedTreeContainer
             : this._renderContainer(this.infoWindow);
 
+        let isFeatureTreeHidden = this.featureTreeHiddenTool.getActive();
+        let featureTreeClassName = isFeatureTreeHidden ? "featureTreeContainer" : "featureTreeContainer shown";
+
         let featureTree = this.featureSelectedTree
             = this.featureSelectedTree
             ? this.featureSelectedTree
-            : this._renderContainer(featureTreeContainer, { className: "featureTreeContainer shown"});
-
-        //this._renderSizeMizeButton(featureTreeContainer, featureTree);
+            : this._renderContainer(featureTreeContainer, { className: featureTreeClassName });
 
         let dataTreeNode = IdentifyFeatureLayerTree.createTreeNodeData(flCollection);
         this._layerFeatureTree = new IdentifyFeatureLayerTree(featureTree, dataTreeNode);
         this._layerFeatureTree.initComponent()
             .bindEvent("treeclick", (evt, layer) => this._featureTreeNodeClickHandle(layer));
-
+        // In default, select the fitst one on  dataTreeNode
+        let firstNodeData = IdentifyFeatureLayerTree.getTreeNodeFirstData(dataTreeNode);
+        if(firstNodeData !== null){
+            this._layerFeatureTree.selectTreeNodeByData(firstNodeData);
+            this._featureTreeNodeClickHandle(firstNodeData);
+        }
         return this;
     }
 
@@ -232,6 +238,7 @@ export default class identify extends Control{
      * @private
      */
     _featureTreeNodeClickHandle(item){
+        this._featureSelected = item;
         //highligh feature on map
         this.highlight.highlightSpecificFeature(item.layerSource);
         //create feature attribute table
@@ -240,12 +247,12 @@ export default class identify extends Control{
             ? this.featureAttributeContainer
             : this._renderContainer(this.infoWindow);
 
+        let isFeatureAttrTableHidden = this.featureAttrTableHiddenTool.getActive();
+        let featureAttrTableClassName = isFeatureAttrTableHidden ? "featureAttrTable" :  "featureAttrTable shown";
         let attrTable = this.featureAttributeTable
             = this.featureAttributeTable
             ? this.featureAttributeTable
-            : this._renderContainer(attrTableContainer, {className: "featureAttrTable shown"});
-
-        //this._renderSizeMizeButton(attrTableContainer, attrTable);
+            : this._renderContainer(attrTableContainer, {className: featureAttrTableClassName});
 
         let featureAttrTable = this._featureAttrTable = new IdentifyFeatureAttrTable(attrTable);
         featureAttrTable.initComponent(item.layerSource);
@@ -269,46 +276,6 @@ export default class identify extends Control{
         return _Contanier;
     }
 
-    /**
-     *  render the maxmize or minimize button on contanier ,target on targetElement
-     * @param { HtmlElement} container
-     * @param { HtmlElement} targetElement
-     * @private
-     */
-    _renderSizeMizeButton(container, targetElement){
-        /* remenber inverted order*/
-        let childs = container.childNodes;
-        for(let i = childs.length - 1; i >= 0; i--) {
-            let element = childs[i];
-            if(element.classList.contains(this.minimizeClassName)
-                || element.classList.contains(this.maximizeClassName)){
-                return;
-            }
-        }
-
-        let minimizeBtn = document.createElement("span");
-        minimizeBtn.className = this.minimizeClassName;
-        minimizeBtn.onclick = (evt)=> this._minimizeOrMaxmineContaner(targetElement, minimizeBtn);
-
-        container.insertBefore(minimizeBtn, targetElement);
-    }
-
-    /**
-     *
-     * @param element
-     * @private
-     */
-    _minimizeOrMaxmineContaner(container, btnElement){
-        if(btnElement.classList.contains(this.minimizeClassName)){
-            this._hideSpecificContainer(container);
-            btnElement.classList.remove(this.minimizeClassName);
-            btnElement.classList.add(this.maximizeClassName);
-        }else if(btnElement.classList.contains(this.maximizeClassName)){
-            this._showSpecificContainer(container);
-            btnElement.classList.remove(this.maximizeClassName);
-            btnElement.classList.add(this.minimizeClassName);
-        }
-    }
     /**
      * @desc make the specific element display shown
      * @param element
@@ -377,6 +344,16 @@ export default class identify extends Control{
         let boxSelectTool = toolbarContanier.registerExtraTool({
             name: "boxSelect", handle: ()=> this._boxSelectHandler(boxSelectTool), image: "boxSelect"
         });
+        let treeHiddenTool = this.featureTreeHiddenTool = toolbarContanier.registerExtraTool({
+            name: "treeHidden", handle: ()=> this._containerHiddenHandle(treeHiddenTool, this.featureSelectedTree), image: "hideTree"
+        });
+        let tableHiddenTool = this.featureAttrTableHiddenTool = toolbarContanier.registerExtraTool({
+            name: "tableHidden", handle: ()=> this._containerHiddenHandle(tableHiddenTool, this.featureAttributeTable), image: "hideTable"
+        });
+        let featureFitTool = toolbarContanier.registerExtraTool({
+            name: "featureFit", handle: ()=> this._fitFeatureHandle(featureFitTool, this._featureSelected
+                ? this._featureSelected.layerSource : null), image: "fitFeature"
+        });
         let treeClearTool = toolbarContanier.registerExtraTool({
             name: "clearTree", handle: ()=> this._treeClearHandle(treeClearTool), image: "clearTree"
         });
@@ -426,14 +403,46 @@ export default class identify extends Control{
      */
     _treeClearHandle(tool){
         if(this.featureSelectedTreeContainer){
-            this.featureSelectedTreeContainer.parentNode.removeChild(this.featureSelectedTreeContainer);
+            this._layerFeatureTree.destroyComponent();
             this.featureSelectedTreeContainer = null;
             this.featureSelectedTree = null;
+            this._layerFeatureTree = null;
+            this._featureSelected = null;
         }
         if(this.featureAttributeContainer){
-            this.featureAttributeContainer.parentNode.removeChild(this.featureAttributeContainer);
+            this._featureAttrTable.destroyComponent();
             this.featureAttributeContainer = null;
             this.featureAttributeTable = null;
+            this._featureAttrTable = null;
+        }
+        //clear the highlightfeature
+        this.highlight.clearhighlightFeature();
+    }
+
+    /**
+     * hide the specific container
+     * @param tool
+     * @param container
+     * @private
+     */
+    _containerHiddenHandle(tool, container){
+        if(tool.getActive()){
+            this._showSpecificContainer(container);
+            tool.setActive(false);
+        }else{
+            this._hideSpecificContainer(container);
+            tool.setActive(true);
+        }
+    }
+
+    /**
+     * 缩放至图层工具的处理事件
+     * @param tool
+     * @private
+     */
+    _fitFeatureHandle(tool,  feature){
+        if(!!feature){
+            this.map_.getView().fit(feature.getGeometry().getExtent(), { maxZoom: 17, duration: 400 });
         }
     }
     /**

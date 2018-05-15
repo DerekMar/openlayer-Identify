@@ -37,4 +37,12 @@ export default  class IdentifyTool extends IdentifyBaseComponent{
             }
         }
     }
+
+    /**
+     * 获取tool的状态
+     * @return {boolean}是否是激活状态
+     */
+    getActive(){
+        return this.toolContaniner.classList.contains("select");
+    }
 }

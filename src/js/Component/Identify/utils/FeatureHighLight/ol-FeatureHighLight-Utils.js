@@ -93,7 +93,7 @@ class FeatureFeatureHighLightUtils extends Base{
      * @private
      */
     _highlightOtherFeature(feature){
-        this._clearhighlightFeature();
+        this.clearhighlightFeature();
         this._highlightOtherFeaturetWithAnimate(feature);
     }
 
@@ -148,7 +148,7 @@ class FeatureFeatureHighLightUtils extends Base{
      * @private
      */
     _highlightPointFeature(point){
-        this._clearhighlightFeature();
+        this.clearhighlightFeature();
         this._highlightPointWithAnimate(point);
     }
 
@@ -156,7 +156,7 @@ class FeatureFeatureHighLightUtils extends Base{
      * 清除高亮的要素
      * @private
      */
-    _clearhighlightFeature(){
+    clearhighlightFeature(){
         if(this.animationMarker && this.animationMarker.isOpened()){
             this.animationMarker.clearAnimation();
             this.map.removeOverlay(this.animationMarker);
@@ -224,7 +224,7 @@ class FeatureFeatureHighLightUtils extends Base{
         }
         this.mapListeners.length = 0;
 
-        this._clearhighlightFeature();
+        this.clearhighlightFeature();
     }
 }
 

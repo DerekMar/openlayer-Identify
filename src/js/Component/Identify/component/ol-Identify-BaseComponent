@@ -10,6 +10,9 @@ export default class IdentifyBaseComponent{
     initComponent(){
         return this;
     }
+    destroyComponent(){
+        this.element.parentNode && this.element.parentNode.removeChild(this.element);
+    }
     _extend(destination, source){
         for( let property in source ){
             destination[property] = source[property];

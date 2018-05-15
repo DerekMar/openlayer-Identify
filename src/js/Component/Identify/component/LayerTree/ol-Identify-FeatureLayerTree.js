@@ -24,7 +24,7 @@ export default  class IdentifyFeatureLayerTree extends IdentifyBaseComponent{
          * }
          */
         this._DataTreeNode = dataNode;   // feature treeNode data
-        this.selectTreeNode = null;
+        this._selectTreeNode = null;
 
         //Evented Listener set Varience
         let noop = ()=>{} // empty operation
@@ -75,6 +75,19 @@ export default  class IdentifyFeatureLayerTree extends IdentifyBaseComponent{
                 break;
         }
         return this;
+    }
+
+    /**
+     * @desc select the treeNode，include affect
+     * @param treeNodeData
+     */
+    selectTreeNodeByData(treeNodeData){
+        let groupIndex = treeNodeData.groupIndex, layerIndex = treeNodeData.layerIndex;
+        let _element = this.element.childNodes[0].childNodes[0];
+        let groupNode = _element.childNodes[groupIndex];
+        let layerNode = groupNode.childNodes[1].childNodes[layerIndex];
+
+        this._selectFeatureTreeNode(layerNode, treeNodeData);
     }
     /**
      *
@@ -180,9 +193,6 @@ export default  class IdentifyFeatureLayerTree extends IdentifyBaseComponent{
         if(treeNode && !treeNode.classList.contains("select")){
             treeNode.classList.add("select");
         }
-        //show the feature Attribute table
-        let layerCoordinate, layerGeometryType;
-
     }
     /**
      *
@@ -219,6 +229,21 @@ export default  class IdentifyFeatureLayerTree extends IdentifyBaseComponent{
                     let featureData = { layerName: feature. id_, layerSource: feature, groupIndex: hasResult, layerIndex: result[hasResult]["layerData"].length };
                     result[hasResult]["layerData"].push(featureData);
                 }
+            }
+        }
+        return result;
+    }
+
+    /**
+     * 获取树节点的第一个要素
+     * @param flCollection
+     */
+    static getTreeNodeFirstData(dataTreeNode){
+        let result = null;
+        if(dataTreeNode && dataTreeNode.length > 0){
+            let layersData = dataTreeNode[0]["layerData"];
+            if(layersData && layersData.length > 0){
+                result = layersData[0];
             }
         }
         return result;
