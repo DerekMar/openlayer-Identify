@@ -43,13 +43,13 @@ layerCreator.prototype._getLayerByName = function(Name){
 
     switch (Name){
         case "basicfacility":
-            result = this._getVectorLayerByUrl("http://localhost:8080/geoserver/Test/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Test:GIST2_basicfacility&maxFeatures=1000&outputFormat=application%2Fjson&bbox=", this.geometryType.Polygon, {});
+            result = this._getVectorLayerByUrl("http://localhost:8080/geoserver/Test/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Test:GIST2_basicfacility&maxFeatures=1000&outputFormat=application%2Fjson&bbox=", this.geometryType.Polygon, {title: "GIST2_basicfacility"});
             break;
         case "roadline":
-            result = this._getVectorLayerByUrl("http://localhost:8080/geoserver/Test/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Test:GIST2_roadline&maxFeatures=1000&outputFormat=application%2Fjson&bbox=", this.geometryType.Polyline, {});
+            result = this._getVectorLayerByUrl("http://localhost:8080/geoserver/Test/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Test:GIST2_roadline&maxFeatures=1000&outputFormat=application%2Fjson&bbox=", this.geometryType.Polyline, {title: "GIST2_roadline"});
             break;
         case "trafficsign":
-            result = this._getVectorLayerByUrl("http://localhost:8080/geoserver/Test/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Test:GIST2_trafficsign&maxFeatures=1000&outputFormat=application%2Fjson&bbox=", this.geometryType.Point, {});
+            result = this._getVectorLayerByUrl("http://localhost:8080/geoserver/Test/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Test:GIST2_trafficsign&maxFeatures=1000&outputFormat=application%2Fjson&bbox=", this.geometryType.Point, {title: "GIST2_trafficsign"});
             break;
         default:
             alert("调用getLayerByName方法没有对应图层名字");

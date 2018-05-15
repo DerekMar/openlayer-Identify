@@ -62,10 +62,19 @@ export default class identify extends Control{
 
         this.featureTreeHiddenTool = null;  //featureTreeHiddenTool,which control the featureTree hidden
         this.featureAttrTableHiddenTool = null; //featureAttrTableHiddenTool, which control the featureAttrTabl hidden
+    }
+
+    /**
+     * @desc show the Identify component
+     * @public
+     * @return {identify}
+     */
+    showIdenditfy(){
         //create the entry Button
-        this._initEntryBtnElement(element);
+        this._initEntryBtnElement(this.element);
         //create the result infoWindow
-        this._initResultInfoWindow(element);
+        this._initResultInfoWindow(this.element);
+        return this;
     }
     /**
      * @private
@@ -189,9 +198,10 @@ export default class identify extends Control{
         if(condition === this._layerTypeSelect.optionEnum.ALLLAYER){
             features = this.map_.getFeaturesAtPixel(evt.pixel);
         }else if(condition === this._layerTypeSelect.optionEnum.TOPMOST){
-            features = [this.map_.forEachFeatureAtPixel(evt.pixel, (_feature, _layer)=>{
+            let _features = this.map_.forEachFeatureAtPixel(evt.pixel, (_feature, _layer)=>{
                 return _feature
-            })];
+            });
+            _features && (features = [_features]);
         }else if(condition === this._layerTypeSelect.optionEnum.VISIBLE){
             features = this.map_.getFeaturesAtPixel(evt.pixel);
             options.visible = true;
@@ -334,12 +344,36 @@ export default class identify extends Control{
         //create Title
         let titlepanelContainer = new IdentifyFeatureTitlePanel(mainContainer, { title: "Identify"});
         titlepanelContainer.initComponent();
+        this._addLayerInfoOnTypeSelect(titlepanelContainer);
         //create layer type selected options
         let optionsContainer = this._layerTypeSelect = new IdentifyLayerTypeSelect(mainContainer);
         optionsContainer.initComponent();
         //create toolbar
         let toolbarContanier = this._toolbarContanier = new IdentifyFeatureToolbar(mainContainer);
         toolbarContanier.initComponent();
+        this._regiserToolonToolbar(toolbarContanier);
+    }
+
+    /**
+     * add layer info on the typeSelectComponent
+     * @param optionsContainer
+     * @private
+     */
+    _addLayerInfoOnTypeSelect(optionsContainer){
+        let layerHelper = new FeatureLayerHelper(this.map_);
+        let layerInfo = layerHelper.getVectorLayerInfo(this.map_.getLayers());
+
+        for (let i = 0, length = layerInfo.length; i < length; i++){
+            let features = layerInfo[i].getSource().getFeatures();
+            console.log(features);
+        }
+    }
+    /**
+     * regiser default Tool on Toolbar
+     * @param toolbarContanier
+     * @private
+     */
+    _regiserToolonToolbar(toolbarContanier){
         //bind draw polygon select feature
         let boxSelectTool = toolbarContanier.registerExtraTool({
             name: "boxSelect", handle: ()=> this._boxSelectHandler(boxSelectTool), image: "boxSelect"

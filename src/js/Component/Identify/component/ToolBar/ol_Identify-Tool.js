@@ -1,6 +1,10 @@
 import IdentifyBaseComponent from "../ol-Identify-BaseComponent";
 const defaultImagePath = require("./img/box-select.png");
-
+/**
+ * OpenLayers Feature Identify Control. Tool Component
+ * @constructor
+ * @param {Object} element, the component renderby:
+ */
 export default  class IdentifyTool extends IdentifyBaseComponent{
     constructor(element, options){
         super(element);

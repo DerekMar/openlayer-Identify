@@ -2,37 +2,91 @@
 .identify .infoWindow .selectContainer {
     width: 100%;
     height: 40px;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     /*box-shadow: 0 0 2px #ccc;*/
     position: relative;
 }
 
-.identify .infoWindow .selectContainer:after {
-    content: "";
-    width: 14px;
-    height: 8px;
-    background: url("./img/pull-down.png") no-repeat center;
-    position: absolute;
-    right: 20px;
-    top: 45%;
-    pointer-events: none;
-}
-
-.identify .infoWindow select {
-    border: none;
-    outline: none;
-    width: 100%;
+.identify .infoWindow .selectContainer cite{
+    display: block;
+    color: #31718d;
+    font-weight: bold;
+    width: 97%;
     height: 40px;
     line-height: 40px;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    font-size: 16px;
-    padding-left: calc(50% - 40px);
+    background: url("./img/pull-down.png") no-repeat right center;
+    text-align: center;
+    position: relative;
 }
 
-.identify .infoWindow select option {
-    line-height: 30px;
-    height: 30px;
-    margin: 5px auto;
+.selectElement{
+    display: none;
+    position: absolute;
+    z-index: 99;
+    width: 300px;
+    box-shadow: 0 0 1px #31718d;
+    background: #fff;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.selectElementshown{
+    display: block !important;
+}
+
+.selectElement ul{
+    padding: 0px;
+    margin:  0px auto;
+}
+.selectElement ul li{
+    list-style: none;
+    position: relative;
+    text-align: center;
+    line-height: 36px;
+    border-top: 1px solid #d6e3e9;
+}
+
+.selectElement ul li lable{
+    color: #31718d;
+}
+
+.selectElement ul li a{
+    display: block;
+    height: 36px;
+    color: #333;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    text-decoration: none;
+}
+
+.selectElement ul li a:hover,.selectElement ul li a:focus{
+    background: #e9f0f3;
+    text-decoration: none;
+}
+
+.selectElement ul li a img{
+    vertical-align:middle;
+    border: 0px;
+    position: absolute;
+    left: 20%;
+    top: calc(50% - 7.5px);
+    margin: 0px;
+}
+
+/*滚动条样式*/
+.selectElement::-webkit-scrollbar {
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+.selectElement::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(18,66,87,0.2);
+    border-radius: 10px;
+    background: #EDEDED;
+}
+.selectElement::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(18,66,87,0.2);
+    background: rgba(49, 113, 141, 0.59);
 }

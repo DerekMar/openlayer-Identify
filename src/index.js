@@ -20,9 +20,10 @@ mapCtrl.addLayer(layerGroup);
  *
  */
 let identify = new Identify({
-    position: "bottom"
+    // position: "bottom"
 });
 mapCtrl.getMap().addControl(identify);
+identify.showIdenditfy();
 
 /*
 加载要素识别模块

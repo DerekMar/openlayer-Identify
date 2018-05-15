@@ -5,7 +5,11 @@ const treeClearImagePath = require("./img/tree-clear.png");
 const treeHiddenImagePath = require("./img/tree-hidden.png");
 const tableHiddenImagePath = require("./img/table-hidden.png");
 const featureFitImagePath = require("./img/feature-fitbound.png");
-
+/**
+ * OpenLayers Feature Identify Control. Toolbar Component
+ * @constructor
+ * @param {Object} element, the component renderby:
+ */
 export default  class IdentifyToolbar extends IdentifyBaseComponent{
     constructor(element){
         super(element);

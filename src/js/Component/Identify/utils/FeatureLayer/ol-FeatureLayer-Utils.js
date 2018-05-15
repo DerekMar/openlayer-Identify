@@ -3,7 +3,6 @@ import VectorSource from 'ol/source/vector';
 import TileLayer from 'ol/layer/tile';
 import LayerGroup from 'ol/layer/group';
 import ImageLayer from 'ol/layer/image';
-
 /**
  * OpenLayers Feature Layer Utils. Help to Use Layer and Feature;
  * @constructor
@@ -13,6 +12,26 @@ import ImageLayer from 'ol/layer/image';
 class FeatureIdentifyUtils extends Base{
     constructor(map){
         super(map);
+    }
+
+    /**
+     *
+     */
+    getVectorLayerInfo(layers){
+        let result = [];
+        for (let i = 0, length = layers.array_.length; i < length; i++){
+            let layer = layers.array_[i];
+            if(layer instanceof LayerGroup){
+                let _result = this.getVectorLayerInfo(layer.getLayers());
+                result = result.concat(_result);
+            }else{
+                let source = layer.getSource && layer.getSource();
+                if(source instanceof VectorSource) {
+                    result.push(layer);
+                }
+            }
+        }
+        return result;
     }
 
     /**
