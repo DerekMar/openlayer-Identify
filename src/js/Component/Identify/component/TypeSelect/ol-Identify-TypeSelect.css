@@ -33,6 +33,10 @@
 
 .selectElementshown{
     display: block !important;
+    animation: selectShowGradually 0.3s;
+    -moz-animation: selectShowGradually  0.3s; /* Firefox */
+    -webkit-animation: selectShowGradually  0.3s; /* Safari and Chrome */
+    -o-animation: selectShowGradually  0.3s; /* Opera */
 }
 
 .selectElement ul{
@@ -89,4 +93,8 @@
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 5px rgba(18,66,87,0.2);
     background: rgba(49, 113, 141, 0.59);
+}
+@keyframes selectShowGradually{
+    0%{ opacity: 0; }
+    100%{ opacity: 1;}
 }

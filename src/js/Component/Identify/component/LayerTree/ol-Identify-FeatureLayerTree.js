@@ -210,6 +210,9 @@ export default  class IdentifyFeatureLayerTree extends IdentifyBaseComponent{
             for (let i = 0, length = flCollection.length; i < length; i++){
                 let featureAndLayer = flCollection[i];
                 let layer = featureAndLayer[0], feature = featureAndLayer[1];
+                if(!layer){
+                   continue;
+                }
                 let layerGroupTitle = layer.get("title")
                     ? layer.get("title")
                     : feature.id_.split(".")[0];

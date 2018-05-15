@@ -209,6 +209,7 @@ export default class identify extends Control{
         if(!! features){
             let collection = this._getLayerByFeature(features, options);
             this.renderInfoWindow(collection);
+
         }
     }
     /**
@@ -365,7 +366,7 @@ export default class identify extends Control{
 
         for (let i = 0, length = layerInfo.length; i < length; i++){
             let features = layerInfo[i].getSource().getFeatures();
-            console.log(features);
+            //console.log(features);
         }
     }
     /**
@@ -460,6 +461,8 @@ export default class identify extends Control{
      * @private
      */
     _containerHiddenHandle(tool, container){
+        if(!container) return;
+
         if(tool.getActive()){
             this._showSpecificContainer(container);
             tool.setActive(false);
