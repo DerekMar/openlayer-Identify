@@ -235,11 +235,12 @@ export default class identify extends Control{
         this._layerFeatureTree.initComponent()
             .bindEvent("treeclick", (evt, layer) => this._featureTreeNodeClickHandle(layer));
         // In default, select the fitst one on  dataTreeNode
-        let firstNodeData = IdentifyFeatureLayerTree.getTreeNodeFirstData(dataTreeNode);
-        if(firstNodeData !== null){
-            this._layerFeatureTree.selectTreeNodeByData(firstNodeData);
-            this._featureTreeNodeClickHandle(firstNodeData);
-        }
+        // let firstNodeData = IdentifyFeatureLayerTree.getTreeNodeFirstData(dataTreeNode);
+        //
+        // if(firstNodeData !== null){
+        //     this._layerFeatureTree.selectTreeNodeByData(firstNodeData);
+        //     this._featureTreeNodeClickHandle(firstNodeData);
+        // }
         return this;
     }
 

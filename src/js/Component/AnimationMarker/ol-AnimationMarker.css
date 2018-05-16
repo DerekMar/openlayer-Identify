@@ -4,6 +4,22 @@
     bottom: -4px;
     left: -16px;
 }
+.shown{
+    display: block;
+
+    animation: AnimationMarker 0.6s;
+    -moz-animation: AnimationMarker  0.6s; /* Firefox */
+    -webkit-animation: AnimationMarker  0.6s; /* Safari and Chrome */
+    -o-animation: AnimationMarker  0.6s; /* Opera */
+}
+
 .ol-AnimationMarker img{
 
+}
+
+@keyframes AnimationMarker{
+    0%{ transform: translate(0, -80px) }
+    50%{transform: translate(0, 0px) }
+    75%{transform: translate(0, -20px) }
+    100%{ transform: translate(0, 0) }
 }

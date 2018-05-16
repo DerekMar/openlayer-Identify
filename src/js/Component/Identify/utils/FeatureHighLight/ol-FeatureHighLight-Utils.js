@@ -158,7 +158,6 @@ class FeatureFeatureHighLightUtils extends Base{
      */
     clearhighlightFeature(){
         if(this.animationMarker && this.animationMarker.isOpened()){
-            this.animationMarker.clearAnimation();
             this.map.removeOverlay(this.animationMarker);
             this.animationMarker = null;
         }
