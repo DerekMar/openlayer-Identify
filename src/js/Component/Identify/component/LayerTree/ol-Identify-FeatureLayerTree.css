@@ -17,6 +17,7 @@
 .identify .infoWindow li.group {
     padding-top: 5px;
     text-align: left;
+    list-style: square inside url("./img/tree-gourp.png");
 }
 .identify .infoWindow li.folding{
     list-style: square inside url("./img/tree-maximize.png");
@@ -29,14 +30,24 @@
 }
 
 .identify .infoWindow li.layer {
-    display: table;
+    /*display: table;*/
     width: 100%;
-    margin: 5px 0 5px 0;
+    margin: 3px 0 3px 0;
+    height: 24px;
+    line-height: 24px;
 }
-.identify .infoWindow li.layer > label{
+.identify .infoWindow li.layer .treeicon{
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    background: url("./img/tree-ldashed.png") no-repeat center center;
+}
+
+.identify .infoWindow li.layer label{
     text-align: left !important;
     color: #31718d;
     font-size: 15px;
+    position:absolute;
 }
 
 .identify .infoWindow li.group ul {

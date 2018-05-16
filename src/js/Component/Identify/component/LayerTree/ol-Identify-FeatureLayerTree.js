@@ -103,7 +103,7 @@ export default  class IdentifyFeatureLayerTree extends IdentifyBaseComponent{
             let ul_ChildNode = this._renderTreeNode_(layerGroupNode.layerData);
 
             li.className = 'group';
-            label.innerHTML = layerGroupNode.layerGroup;
+            label.innerHTML = layerGroupNode.layerGroup + "(" + layerGroupNode.layerData.length + ")";
             label.onclick = (e)=>this._treeGroupClickHandle(e, ul_ChildNode);
 
             li.appendChild(label);
@@ -139,9 +139,12 @@ export default  class IdentifyFeatureLayerTree extends IdentifyBaseComponent{
             let lyrTitle = featureNode.layerName, lyrId = lyrTitle;
             let li = document.createElement('li'), label = document.createElement('label');
             li.className = 'layer';
+            let icon = document.createElement("i");
+            icon.className = "treeicon";
 
             label.htmlFor = lyrId;
-            label.innerHTML = lyrTitle;
+            label.innerText = lyrTitle;
+            li.appendChild(icon);
             li.appendChild(label);
             //bind click、hover Event, !!! no bind this on Event !!!
             li.onclick = (evt)=> this._FeatureTreeNodeOnClick.call(Object.assign(this, {_layer_: featureNode}), evt);

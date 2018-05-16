@@ -102,6 +102,11 @@
     background-repeat: no-repeat;
     background-color: white;
     border: none;
+
+    animation: advancegradually 0.3s;
+    -moz-animation: advancegradually  0.3s; /* Firefox */
+    -webkit-animation: advancegradually  0.3s; /* Safari and Chrome */
+    -o-animation: advancegradually  0.3s; /* Opera */
 }
 
 .identify button:focus, .identify button:hover {
