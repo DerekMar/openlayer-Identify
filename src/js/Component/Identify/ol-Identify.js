@@ -407,24 +407,26 @@ export default class identify extends Control{
                 let mapCoordinateHelper = new MapCoordinateHelper(this.map_);
                 let extent = mapCoordinateHelper.getExtendByElement(element);
 
-                let targetLayer, layers = this.map_.getLayers();
-                let layerHelper = new FeatureLayerHelper(this.map_);
-                let options = {}, condition = this._layerTypeSelect.getLayerTypeSelectValue();
-                //According to Enum optionEnum , get the collection;
-                if(condition === this._layerTypeSelect.optionEnum.ALLLAYER){
-                    targetLayer = layers.array_;
-                }else if(condition === this._layerTypeSelect.optionEnum.TOPMOST){
-                    targetLayer = layers.array_;
-                    options.topmost = true;
-                }else if(condition === this._layerTypeSelect.optionEnum.VISIBLE){
-                    targetLayer = layers.array_;
-                    options.visible = true;
-                }
-                let features = layerHelper.getFeatureByExtent(targetLayer, extent, options);
+                if(extent !== null){
+                    let targetLayer, layers = this.map_.getLayers();
+                    let layerHelper = new FeatureLayerHelper(this.map_);
+                    let options = {}, condition = this._layerTypeSelect.getLayerTypeSelectValue();
+                    //According to Enum optionEnum , get the collection;
+                    if(condition === this._layerTypeSelect.optionEnum.ALLLAYER){
+                        targetLayer = layers.array_;
+                    }else if(condition === this._layerTypeSelect.optionEnum.TOPMOST){
+                        targetLayer = layers.array_;
+                        options.topmost = true;
+                    }else if(condition === this._layerTypeSelect.optionEnum.VISIBLE){
+                        targetLayer = layers.array_;
+                        options.visible = true;
+                    }
+                    let features = layerHelper.getFeatureByExtent(targetLayer, extent, options);
 
-                if(!! features && features.length > 0){
-                    let collection = this._getLayerByFeature(features, true);
-                    this.renderInfoWindow(collection);
+                    if(!! features && features.length > 0){
+                        let collection = this._getLayerByFeature(features, true);
+                        this.renderInfoWindow(collection);
+                    }
                 }
             });
             tool.setActive(true);

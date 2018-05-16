@@ -11,6 +11,8 @@ export default class MapzCoordinateUtils extends Base{
      * @param element
      */
     getExtendByElement(element){
+        let extent = null;
+
         let div_top = element.offsetTop, div_left = element.offsetLeft;
         let div_right = div_left + element.offsetWidth, div_bottom = div_top + element.offsetHeight;
 
@@ -20,14 +22,17 @@ export default class MapzCoordinateUtils extends Base{
         let left = div_left - map_left, right = div_right - map_left;
         let top = div_top - map_top, bottom = div_bottom - map_top;
 
-        let topleft = this.map.getCoordinateFromPixel([left, top]);
-        let bottomright = this.map.getCoordinateFromPixel([right, bottom]);
-        let topright = this.map.getCoordinateFromPixel([right, top]);
-        let bottomleft = this.map.getCoordinateFromPixel([left, bottom]);
+        if(Math.abs(left - right) > 4 || Math.abs(top - bottom) > 4){
+            let topleft = this.map.getCoordinateFromPixel([left, top]);
+            let bottomright = this.map.getCoordinateFromPixel([right, bottom]);
+            let topright = this.map.getCoordinateFromPixel([right, top]);
+            let bottomleft = this.map.getCoordinateFromPixel([left, bottom]);
 
-        let polygon = new Polygon([[topleft, topright, bottomright, bottomleft, topleft]]);
+            let polygon = new Polygon([[topleft, topright, bottomright, bottomleft, topleft]]);
+            extent = polygon.getExtent();
+        }
 
-        return polygon.getExtent();
+        return extent;
     }
 }
 
