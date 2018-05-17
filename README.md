@@ -24,3 +24,15 @@
   
 # 额外
   包含了select组件、树状列表组件、表格组件、工具栏组件，均为没有引入第三方插件
+  
+# 使用方法
+ 1. 引入ol-Identify.js （暂时没有上传到npm上）
+ 2. 在地图初始化后，初始化我们的control组件，并展示，如下：
+ `````````
+ import Identify from './js/Component/Identify/ol-Identify';
+ let identify = new Identify({
+    // position: "bottom" //这里可以设置一下位置 top 或者bottom，默认是top
+ });
+ map.addControl(identify);
+ identify.showIdenditfy();
+ `````````
