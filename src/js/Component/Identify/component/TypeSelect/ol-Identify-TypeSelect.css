@@ -26,9 +26,9 @@
     width: 300px;
     box-shadow: 0 0 1px #31718d;
     background: #fff;
-    max-height: 200px;
+    max-height: 500px;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .selectElementshown{
@@ -40,27 +40,54 @@
 }
 
 .selectElement ul{
-    padding: 0px;
+    padding: 0;
     margin:  0px auto;
 }
-.selectElement ul li{
+.selectElement ul:first-child{
+    padding-bottom: 20px !important;
+}
+/*分割线*/
+.selectElement ul .Separateline{
+    width: 300px;
+}
+.selectElement ul .Separateline span{
+    display: inline-block;
+    width: 100px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 5px;
+    color: #31718d;
+    font-weight: bold;
+    font-family: 黑体;
+}
+.selectElement ul .Separateline b{
+    background: #d6e3e9;
+    margin-top: 4px;
+    display: inline-block;
+    width: 100px;
+    height: 2px;
+    _overflow: hidden;
+    vertical-align: middle;
+}
+
+.selectElement .optionElement{
     list-style: none;
     position: relative;
     text-align: center;
     line-height: 36px;
-    border-top: 1px solid #d6e3e9;
+    /*border-top: 1px solid #d6e3e9;*/
+    border-bottom: 1px solid #d6e3e9;
 }
 
-.selectElement ul li lable{
+.selectElement lable{
     color: #31718d;
 }
 
-.selectElement ul li a{
+.selectElement a{
     display: block;
     height: 36px;
     color: #333;
     width: 100%;
-    text-align: center;
     margin: 0px;
     text-decoration: none;
 }
@@ -70,15 +97,35 @@
     text-decoration: none;
 }
 
-.selectElement ul li a img{
-    vertical-align:middle;
+.selectElement a img{
     border: 0px;
-    position: absolute;
     left: 20%;
-    top: calc(50% - 7.5px);
-    margin: 0px;
+    top: calc(50% - 18px);
+    margin: 0;
+    padding-right: 10px;
+}
+.selectElement .TreeContainerElement a lable{
+    position: absolute;
 }
 
+.selectElement .TreeContainerElement {
+    border-top: none;
+    text-align: left;
+    list-style: none;
+    line-height: 36px;
+    width: 100%;
+
+    animation: selectTreeNodeshowGradually 0.3s;
+    -moz-animation: selectTreeNodeshowGradually  0.3s; /* Firefox */
+    -webkit-animation: selectTreeNodeshowGradually  0.3s; /* Safari and Chrome */
+    -o-animation: selectTreeNodeshowGradually  0.3s; /* Opera */
+}
+.selectElement .TreeContainerElement .treeNodeElement{
+    padding-left: 1em;
+}
+.selectElement .TreeContainerElement .hidden{
+    display: none;
+}
 /*滚动条样式*/
 .selectElement::-webkit-scrollbar {
     width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
@@ -97,4 +144,8 @@
 @keyframes selectShowGradually{
     0%{ opacity: 0; }
     100%{ opacity: 1;}
+}
+@keyframes selectTreeNodeshowGradually{
+    0%{ opacity: 0; transform: translate(0, -30px) }
+    100%{ opacity: 1; transform: translate(0, 0) }
 }

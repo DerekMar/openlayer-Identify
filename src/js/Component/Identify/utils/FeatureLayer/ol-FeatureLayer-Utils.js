@@ -1,5 +1,6 @@
 import Base from '../ol-Base-Utils';
 import VectorSource from 'ol/source/vector';
+import VectorLayer from 'ol/layer/vector';
 import TileLayer from 'ol/layer/tile';
 import LayerGroup from 'ol/layer/group';
 import ImageLayer from 'ol/layer/image';
@@ -21,15 +22,22 @@ class FeatureIdentifyUtils extends Base{
         let result = [];
         for (let i = 0, length = layers.array_.length; i < length; i++){
             let layer = layers.array_[i];
+            if(!(layer instanceof  VectorLayer || layer instanceof LayerGroup)) continue;
+
+            let layerinfo = {};
+            layerinfo.oid = layer.ol_uid;
+            layerinfo.title = this.getVectorLayerTitle(layer);
+            layerinfo.layerdata = layer;
+            layerinfo.icon = "layer";
+            layerinfo.value = "layer_" + layerinfo.oid;
             if(layer instanceof LayerGroup){
-                let _result = this.getVectorLayerInfo(layer.getLayers());
-                result = result.concat(_result);
-            }else{
-                let source = layer.getSource && layer.getSource();
-                if(source instanceof VectorSource) {
-                    result.push(layer);
-                }
+                let childlayer = this.getVectorLayerInfo(layer.getLayers());
+                layerinfo.childLayer = childlayer;
+                layerinfo.icon = "layergroup";
+                layerinfo.value = "layergroup_" + layerinfo.oid;
             }
+
+            result.push(layerinfo);
         }
         return result;
     }
@@ -123,12 +131,55 @@ class FeatureIdentifyUtils extends Base{
         let features = source.getFeatures(), rIndex = -1;
         if(features && features.length > 0){
             for(let i = 0, length = features.length; i < length; i++){
-                if(features[i] === feature) rIndex = i;
+                if(features[i].ol_uid === feature.ol_uid) {
+                    rIndex = i;
+                    break;
+                }
             }
         }
         return isIndex == true ? rIndex : (rIndex === -1 ? false : true);
     }
 
+    /**
+     * 查找是否在给定的图层上
+     * @param layer
+     * @param feature
+     * @return {boolean}
+     */
+    isFeatureInLayer(layer, feature){
+        let result = false;
+        if(layer instanceof LayerGroup){
+            let _layers = layer.getLayers().array_;
+            for (let i = 0, length = _layers.length; i < length; i++ ){
+                let _result = this.isFeatureInLayer(_layers[i], feature);
+                if(_result){
+                    result = _result;
+                    break;
+                }
+            }
+        }else if(layer instanceof VectorLayer){
+            result = this._isFeatureInVectorSource(layer.getSource(), feature);
+        }
+        return result;
+    }
+
+    /**
+     * 要素集中获取指定图层的要素
+     * @param features
+     * @param layer
+     * @return {Array}
+     */
+    getFeaturesByLayerFilter(features, layer){
+        let result = [];
+        if(!!features && features.length > 0){
+            for (let i = 0, length = features.length; i < length; i++){
+                let feature = features[i];
+                if(this.isFeatureInLayer(layer, feature))
+                    result.push(feature);
+            }
+        }
+        return result;
+    }
     /**
      *
      * search all of the features inside extent in all layers
@@ -158,6 +209,46 @@ class FeatureIdentifyUtils extends Base{
         return features;
     }
 
+    /**
+     *
+     */
+    getVectorLayerTitle(layer){
+        let title = "无标题";
+        if(!!layer){
+            if(layer instanceof VectorLayer || layer instanceof LayerGroup) {
+                if(layer.get("title")) {
+                    title = layer.get("title");
+                }
+            }
+        }
+        return title;
+    }
+
+    /**
+     * 根据Layer的OL_OID返回对应的Layer对象
+     * @param oid
+     */
+    getLayerByLayerID(oid, layers){
+        let result = null;
+        if(layers){
+            for (let i = 0, length = layers.length; i < length; i++){
+                let layer = layers[i];
+
+                if(layer.ol_uid == oid){
+                    result = layer;
+                    break;
+                }
+                if(layer instanceof LayerGroup){
+                    let _layer = this.getLayerByLayerID(oid, layer.getLayers().array_);
+                    if(_layer) {
+                        result = _layer;
+                        break;
+                    };
+                }
+            }
+        }
+        return result;
+    }
     /**
      * get the topmost layer from all of the layer
      * @param layers

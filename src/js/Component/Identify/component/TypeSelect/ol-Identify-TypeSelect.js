@@ -1,7 +1,8 @@
 import "./ol-Identify-TypeSelect.css";
 import IdentifyBaseComponent from '../ol-Identify-BaseComponent';
 
-const LayerIconImage = require("./img/icon-layer.png");
+const LayerIconImage = require("./img/tree-ldashed.png");
+const LayerGroupIconImage = require("./img/icon-layer.png");
 /**
  * OpenLayers Feature Identify Control. LayerTypeSelect Component
  * @constructor
@@ -16,6 +17,7 @@ export default  class IdentifyLayerTypeSelect extends IdentifyBaseComponent{
         //select element
         this._layerTypeSelect = null;
         this._layerTypeSelectControl = null;
+        this._layerTypeOptionContaniner = null;
         this.valueFieldName = "dataValue";
 
         this._curSelected = null;
@@ -24,7 +26,8 @@ export default  class IdentifyLayerTypeSelect extends IdentifyBaseComponent{
         this.maxHeight = 200;
 
         this.defaultImage = {
-            "layer": LayerIconImage
+            "layer": LayerIconImage,
+            "layergroup": LayerGroupIconImage
         }
     }
 
@@ -42,7 +45,7 @@ export default  class IdentifyLayerTypeSelect extends IdentifyBaseComponent{
         let selectContentContainer = this._layerTypeSelect = document.createElement("div");
         selectContentContainer.className = "selectElement";
 
-        let selectContent  = this._createSelect();
+        let selectContent  = this._layerTypeOptionContaniner = this._createSelect();
 
         let option_topmost = this._createOption(this.optionEnum.TOPMOST, this.optionTextEnum.TOPMOST);
         let options_visible = this._createOption(this.optionEnum.VISIBLE, this.optionTextEnum.VISIBLE);
@@ -70,7 +73,7 @@ export default  class IdentifyLayerTypeSelect extends IdentifyBaseComponent{
     selectOption(optionElement){
         let copyElement = document.createElement("label");
         copyElement.setAttribute(this.valueFieldName, optionElement.getAttribute(this.valueFieldName));
-        copyElement.innerText = optionElement.innerText;
+        copyElement.innerText = optionElement.childNodes[0].innerText;
 
         this._selectLiElement = copyElement;
         this._curSelected = copyElement;
@@ -84,8 +87,56 @@ export default  class IdentifyLayerTypeSelect extends IdentifyBaseComponent{
         return this;
     }
 
-    addOption(){
+    /**
+     * 增加选项
+     * @param value
+     * @param text
+     * @param iconName
+     */
+    addOption(value, text, iconName){
+        let option = this._createOption(value, text, iconName);
+        this._layerTypeOptionContaniner.appendChild(option);
+    }
 
+    /**
+     * 增加树节点的选项
+     * @param treeNodes
+     * @param title 是否需要分割线，分割线的标题，有标题则有分割线
+     * treeNodes {
+     *
+     * }
+     */
+    addTreeNodeOption(treeNodes, title){
+        if(treeNodes && treeNodes.length > 0){
+            let option = this._addTreeNodeOption(treeNodes);
+            let separateline = this._createSeparateline(title);
+            this._layerTypeOptionContaniner.appendChild(separateline);
+            this._layerTypeOptionContaniner.appendChild(option);
+        }
+    }
+
+    /**
+     * 增加树节点的option选项
+     * @param treeNodes
+     * @param element
+     * @private
+     */
+    _addTreeNodeOption(treeNodes){
+        let treeContainer = document.createElement("ul");
+        treeContainer.className = "TreeContainerElement";
+
+        for (let i = 0, length = treeNodes.length; i < length; i++){
+            let treeNode = treeNodes[i];
+
+            let treeNodeElement = this._createOption(treeNode.value? treeNode.value : treeNode.title, treeNode.title, treeNode.icon, true);
+
+            if(treeNode.childLayer){
+                let childULElement = this._addTreeNodeOption(treeNode.childLayer);
+                treeNodeElement.appendChild(childULElement);
+            }
+            treeContainer.appendChild(treeNodeElement);
+        }
+        return treeContainer;
     }
 
     /**
@@ -193,13 +244,14 @@ export default  class IdentifyLayerTypeSelect extends IdentifyBaseComponent{
      * @return {HTMLLIElement}
      * @private
      */
-    _createOption(value, text, iconName){
+    _createOption(value, text, iconName, isTreeNode){
         let optionElement = document.createElement("li");
-        optionElement.className = "optionElement";
+        optionElement.className = !isTreeNode ? "optionElement" : "treeNodeElement";
         optionElement.setAttribute(this.valueFieldName, value);
         optionElement.onclick = (e)=> {
             this.selectOption(optionElement);
             this.hideOptionPanel(e);
+            e.stopPropagation();
         };
 
         let aElement = document.createElement("a");
@@ -207,12 +259,31 @@ export default  class IdentifyLayerTypeSelect extends IdentifyBaseComponent{
         if(this.defaultImage[iconName]){
             let iconElement = document.createElement("img");
             iconElement.src = this.defaultImage[iconName];
+            //如果是树节点，则增加折叠事件
+            isTreeNode && (iconElement.onclick = function(e){
+                let targetElement = e.target;
+                while (targetElement.tagName != "LI"){
+                    targetElement = targetElement.parentNode;
+                }
+                for(let i = 0, length = targetElement.childElementCount; i < length; i++){
+                    let childElement = targetElement.childNodes[i];
+                    if(childElement.tagName == "UL"){
+                        if(childElement.classList.contains("hidden")){
+                            childElement.classList.remove("hidden");
+                        }else{
+                            childElement.classList.add("hidden");
+                        }
+                        break;
+                    }
+                }
+                e.stopPropagation();
+            });
             aElement.appendChild(iconElement);
         }
 
         let textContent = document.createElement("lable");
         textContent.innerText = text;
-        textContent.setAttribute(this.valueFieldName, value);
+        // textContent.setAttribute(this.valueFieldName, value);
 
         aElement.appendChild(textContent);
         optionElement.appendChild(aElement);
@@ -220,8 +291,26 @@ export default  class IdentifyLayerTypeSelect extends IdentifyBaseComponent{
         return optionElement;
     }
 
-    _createSeparateline(){
+    /**
+     * 创建分割线
+     * @param text 分割线标题
+     * @return {HTMLSpanElement}
+     * @private
+     */
+    _createSeparateline(text){
+        let separateline = document.createElement("div");
+        separateline.className = "Separateline";
 
+        if(text){
+            let bBefore = document.createElement("b");
+            let bAfter = document.createElement("b");
+            let textContanier = document.createElement("span");
+            textContanier.innerText = text;
+            separateline.appendChild(bBefore);
+            separateline.appendChild(textContanier);
+            separateline.appendChild(bAfter);
+        }
+        return separateline;
     }
 
     /**
@@ -230,6 +319,6 @@ export default  class IdentifyLayerTypeSelect extends IdentifyBaseComponent{
      * @returns {string} selected options Value
      */
     getLayerTypeSelectValue(){
-        return this._curSelected.getAttribute(this.valueFieldName);
+        return this._curSelected.getAttribute(this.valueFieldName) ? this._curSelected.getAttribute(this.valueFieldName) : null;
     }
 }

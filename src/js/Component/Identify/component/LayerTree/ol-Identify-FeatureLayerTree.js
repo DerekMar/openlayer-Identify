@@ -139,12 +139,12 @@ export default  class IdentifyFeatureLayerTree extends IdentifyBaseComponent{
             let lyrTitle = featureNode.layerName, lyrId = lyrTitle;
             let li = document.createElement('li'), label = document.createElement('label');
             li.className = 'layer';
-            let icon = document.createElement("i");
-            icon.className = "treeicon";
+            // let icon = document.createElement("i");
+            // icon.className = "treeicon";
 
             label.htmlFor = lyrId;
             label.innerText = lyrTitle;
-            li.appendChild(icon);
+            // li.appendChild(icon);
             li.appendChild(label);
             //bind click、hover Event, !!! no bind this on Event !!!
             li.onclick = (evt)=> this._FeatureTreeNodeOnClick.call(Object.assign(this, {_layer_: featureNode}), evt);
@@ -218,7 +218,7 @@ export default  class IdentifyFeatureLayerTree extends IdentifyBaseComponent{
                 }
                 let layerGroupTitle = layer.get("title")
                     ? layer.get("title")
-                    : feature.id_.split(".")[0];
+                    : "无标题" + i;
 
                 let hasResult = result.findIndex((value, index, arr) => {
                     return value.layerGroup == layerGroupTitle && value.layerGroupSource === layer;

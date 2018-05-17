@@ -195,21 +195,28 @@ export default class identify extends Control{
     _mapSingleClickHandle(evt){
         let features, options = {}, condition = this._layerTypeSelect.getLayerTypeSelectValue();
         //According to Enum optionEnum , get the collection;
-        if(condition === this._layerTypeSelect.optionEnum.ALLLAYER){
-            features = this.map_.getFeaturesAtPixel(evt.pixel);
-        }else if(condition === this._layerTypeSelect.optionEnum.TOPMOST){
-            let _features = this.map_.forEachFeatureAtPixel(evt.pixel, (_feature, _layer)=>{
-                return _feature
-            });
-            _features && (features = [_features]);
-        }else if(condition === this._layerTypeSelect.optionEnum.VISIBLE){
-            features = this.map_.getFeaturesAtPixel(evt.pixel);
-            options.visible = true;
+        switch (condition){
+            case this._layerTypeSelect.optionEnum.ALLLAYER:
+                features = this.map_.getFeaturesAtPixel(evt.pixel);
+                break;
+            case this._layerTypeSelect.optionEnum.TOPMOST:
+                let _features = this.map_.forEachFeatureAtPixel(evt.pixel, (_feature)=> { return _feature });
+                _features && (features = [_features]);
+                break;
+            case this._layerTypeSelect.optionEnum.VISIBLE:
+                features = this.map_.getFeaturesAtPixel(evt.pixel);
+                options.visible = true;
+                break;
+            default:
+                let layerHelper = new FeatureLayerHelper(this.map_);
+                let targetLayer = layerHelper.getLayerByLayerID(condition.split("_")[1], this.map_.getLayers().array_);
+                let t_features = this.map_.getFeaturesAtPixel(evt.pixel);
+                features = layerHelper.getFeaturesByLayerFilter(t_features, targetLayer);
+                break;
         }
-        if(!! features){
+        if(!! features && features.length > 0){
             let collection = this._getLayerByFeature(features, options);
             this.renderInfoWindow(collection);
-
         }
     }
     /**
@@ -346,10 +353,10 @@ export default class identify extends Control{
         //create Title
         let titlepanelContainer = new IdentifyFeatureTitlePanel(mainContainer, { title: "Identify"});
         titlepanelContainer.initComponent();
-        this._addLayerInfoOnTypeSelect(titlepanelContainer);
         //create layer type selected options
         let optionsContainer = this._layerTypeSelect = new IdentifyLayerTypeSelect(mainContainer);
         optionsContainer.initComponent();
+        this._addLayerInfoOnTypeSelect(optionsContainer);
         //create toolbar
         let toolbarContanier = this._toolbarContanier = new IdentifyFeatureToolbar(mainContainer);
         toolbarContanier.initComponent();
@@ -365,10 +372,7 @@ export default class identify extends Control{
         let layerHelper = new FeatureLayerHelper(this.map_);
         let layerInfo = layerHelper.getVectorLayerInfo(this.map_.getLayers());
 
-        for (let i = 0, length = layerInfo.length; i < length; i++){
-            let features = layerInfo[i].getSource().getFeatures();
-            //console.log(features);
-        }
+        this._layerTypeSelect.addTreeNodeOption(layerInfo, "图层列表");
     }
     /**
      * regiser default Tool on Toolbar
@@ -421,6 +425,9 @@ export default class identify extends Control{
                     }else if(condition === this._layerTypeSelect.optionEnum.VISIBLE){
                         targetLayer = layers.array_;
                         options.visible = true;
+                    }else{
+                        let _targetLayer = layerHelper.getLayerByLayerID(condition.split("_")[1], this.map_.getLayers().array_);
+                        _targetLayer && (targetLayer = [_targetLayer]);
                     }
                     let features = layerHelper.getFeatureByExtent(targetLayer, extent, options);
 

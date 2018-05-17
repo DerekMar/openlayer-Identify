@@ -32,16 +32,17 @@
 .identify .infoWindow li.layer {
     /*display: table;*/
     width: 100%;
-    margin: 3px 0 3px 0;
+    margin: 3px 0 3px 4.5%;
     height: 24px;
     line-height: 24px;
+    list-style: square outside url("./img/tree-ldashed.png");
 }
-.identify .infoWindow li.layer .treeicon{
-    display: inline-block;
-    height: 24px;
-    width: 24px;
-    background: url("./img/tree-ldashed.png") no-repeat center center;
-}
+/*.identify .infoWindow li.layer .treeicon{*/
+    /*!*display: inline-block;*!*/
+    /*!*height: 24px;*!*/
+    /*!*width: 24px;*!*/
+    /*!*background: url("./img/tree-ldashed.png") no-repeat center center;*!*/
+/*}*/
 
 .identify .infoWindow li.layer label{
     text-align: left !important;

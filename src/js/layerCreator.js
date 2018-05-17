@@ -24,12 +24,25 @@ layerCreator.prototype.getLayerGourp = function(){
     var roadline =      this._getLayerByName('roadline');
     var trafficsign =   this._getLayerByName('trafficsign');
 
-    return new LayerGroup({
+    let layerGroup1 = new LayerGroup({
+        layers: [
+            trafficsign
+        ],
+        title: "GIST2_group1"
+    });
+    let layergroup2 = new LayerGroup({
         layers: [
             basicfacility,
             roadline,
-            trafficsign
-        ]
+            layerGroup1
+        ],
+        title: "GIST2_group2"
+    });
+    return new LayerGroup({
+        layers: [
+            layergroup2
+        ],
+        title: "GIST2_group_total"
     })
 }
 /*
@@ -72,7 +85,8 @@ layerCreator.prototype._getVectorLayerByUrl = function(LayerUrl, GeomtryType, op
             format: new GeoJsonFormat(),
             strategy: loadingstrategy.bbox
         }),
-        style: GeometrySymbol.getSymbolByGeoType(GeomtryType, options)
+        style: GeometrySymbol.getSymbolByGeoType(GeomtryType, options),
+        title: options.title ? options.title : "无标题"
     })
 }
 
