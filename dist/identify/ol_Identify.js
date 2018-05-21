@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/assets/";
+/******/ 	__webpack_require__.p = "./";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -70,6 +70,25 @@
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./node_modules/css-loader/index.js!./src/js/Component/AnimationMarker/ol-AnimationMarker.css":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/css-loader!./src/js/Component/AnimationMarker/ol-AnimationMarker.css ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".ol-AnimationMarker{\r\n    display: none;\r\n    position: absolute;\r\n    bottom: -4px;\r\n    left: -16px;\r\n}\r\n.ol-AnimationMarker.shown{\r\n    display: block !important;\r\n\r\n    animation: AnimationMarker 0.6s;\r\n    -moz-animation: AnimationMarker  0.6s; /* Firefox */\r\n    -webkit-animation: AnimationMarker  0.6s; /* Safari and Chrome */\r\n    -o-animation: AnimationMarker  0.6s; /* Opera */\r\n}\r\n\r\n.ol-AnimationMarker img{\r\n\r\n}\r\n\r\n@keyframes AnimationMarker{\r\n    0%{ transform: translate(0, -80px) }\r\n    50%{transform: translate(0, 0px) }\r\n    75%{transform: translate(0, -20px) }\r\n    100%{ transform: translate(0, 0) }\r\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
 
 /***/ "./node_modules/css-loader/index.js!./src/js/Component/Identify/component/AttrTable/ol-Identify-FeatureAttrTable.css":
 /*!******************************************************************************************************************!*\
@@ -83,7 +102,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".identify .infoWindow table.altrowstable {\r\n    font-family: verdana, arial, sans-serif;\r\n    font-size: 11px;\r\n    color: #333333;\r\n    border-width: 1px;\r\n    border-color: #a9c6c9;\r\n    border-collapse: collapse;\r\n    width: 100%;\r\n}\r\n\r\n.identify .infoWindow table.altrowstable th {\r\n    border-width: 1px;\r\n    padding: 8px;\r\n    border-style: solid;\r\n    border-color: #d0d1d6;\r\n}\r\n.identify .infoWindow table.altrowstable .title {\r\n    text-align: left;\r\n    font-size: 12px;\r\n}\r\n\r\n.identify .infoWindow table.altrowstable td {\r\n    border-width: 1px;\r\n    padding: 8px;\r\n    border-style: solid;\r\n    border-color: #d0d1d6;\r\n}\r\n\r\n.identify .infoWindow table.altrowstable .oddrowcolor {\r\n    background-color: #ffffff;\r\n}\r\n\r\n.identify .infoWindow table.altrowstable .evenrowcolor {\r\n    background-color: #eef2f6;\r\n}\r\n/*滚动条样式*/\r\n.featureAttrTable::-webkit-scrollbar {\r\n    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/\r\n    height: 1px;\r\n}\r\n.featureAttrTable::-webkit-scrollbar-track {\r\n    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);\r\n    border-radius: 10px;\r\n    background: #EDEDED;\r\n}\r\n.featureAttrTable::-webkit-scrollbar-thumb {\r\n    border-radius: 10px;\r\n    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);\r\n    background: rgba(83, 83, 83, 0.59);\r\n}", ""]);
+exports.push([module.i, ".identify .infoWindow table.altrowstable {\r\n    font-family: verdana, arial, sans-serif;\r\n    font-size: 11px;\r\n    color: #31718d;\r\n    border-width: 1px;\r\n    border-color: #d6e3e9;\r\n    border-collapse: collapse;\r\n    width: 100%;\r\n    table-layout: fixed;\r\n    animation: showTableGradually 0.8s;\r\n    -moz-animation: showTableGradually  0.8s; /* Firefox */\r\n    -webkit-animation: showTableGradually  0.8s; /* Safari and Chrome */\r\n    -o-animation: showTableGradually  0.8s; /* Opera */\r\n}\r\n\r\n.identify .infoWindow table.altrowstable th {\r\n    border-width: 1px;\r\n    padding: 8px;\r\n    border-style: solid;\r\n    border-color: #d6e3e9;\r\n}\r\n.identify .infoWindow table.altrowstable .title {\r\n    text-align: left;\r\n    font-size: 12px;\r\n    width: 35%;\r\n}\r\n\r\n.identify .infoWindow table.altrowstable td {\r\n    border-width: 1px;\r\n    padding: 8px;\r\n    border-style: solid;\r\n    border-color: #e9f0f3;\r\n    word-wrap: break-word;\r\n}\r\n\r\n.identify .infoWindow table.altrowstable .oddrowcolor {\r\n    background-color: #ffffff;\r\n}\r\n\r\n.identify .infoWindow table.altrowstable .evenrowcolor {\r\n    background-color: #e9f0f3;\r\n}\r\n/*滚动条样式*/\r\n.featureAttrTable::-webkit-scrollbar {\r\n    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/\r\n    height: 1px;\r\n}\r\n.featureAttrTable::-webkit-scrollbar-track {\r\n    -webkit-box-shadow: inset 0 0 5px rgba(18,66,87,0.2);\r\n    border-radius: 10px;\r\n    background: #EDEDED;\r\n}\r\n.featureAttrTable::-webkit-scrollbar-thumb {\r\n    border-radius: 10px;\r\n    -webkit-box-shadow: inset 0 0 5px rgba(18,66,87,0.2);\r\n    background: rgba(49, 113, 141, 0.59);\r\n}\r\n@keyframes showTableGradually{\r\n    0%{ opacity: 0; transform: translate(-30px, 0) }\r\n    100%{ opacity: 1; transform: translate(0, 0) }\r\n}", ""]);
 
 // exports
 
@@ -97,12 +116,13 @@ exports.push([module.i, ".identify .infoWindow table.altrowstable {\r\n    font-
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "\r\n.identify .infoWindow ul {\r\n    padding-left: 1em;\r\n    list-style: none;\r\n}\r\n\r\n.identify .infoWindow li.group {\r\n    padding-top: 5px;\r\n    text-align: left;\r\n}\r\n\r\n.identify .infoWindow li.group > label {\r\n    font-weight: bold;\r\n    text-align: left !important;\r\n}\r\n\r\n.identify .infoWindow li.layer {\r\n    display: table;\r\n    width: 100%;\r\n    margin: 5px 0 5px 0;\r\n}\r\n\r\n.identify .infoWindow li.group ul {\r\n    margin: 5px 16px 0 0;\r\n}\r\n\r\n.identify .infoWindow li.group li.layer:focus,\r\n.identify .infoWindow li.group li.layer:hover,\r\n.identify .infoWindow .select{\r\n    background-color: #00b0f0;\r\n    color: white;\r\n}\r\n\r\n.identify .infoWindow label.disabled {\r\n    opacity: 0.4;\r\n}\r\n/*滚动条样式*/\r\n.featureTreeContainer::-webkit-scrollbar {\r\n    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/\r\n    height: 1px;\r\n}\r\n.featureTreeContainer::-webkit-scrollbar-track {\r\n    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);\r\n    border-radius: 10px;\r\n    background: #EDEDED;\r\n}\r\n.featureTreeContainer::-webkit-scrollbar-thumb {\r\n    border-radius: 10px;\r\n    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);\r\n    background: rgba(83, 83, 83, 0.59);\r\n}", ""]);
+exports.push([module.i, "\r\n.identify .infoWindow ul {\r\n    padding-left: 1em;\r\n    list-style: none;\r\n    margin: 0 auto;\r\n\r\n    animation: showGradually 0.3s;\r\n    -moz-animation: showGradually  0.3s; /* Firefox */\r\n    -webkit-animation: showGradually  0.3s; /* Safari and Chrome */\r\n    -o-animation: showGradually  0.3s; /* Opera */\r\n}\r\n\r\n.identify .infoWindow ul .hidden{\r\n    display: none;\r\n}\r\n\r\n.identify .infoWindow li.group {\r\n    padding-top: 5px;\r\n    text-align: left;\r\n    list-style: square inside url(" + escape(__webpack_require__(/*! ./img/tree-gourp.png */ "./src/js/Component/Identify/component/LayerTree/img/tree-gourp.png")) + ");\r\n}\r\n.identify .infoWindow li.folding{\r\n    list-style: square inside url(" + escape(__webpack_require__(/*! ./img/tree-maximize.png */ "./src/js/Component/Identify/component/LayerTree/img/tree-maximize.png")) + ");\r\n}\r\n\r\n.identify .infoWindow li.group > label {\r\n    font-weight: bold;\r\n    text-align: left !important;\r\n    color: #31718d;\r\n}\r\n\r\n.identify .infoWindow li.layer {\r\n    /*display: table;*/\r\n    width: 100%;\r\n    margin: 3px 0 3px 4.5%;\r\n    height: 24px;\r\n    line-height: 24px;\r\n    list-style: square outside url(" + escape(__webpack_require__(/*! ./img/tree-ldashed.png */ "./src/js/Component/Identify/component/LayerTree/img/tree-ldashed.png")) + ");\r\n}\r\n/*.identify .infoWindow li.layer .treeicon{*/\r\n    /*!*display: inline-block;*!*/\r\n    /*!*height: 24px;*!*/\r\n    /*!*width: 24px;*!*/\r\n    /*!*background: url(\"./img/tree-ldashed.png\") no-repeat center center;*!*/\r\n/*}*/\r\n\r\n.identify .infoWindow li.layer label{\r\n    text-align: left !important;\r\n    color: #31718d;\r\n    font-size: 15px;\r\n    position:absolute;\r\n}\r\n\r\n.identify .infoWindow li.group ul {\r\n    margin: 5px 16px 0 0;\r\n}\r\n\r\n.identify .infoWindow li.group li.layer:focus,\r\n.identify .infoWindow li.group li.layer:hover,\r\n.identify .infoWindow .select{\r\n    background-color: #e9f0f3;\r\n    color: white;\r\n}\r\n\r\n.identify .infoWindow label.disabled {\r\n    opacity: 0.4;\r\n}\r\n/*滚动条样式*/\r\n.featureTreeContainer::-webkit-scrollbar {\r\n    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/\r\n    height: 1px;\r\n}\r\n.featureTreeContainer::-webkit-scrollbar-track {\r\n    -webkit-box-shadow: inset 0 0 5px rgba(18,66,87,0.2);\r\n    border-radius: 10px;\r\n    background: #EDEDED;\r\n}\r\n.featureTreeContainer::-webkit-scrollbar-thumb {\r\n    border-radius: 10px;\r\n    -webkit-box-shadow: inset 0 0 5px rgba(18,66,87,0.2);\r\n    background: rgba(49, 113, 141, 0.59);\r\n}\r\n\r\n@keyframes showGradually{\r\n    0%{ opacity: 0; transform: translate(0, -30px) }\r\n    100%{ opacity: 1; transform: translate(0, 0) }\r\n}", ""]);
 
 // exports
 
@@ -121,7 +141,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".identify .infoWindow .titlePanel{\r\n    width: 100%;\r\n    text-align: center;\r\n}\r\n.identify .infoWindow h3 {\r\n    margin: 10px auto;\r\n}", ""]);
+exports.push([module.i, ".identify .infoWindow .titlePanel{\r\n    width: 100%;\r\n    text-align: center;\r\n    background-color: #31718d;\r\n    height: 40px;\r\n    line-height: 40px;\r\n}\r\n.identify .infoWindow h3 {\r\n    margin: 0 auto;\r\n    color: white;\r\n}", ""]);
 
 // exports
 
@@ -140,7 +160,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".identify .infoWindow .toolbarContanier{\r\n    height: 40px;\r\n    border-radius: 5px;\r\n    /*box-shadow: 0 0 2px #ccc;*/\r\n    position: relative;\r\n    padding-left: 15px;\r\n    text-align: left;\r\n}\r\n\r\n.identify .infoWindow a.toolContanier{\r\n    background-position: center 50%;\r\n    background-repeat: no-repeat;\r\n    width: 30px;\r\n    height: 30px;\r\n    top: 50%;\r\n    background-size: 20px 20px;\r\n    transform: translateY(-50%);\r\n    position: relative;\r\n    display:inline-block;\r\n    margin-right: 10px;\r\n}\r\n\r\n.identify .infoWindow a.toolContanier:hover, .identify .infoWindow a.toolContanier:focus{\r\n    background-color: #e6e6e6;\r\n}", ""]);
+exports.push([module.i, ".identify .infoWindow .toolbarContanier{\r\n    height: 35px;\r\n    /*border-radius: 35px;*/\r\n    /*box-shadow: 0 0 2px #ccc;*/\r\n    position: relative;\r\n    padding-left: 15px;\r\n    text-align: left;\r\n    background-color: #e9f0f3;\r\n}\r\n\r\n.identify .infoWindow a.toolContanier{\r\n    background-position: center 50%;\r\n    background-repeat: no-repeat;\r\n    width: 30px;\r\n    height: 30px;\r\n    top: 50%;\r\n    background-size: 20px 20px;\r\n    transform: translateY(-50%);\r\n    position: relative;\r\n    display:inline-block;\r\n    margin-right: 10px;\r\n}\r\n\r\n.identify .infoWindow a.toolContanier:hover,\r\n.identify .infoWindow a.toolContanier:focus,\r\n.identify .infoWindow .toolContanier.select{\r\n    background-color: white;\r\n}", ""]);
 
 // exports
 
@@ -160,7 +180,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "\r\n.identify .infoWindow .selectContainer {\r\n    width: 100%;\r\n    height: 40px;\r\n    border-radius: 5px;\r\n    box-shadow: 0 0 2px #ccc;\r\n    position: relative;\r\n}\r\n\r\n.identify .infoWindow .selectContainer:after {\r\n    content: \"\";\r\n    width: 14px;\r\n    height: 8px;\r\n    background: url(" + escape(__webpack_require__(/*! ./img/pull-down.png */ "./src/js/Component/Identify/component/TypeSelect/img/pull-down.png")) + ") no-repeat center;\r\n    position: absolute;\r\n    right: 20px;\r\n    top: 45%;\r\n    pointer-events: none;\r\n}\r\n\r\n.identify .infoWindow select {\r\n    border: none;\r\n    outline: none;\r\n    width: 100%;\r\n    height: 40px;\r\n    line-height: 40px;\r\n    appearance: none;\r\n    -webkit-appearance: none;\r\n    -moz-appearance: none;\r\n    font-size: 16px;\r\n    padding-left: calc(50% - 40px);\r\n}\r\n\r\n.identify .infoWindow select option {\r\n    line-height: 30px;\r\n    height: 30px;\r\n    margin: 5px auto;\r\n}", ""]);
+exports.push([module.i, "\r\n.identify .infoWindow .selectContainer {\r\n    width: 100%;\r\n    height: 40px;\r\n    /*border-radius: 5px;*/\r\n    /*box-shadow: 0 0 2px #ccc;*/\r\n    position: relative;\r\n}\r\n\r\n.identify .infoWindow .selectContainer cite{\r\n    display: block;\r\n    color: #31718d;\r\n    font-weight: bold;\r\n    width: 97%;\r\n    height: 40px;\r\n    line-height: 40px;\r\n    background: url(" + escape(__webpack_require__(/*! ./img/pull-down.png */ "./src/js/Component/Identify/component/TypeSelect/img/pull-down.png")) + ") no-repeat right center;\r\n    text-align: center;\r\n    position: relative;\r\n}\r\n\r\n.selectElement{\r\n    display: none;\r\n    position: absolute;\r\n    z-index: 99;\r\n    width: 300px;\r\n    box-shadow: 0 0 1px #31718d;\r\n    background: #fff;\r\n    max-height: 500px;\r\n    overflow-x: hidden;\r\n    overflow-y: hidden;\r\n}\r\n\r\n.selectElementshown{\r\n    display: block !important;\r\n    animation: selectShowGradually 0.3s;\r\n    -moz-animation: selectShowGradually  0.3s; /* Firefox */\r\n    -webkit-animation: selectShowGradually  0.3s; /* Safari and Chrome */\r\n    -o-animation: selectShowGradually  0.3s; /* Opera */\r\n}\r\n\r\n.selectElement ul{\r\n    padding: 0;\r\n    margin:  0px auto;\r\n}\r\n.selectElement ul:first-child{\r\n    padding-bottom: 20px !important;\r\n}\r\n/*分割线*/\r\n.selectElement ul .Separateline{\r\n    width: 300px;\r\n}\r\n.selectElement ul .Separateline span{\r\n    display: inline-block;\r\n    width: 100px;\r\n    vertical-align: middle;\r\n    text-align: center;\r\n    font-size: 5px;\r\n    color: #31718d;\r\n    font-weight: bold;\r\n    font-family: 黑体;\r\n}\r\n.selectElement ul .Separateline b{\r\n    background: #d6e3e9;\r\n    margin-top: 4px;\r\n    display: inline-block;\r\n    width: 100px;\r\n    height: 2px;\r\n    _overflow: hidden;\r\n    vertical-align: middle;\r\n}\r\n\r\n.selectElement .optionElement{\r\n    list-style: none;\r\n    position: relative;\r\n    text-align: center;\r\n    line-height: 36px;\r\n    /*border-top: 1px solid #d6e3e9;*/\r\n    border-bottom: 1px solid #d6e3e9;\r\n}\r\n\r\n.selectElement lable{\r\n    color: #31718d;\r\n}\r\n\r\n.selectElement a{\r\n    display: block;\r\n    height: 36px;\r\n    color: #333;\r\n    width: 100%;\r\n    margin: 0px;\r\n    text-decoration: none;\r\n}\r\n\r\n.selectElement ul li a:hover,.selectElement ul li a:focus{\r\n    background: #e9f0f3;\r\n    text-decoration: none;\r\n}\r\n\r\n.selectElement a img{\r\n    border: 0px;\r\n    left: 20%;\r\n    top: calc(50% - 18px);\r\n    margin: 0;\r\n    padding-right: 10px;\r\n}\r\n.selectElement .TreeContainerElement a lable{\r\n    position: absolute;\r\n}\r\n\r\n.selectElement .TreeContainerElement {\r\n    border-top: none;\r\n    text-align: left;\r\n    list-style: none;\r\n    line-height: 36px;\r\n    width: 100%;\r\n\r\n    animation: selectTreeNodeshowGradually 0.3s;\r\n    -moz-animation: selectTreeNodeshowGradually  0.3s; /* Firefox */\r\n    -webkit-animation: selectTreeNodeshowGradually  0.3s; /* Safari and Chrome */\r\n    -o-animation: selectTreeNodeshowGradually  0.3s; /* Opera */\r\n}\r\n.selectElement .TreeContainerElement .treeNodeElement{\r\n    padding-left: 1em;\r\n}\r\n.selectElement .TreeContainerElement .hidden{\r\n    display: none;\r\n}\r\n/*滚动条样式*/\r\n.selectElement::-webkit-scrollbar {\r\n    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/\r\n    height: 1px;\r\n}\r\n.selectElement::-webkit-scrollbar-track {\r\n    -webkit-box-shadow: inset 0 0 5px rgba(18,66,87,0.2);\r\n    border-radius: 10px;\r\n    background: #EDEDED;\r\n}\r\n.selectElement::-webkit-scrollbar-thumb {\r\n    border-radius: 10px;\r\n    -webkit-box-shadow: inset 0 0 5px rgba(18,66,87,0.2);\r\n    background: rgba(49, 113, 141, 0.59);\r\n}\r\n@keyframes selectShowGradually{\r\n    0%{ opacity: 0; }\r\n    100%{ opacity: 1;}\r\n}\r\n@keyframes selectTreeNodeshowGradually{\r\n    0%{ opacity: 0; transform: translate(0, -30px) }\r\n    100%{ opacity: 1; transform: translate(0, 0) }\r\n}", ""]);
 
 // exports
 
@@ -185,7 +205,7 @@ exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!./compon
 exports.i(__webpack_require__(/*! -!../../../../node_modules/css-loader!./component/ToolBar/ol-Identify-Toolbar.css */ "./node_modules/css-loader/index.js!./src/js/Component/Identify/component/ToolBar/ol-Identify-Toolbar.css"), "");
 
 // module
-exports.push([module.i, ".identify.shown.ol-control {\r\n    background-color: transparent;\r\n}\r\n\r\n.identify.shown.ol-control:hover {\r\n    background-color: transparent;\r\n}\r\n\r\n.identify {\r\n    position: absolute;\r\n    right: 0.5em;\r\n}\r\n\r\n.identify.top {\r\n    top: 1.0em;\r\n}\r\n\r\n.identify.bottom {\r\n    bottom: 1.5em;\r\n}\r\n\r\n.identify.shown {\r\n    /*top: 1.5 em;*/\r\n}\r\n\r\n.identify .infoWindow {\r\n    width: 300px;\r\n    padding: 0 0 0 0;\r\n    margin: 0;\r\n    border: 1px solid #eee;\r\n    border-radius: 4px;\r\n    background-color: white;\r\n    display: none;\r\n    max-height: 100%;\r\n    overflow-y: auto;\r\n}\r\n\r\n.identify .infoWindow .featureTreeContainer {\r\n    width: 100%;\r\n    height: 180px;\r\n    border-radius: 5px;\r\n    position: relative;\r\n    overflow-y: auto;\r\n    display: none;\r\n}\r\n\r\n.identify .infoWindow .featureTreeContainer.shown {\r\n    display: block !important;\r\n}\r\n\r\n.identify .infoWindow .featureAttrTable {\r\n    width: 100%;\r\n    height: 280px;\r\n    border-radius: 5px;\r\n    position: relative;\r\n    overflow-y: auto;\r\n    display: none;\r\n    box-shadow: 0 0 2px #ccc;\r\n}\r\n\r\n.identify .infoWindow .featureAttrTable.shown {\r\n    display: block !important;\r\n}\r\n\r\n.identify.shown .infoWindow {\r\n    display: block;\r\n}\r\n\r\n.identify .infoWindow .minimizeBtn{\r\n    position: inherit;\r\n    width: 20px;\r\n    height: 20px;\r\n    float: right;\r\n    background-color: #f5f5f5;\r\n    border:solid 2px #dedbe1;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/identify_icon_minimize.png */ "./src/js/Component/Identify/img/identify_icon_minimize.png")) + ");\r\n    z-index:999;\r\n}\r\n\r\n.identify .infoWindow .maxmizeBtn{\r\n    width: 20px;\r\n    height: 20px;\r\n    float: right;\r\n    background-color: #f5f5f5;\r\n    border:solid 2px #dedbe1;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/identify_icon_maxmize.png */ "./src/js/Component/Identify/img/identify_icon_maxmize.png")) + ");\r\n}\r\n\r\n.identify button {\r\n    width: 38px;\r\n    height: 38px;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/Identify_icon.png */ "./src/js/Component/Identify/img/Identify_icon.png")) + ") ;\r\n    background-repeat: no-repeat;\r\n    background-color: white;\r\n    border: none;\r\n    z-index:999;\r\n}\r\n\r\n.identify.shown button {\r\n    width: 38px;\r\n    height: 38px;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/Identify_icon_selected.png */ "./src/js/Component/Identify/img/Identify_icon_selected.png")) + ") ;\r\n    background-repeat: no-repeat;\r\n    background-color: white;\r\n    border: none;\r\n}\r\n\r\n.identify button:focus, .identify button:hover {\r\n    background-color: #e6e6e6;\r\n}\r\n\r\n.identify.touch ::-webkit-scrollbar {\r\n    width: 4px;\r\n}\r\n\r\n.identify.touch ::-webkit-scrollbar-track {\r\n    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\r\n    border-radius: 10px;\r\n}\r\n\r\n.identify.touch ::-webkit-scrollbar-thumb {\r\n    border-radius: 10px;\r\n    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n\r\n", ""]);
+exports.push([module.i, ".identify.shown.ol-control {\r\n    background-color: transparent;\r\n}\r\n\r\n.identify.shown.ol-control:hover {\r\n    background-color: transparent;\r\n}\r\n\r\n.identify {\r\n    position: absolute;\r\n    right: 0.5em;\r\n}\r\n\r\n.identify.top {\r\n    top: 1.0em;\r\n}\r\n\r\n.identify.bottom {\r\n    bottom: 1.5em;\r\n}\r\n\r\n.identify.shown {\r\n    /*top: 1.5 em;*/\r\n}\r\n\r\n.identify .infoWindow {\r\n    width: 300px;\r\n    padding: 0 0 0 0;\r\n    margin: 0;\r\n    border: 1px solid #eee;\r\n    border-radius: 4px;\r\n    background-color: white;\r\n    display: none;\r\n    max-height: 100%;\r\n    overflow-y: auto;\r\n}\r\n\r\n.identify .infoWindow .featureTreeContainer {\r\n    width: 100%;\r\n    height: 180px;\r\n    border-radius: 5px;\r\n    position: relative;\r\n    overflow-y: auto;\r\n    display: none;\r\n}\r\n\r\n.identify .infoWindow .featureTreeContainer.shown {\r\n    display: block !important;\r\n    animation: showGradually 0.3s;\r\n    -moz-animation: showGradually  0.3s; /* Firefox */\r\n    -webkit-animation: showGradually  0.3s; /* Safari and Chrome */\r\n    -o-animation: showGradually  0.3s; /* Opera */\r\n}\r\n\r\n.identify .infoWindow .featureAttrTable {\r\n    width: 100%;\r\n    height: 280px;\r\n    border-radius: 5px;\r\n    position: relative;\r\n    overflow-y: auto;\r\n    display: none;\r\n    /*box-shadow: 0 0 2px #ccc;*/\r\n}\r\n\r\n.identify .infoWindow .featureAttrTable.shown {\r\n    display: block !important;\r\n    animation: showGradually 0.3s;\r\n    -moz-animation: showGradually  0.3s; /* Firefox */\r\n    -webkit-animation: showGradually  0.3s; /* Safari and Chrome */\r\n    -o-animation: showGradually  0.3s; /* Opera */\r\n}\r\n\r\n.identify.shown .infoWindow {\r\n    display: block;\r\n    animation: advancegradually 0.3s;\r\n    -moz-animation: advancegradually  0.3s; /* Firefox */\r\n    -webkit-animation: advancegradually  0.3s; /* Safari and Chrome */\r\n    -o-animation: advancegradually  0.3s; /* Opera */\r\n}\r\n\r\n.identify button {\r\n    width: 38px;\r\n    height: 38px;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/Identify_icon.png */ "./src/js/Component/Identify/img/Identify_icon.png")) + ") ;\r\n    background-repeat: no-repeat;\r\n    background-color: white;\r\n    border: none;\r\n    z-index:999;\r\n}\r\n\r\n.identify.shown button {\r\n    width: 38px;\r\n    height: 38px;\r\n    background-image: url(" + escape(__webpack_require__(/*! ./img/Identify_icon_selected.png */ "./src/js/Component/Identify/img/Identify_icon_selected.png")) + ") ;\r\n    background-repeat: no-repeat;\r\n    background-color: white;\r\n    border: none;\r\n\r\n    animation: advancegradually 0.3s;\r\n    -moz-animation: advancegradually  0.3s; /* Firefox */\r\n    -webkit-animation: advancegradually  0.3s; /* Safari and Chrome */\r\n    -o-animation: advancegradually  0.3s; /* Opera */\r\n}\r\n\r\n.identify button:focus, .identify button:hover {\r\n    background-color: #e6e6e6;\r\n}\r\n\r\n.identify.touch ::-webkit-scrollbar {\r\n    width: 4px;\r\n}\r\n\r\n.identify.touch ::-webkit-scrollbar-track {\r\n    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);\r\n    border-radius: 10px;\r\n}\r\n\r\n.identify.touch ::-webkit-scrollbar-thumb {\r\n    border-radius: 10px;\r\n    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);\r\n}\r\n@keyframes advancegradually{\r\n    0%{ opacity: 0; transform: translate(30px, 0) }\r\n    100%{ opacity: 1; transform: translate(0, 0) }\r\n}\r\n@keyframes showGradually{\r\n    0%{ opacity: 0; transform: translate(0, -30px) }\r\n    100%{ opacity: 1; transform: translate(0, 0) }\r\n}\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -13802,6 +13822,553 @@ _ol_Observable_.prototype.un = function (type, listener, opt_this) {
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (_ol_Observable_);
+
+/***/ }),
+
+/***/ "./node_modules/ol/overlay.js":
+/*!************************************!*\
+  !*** ./node_modules/ol/overlay.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./node_modules/ol/index.js");
+/* harmony import */ var _mapeventtype_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mapeventtype.js */ "./node_modules/ol/mapeventtype.js");
+/* harmony import */ var _object_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./object.js */ "./node_modules/ol/object.js");
+/* harmony import */ var _overlaypositioning_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./overlaypositioning.js */ "./node_modules/ol/overlaypositioning.js");
+/* harmony import */ var _css_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./css.js */ "./node_modules/ol/css.js");
+/* harmony import */ var _dom_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dom.js */ "./node_modules/ol/dom.js");
+/* harmony import */ var _events_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./events.js */ "./node_modules/ol/events.js");
+/* harmony import */ var _extent_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./extent.js */ "./node_modules/ol/extent.js");
+
+
+
+
+
+
+
+
+
+/**
+ * @classdesc
+ * An element to be displayed over the map and attached to a single map
+ * location.  Like {@link ol.control.Control}, Overlays are visible widgets.
+ * Unlike Controls, they are not in a fixed position on the screen, but are tied
+ * to a geographical coordinate, so panning the map will move an Overlay but not
+ * a Control.
+ *
+ * Example:
+ *
+ *     var popup = new ol.Overlay({
+ *       element: document.getElementById('popup')
+ *     });
+ *     popup.setPosition(coordinate);
+ *     map.addOverlay(popup);
+ *
+ * @constructor
+ * @extends {ol.Object}
+ * @param {olx.OverlayOptions} options Overlay options.
+ * @api
+ */
+var _ol_Overlay_ = function (options) {
+
+  _object_js__WEBPACK_IMPORTED_MODULE_2__["default"].call(this);
+
+  /**
+   * @protected
+   * @type {olx.OverlayOptions}
+   */
+  this.options = options;
+
+  /**
+   * @protected
+   * @type {number|string|undefined}
+   */
+  this.id = options.id;
+
+  /**
+   * @protected
+   * @type {boolean}
+   */
+  this.insertFirst = options.insertFirst !== undefined ? options.insertFirst : true;
+
+  /**
+   * @protected
+   * @type {boolean}
+   */
+  this.stopEvent = options.stopEvent !== undefined ? options.stopEvent : true;
+
+  /**
+   * @protected
+   * @type {Element}
+   */
+  this.element = document.createElement('DIV');
+  this.element.className = options.className !== undefined ? options.className : 'ol-overlay-container ' + _css_js__WEBPACK_IMPORTED_MODULE_4__["default"].CLASS_SELECTABLE;
+  this.element.style.position = 'absolute';
+
+  /**
+   * @protected
+   * @type {boolean}
+   */
+  this.autoPan = options.autoPan !== undefined ? options.autoPan : false;
+
+  /**
+   * @protected
+   * @type {olx.OverlayPanOptions}
+   */
+  this.autoPanAnimation = options.autoPanAnimation ||
+  /** @type {olx.OverlayPanOptions} */{};
+
+  /**
+   * @protected
+   * @type {number}
+   */
+  this.autoPanMargin = options.autoPanMargin !== undefined ? options.autoPanMargin : 20;
+
+  /**
+   * @protected
+   * @type {{bottom_: string,
+   *         left_: string,
+   *         right_: string,
+   *         top_: string,
+   *         visible: boolean}}
+   */
+  this.rendered = {
+    bottom_: '',
+    left_: '',
+    right_: '',
+    top_: '',
+    visible: true
+  };
+
+  /**
+   * @protected
+   * @type {?ol.EventsKey}
+   */
+  this.mapPostrenderListenerKey = null;
+
+  _events_js__WEBPACK_IMPORTED_MODULE_6__["default"].listen(this, _object_js__WEBPACK_IMPORTED_MODULE_2__["default"].getChangeEventType(_ol_Overlay_.Property.ELEMENT), this.handleElementChanged, this);
+
+  _events_js__WEBPACK_IMPORTED_MODULE_6__["default"].listen(this, _object_js__WEBPACK_IMPORTED_MODULE_2__["default"].getChangeEventType(_ol_Overlay_.Property.MAP), this.handleMapChanged, this);
+
+  _events_js__WEBPACK_IMPORTED_MODULE_6__["default"].listen(this, _object_js__WEBPACK_IMPORTED_MODULE_2__["default"].getChangeEventType(_ol_Overlay_.Property.OFFSET), this.handleOffsetChanged, this);
+
+  _events_js__WEBPACK_IMPORTED_MODULE_6__["default"].listen(this, _object_js__WEBPACK_IMPORTED_MODULE_2__["default"].getChangeEventType(_ol_Overlay_.Property.POSITION), this.handlePositionChanged, this);
+
+  _events_js__WEBPACK_IMPORTED_MODULE_6__["default"].listen(this, _object_js__WEBPACK_IMPORTED_MODULE_2__["default"].getChangeEventType(_ol_Overlay_.Property.POSITIONING), this.handlePositioningChanged, this);
+
+  if (options.element !== undefined) {
+    this.setElement(options.element);
+  }
+
+  this.setOffset(options.offset !== undefined ? options.offset : [0, 0]);
+
+  this.setPositioning(options.positioning !== undefined ?
+  /** @type {ol.OverlayPositioning} */options.positioning : _overlaypositioning_js__WEBPACK_IMPORTED_MODULE_3__["default"].TOP_LEFT);
+
+  if (options.position !== undefined) {
+    this.setPosition(options.position);
+  }
+};
+
+_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].inherits(_ol_Overlay_, _object_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
+
+/**
+ * Get the DOM element of this overlay.
+ * @return {Element|undefined} The Element containing the overlay.
+ * @observable
+ * @api
+ */
+_ol_Overlay_.prototype.getElement = function () {
+  return (
+    /** @type {Element|undefined} */this.get(_ol_Overlay_.Property.ELEMENT)
+  );
+};
+
+/**
+ * Get the overlay identifier which is set on constructor.
+ * @return {number|string|undefined} Id.
+ * @api
+ */
+_ol_Overlay_.prototype.getId = function () {
+  return this.id;
+};
+
+/**
+ * Get the map associated with this overlay.
+ * @return {ol.PluggableMap|undefined} The map that the overlay is part of.
+ * @observable
+ * @api
+ */
+_ol_Overlay_.prototype.getMap = function () {
+  return (
+    /** @type {ol.PluggableMap|undefined} */this.get(_ol_Overlay_.Property.MAP)
+  );
+};
+
+/**
+ * Get the offset of this overlay.
+ * @return {Array.<number>} The offset.
+ * @observable
+ * @api
+ */
+_ol_Overlay_.prototype.getOffset = function () {
+  return (
+    /** @type {Array.<number>} */this.get(_ol_Overlay_.Property.OFFSET)
+  );
+};
+
+/**
+ * Get the current position of this overlay.
+ * @return {ol.Coordinate|undefined} The spatial point that the overlay is
+ *     anchored at.
+ * @observable
+ * @api
+ */
+_ol_Overlay_.prototype.getPosition = function () {
+  return (
+    /** @type {ol.Coordinate|undefined} */this.get(_ol_Overlay_.Property.POSITION)
+  );
+};
+
+/**
+ * Get the current positioning of this overlay.
+ * @return {ol.OverlayPositioning} How the overlay is positioned
+ *     relative to its point on the map.
+ * @observable
+ * @api
+ */
+_ol_Overlay_.prototype.getPositioning = function () {
+  return (
+    /** @type {ol.OverlayPositioning} */this.get(_ol_Overlay_.Property.POSITIONING)
+  );
+};
+
+/**
+ * @protected
+ */
+_ol_Overlay_.prototype.handleElementChanged = function () {
+  _dom_js__WEBPACK_IMPORTED_MODULE_5__["default"].removeChildren(this.element);
+  var element = this.getElement();
+  if (element) {
+    this.element.appendChild(element);
+  }
+};
+
+/**
+ * @protected
+ */
+_ol_Overlay_.prototype.handleMapChanged = function () {
+  if (this.mapPostrenderListenerKey) {
+    _dom_js__WEBPACK_IMPORTED_MODULE_5__["default"].removeNode(this.element);
+    _events_js__WEBPACK_IMPORTED_MODULE_6__["default"].unlistenByKey(this.mapPostrenderListenerKey);
+    this.mapPostrenderListenerKey = null;
+  }
+  var map = this.getMap();
+  if (map) {
+    this.mapPostrenderListenerKey = _events_js__WEBPACK_IMPORTED_MODULE_6__["default"].listen(map, _mapeventtype_js__WEBPACK_IMPORTED_MODULE_1__["default"].POSTRENDER, this.render, this);
+    this.updatePixelPosition();
+    var container = this.stopEvent ? map.getOverlayContainerStopEvent() : map.getOverlayContainer();
+    if (this.insertFirst) {
+      container.insertBefore(this.element, container.childNodes[0] || null);
+    } else {
+      container.appendChild(this.element);
+    }
+  }
+};
+
+/**
+ * @protected
+ */
+_ol_Overlay_.prototype.render = function () {
+  this.updatePixelPosition();
+};
+
+/**
+ * @protected
+ */
+_ol_Overlay_.prototype.handleOffsetChanged = function () {
+  this.updatePixelPosition();
+};
+
+/**
+ * @protected
+ */
+_ol_Overlay_.prototype.handlePositionChanged = function () {
+  this.updatePixelPosition();
+  if (this.get(_ol_Overlay_.Property.POSITION) && this.autoPan) {
+    this.panIntoView();
+  }
+};
+
+/**
+ * @protected
+ */
+_ol_Overlay_.prototype.handlePositioningChanged = function () {
+  this.updatePixelPosition();
+};
+
+/**
+ * Set the DOM element to be associated with this overlay.
+ * @param {Element|undefined} element The Element containing the overlay.
+ * @observable
+ * @api
+ */
+_ol_Overlay_.prototype.setElement = function (element) {
+  this.set(_ol_Overlay_.Property.ELEMENT, element);
+};
+
+/**
+ * Set the map to be associated with this overlay.
+ * @param {ol.PluggableMap|undefined} map The map that the overlay is part of.
+ * @observable
+ * @api
+ */
+_ol_Overlay_.prototype.setMap = function (map) {
+  this.set(_ol_Overlay_.Property.MAP, map);
+};
+
+/**
+ * Set the offset for this overlay.
+ * @param {Array.<number>} offset Offset.
+ * @observable
+ * @api
+ */
+_ol_Overlay_.prototype.setOffset = function (offset) {
+  this.set(_ol_Overlay_.Property.OFFSET, offset);
+};
+
+/**
+ * Set the position for this overlay. If the position is `undefined` the
+ * overlay is hidden.
+ * @param {ol.Coordinate|undefined} position The spatial point that the overlay
+ *     is anchored at.
+ * @observable
+ * @api
+ */
+_ol_Overlay_.prototype.setPosition = function (position) {
+  this.set(_ol_Overlay_.Property.POSITION, position);
+};
+
+/**
+ * Pan the map so that the overlay is entirely visible in the current viewport
+ * (if necessary).
+ * @protected
+ */
+_ol_Overlay_.prototype.panIntoView = function () {
+  var map = this.getMap();
+
+  if (!map || !map.getTargetElement()) {
+    return;
+  }
+
+  var mapRect = this.getRect(map.getTargetElement(), map.getSize());
+  var element = /** @type {!Element} */this.getElement();
+  var overlayRect = this.getRect(element, [_dom_js__WEBPACK_IMPORTED_MODULE_5__["default"].outerWidth(element), _dom_js__WEBPACK_IMPORTED_MODULE_5__["default"].outerHeight(element)]);
+
+  var margin = this.autoPanMargin;
+  if (!_extent_js__WEBPACK_IMPORTED_MODULE_7__["default"].containsExtent(mapRect, overlayRect)) {
+    // the overlay is not completely inside the viewport, so pan the map
+    var offsetLeft = overlayRect[0] - mapRect[0];
+    var offsetRight = mapRect[2] - overlayRect[2];
+    var offsetTop = overlayRect[1] - mapRect[1];
+    var offsetBottom = mapRect[3] - overlayRect[3];
+
+    var delta = [0, 0];
+    if (offsetLeft < 0) {
+      // move map to the left
+      delta[0] = offsetLeft - margin;
+    } else if (offsetRight < 0) {
+      // move map to the right
+      delta[0] = Math.abs(offsetRight) + margin;
+    }
+    if (offsetTop < 0) {
+      // move map up
+      delta[1] = offsetTop - margin;
+    } else if (offsetBottom < 0) {
+      // move map down
+      delta[1] = Math.abs(offsetBottom) + margin;
+    }
+
+    if (delta[0] !== 0 || delta[1] !== 0) {
+      var center = /** @type {ol.Coordinate} */map.getView().getCenter();
+      var centerPx = map.getPixelFromCoordinate(center);
+      var newCenterPx = [centerPx[0] + delta[0], centerPx[1] + delta[1]];
+
+      map.getView().animate({
+        center: map.getCoordinateFromPixel(newCenterPx),
+        duration: this.autoPanAnimation.duration,
+        easing: this.autoPanAnimation.easing
+      });
+    }
+  }
+};
+
+/**
+ * Get the extent of an element relative to the document
+ * @param {Element|undefined} element The element.
+ * @param {ol.Size|undefined} size The size of the element.
+ * @return {ol.Extent} The extent.
+ * @protected
+ */
+_ol_Overlay_.prototype.getRect = function (element, size) {
+  var box = element.getBoundingClientRect();
+  var offsetX = box.left + window.pageXOffset;
+  var offsetY = box.top + window.pageYOffset;
+  return [offsetX, offsetY, offsetX + size[0], offsetY + size[1]];
+};
+
+/**
+ * Set the positioning for this overlay.
+ * @param {ol.OverlayPositioning} positioning how the overlay is
+ *     positioned relative to its point on the map.
+ * @observable
+ * @api
+ */
+_ol_Overlay_.prototype.setPositioning = function (positioning) {
+  this.set(_ol_Overlay_.Property.POSITIONING, positioning);
+};
+
+/**
+ * Modify the visibility of the element.
+ * @param {boolean} visible Element visibility.
+ * @protected
+ */
+_ol_Overlay_.prototype.setVisible = function (visible) {
+  if (this.rendered.visible !== visible) {
+    this.element.style.display = visible ? '' : 'none';
+    this.rendered.visible = visible;
+  }
+};
+
+/**
+ * Update pixel position.
+ * @protected
+ */
+_ol_Overlay_.prototype.updatePixelPosition = function () {
+  var map = this.getMap();
+  var position = this.getPosition();
+  if (!map || !map.isRendered() || !position) {
+    this.setVisible(false);
+    return;
+  }
+
+  var pixel = map.getPixelFromCoordinate(position);
+  var mapSize = map.getSize();
+  this.updateRenderedPosition(pixel, mapSize);
+};
+
+/**
+ * @param {ol.Pixel} pixel The pixel location.
+ * @param {ol.Size|undefined} mapSize The map size.
+ * @protected
+ */
+_ol_Overlay_.prototype.updateRenderedPosition = function (pixel, mapSize) {
+  var style = this.element.style;
+  var offset = this.getOffset();
+
+  var positioning = this.getPositioning();
+
+  this.setVisible(true);
+
+  var offsetX = offset[0];
+  var offsetY = offset[1];
+  if (positioning == _overlaypositioning_js__WEBPACK_IMPORTED_MODULE_3__["default"].BOTTOM_RIGHT || positioning == _overlaypositioning_js__WEBPACK_IMPORTED_MODULE_3__["default"].CENTER_RIGHT || positioning == _overlaypositioning_js__WEBPACK_IMPORTED_MODULE_3__["default"].TOP_RIGHT) {
+    if (this.rendered.left_ !== '') {
+      this.rendered.left_ = style.left = '';
+    }
+    var right = Math.round(mapSize[0] - pixel[0] - offsetX) + 'px';
+    if (this.rendered.right_ != right) {
+      this.rendered.right_ = style.right = right;
+    }
+  } else {
+    if (this.rendered.right_ !== '') {
+      this.rendered.right_ = style.right = '';
+    }
+    if (positioning == _overlaypositioning_js__WEBPACK_IMPORTED_MODULE_3__["default"].BOTTOM_CENTER || positioning == _overlaypositioning_js__WEBPACK_IMPORTED_MODULE_3__["default"].CENTER_CENTER || positioning == _overlaypositioning_js__WEBPACK_IMPORTED_MODULE_3__["default"].TOP_CENTER) {
+      offsetX -= this.element.offsetWidth / 2;
+    }
+    var left = Math.round(pixel[0] + offsetX) + 'px';
+    if (this.rendered.left_ != left) {
+      this.rendered.left_ = style.left = left;
+    }
+  }
+  if (positioning == _overlaypositioning_js__WEBPACK_IMPORTED_MODULE_3__["default"].BOTTOM_LEFT || positioning == _overlaypositioning_js__WEBPACK_IMPORTED_MODULE_3__["default"].BOTTOM_CENTER || positioning == _overlaypositioning_js__WEBPACK_IMPORTED_MODULE_3__["default"].BOTTOM_RIGHT) {
+    if (this.rendered.top_ !== '') {
+      this.rendered.top_ = style.top = '';
+    }
+    var bottom = Math.round(mapSize[1] - pixel[1] - offsetY) + 'px';
+    if (this.rendered.bottom_ != bottom) {
+      this.rendered.bottom_ = style.bottom = bottom;
+    }
+  } else {
+    if (this.rendered.bottom_ !== '') {
+      this.rendered.bottom_ = style.bottom = '';
+    }
+    if (positioning == _overlaypositioning_js__WEBPACK_IMPORTED_MODULE_3__["default"].CENTER_LEFT || positioning == _overlaypositioning_js__WEBPACK_IMPORTED_MODULE_3__["default"].CENTER_CENTER || positioning == _overlaypositioning_js__WEBPACK_IMPORTED_MODULE_3__["default"].CENTER_RIGHT) {
+      offsetY -= this.element.offsetHeight / 2;
+    }
+    var top = Math.round(pixel[1] + offsetY) + 'px';
+    if (this.rendered.top_ != top) {
+      this.rendered.top_ = style.top = top;
+    }
+  }
+};
+
+/**
+ * returns the options this Overlay has been created with
+ * @public
+ * @return {olx.OverlayOptions} overlay options
+ */
+_ol_Overlay_.prototype.getOptions = function () {
+  return this.options;
+};
+
+/**
+ * @enum {string}
+ * @protected
+ */
+_ol_Overlay_.Property = {
+  ELEMENT: 'element',
+  MAP: 'map',
+  OFFSET: 'offset',
+  POSITION: 'position',
+  POSITIONING: 'positioning'
+};
+/* harmony default export */ __webpack_exports__["default"] = (_ol_Overlay_);
+
+/***/ }),
+
+/***/ "./node_modules/ol/overlaypositioning.js":
+/*!***********************************************!*\
+  !*** ./node_modules/ol/overlaypositioning.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/**
+ * Overlay position: `'bottom-left'`, `'bottom-center'`,  `'bottom-right'`,
+ * `'center-left'`, `'center-center'`, `'center-right'`, `'top-left'`,
+ * `'top-center'`, `'top-right'`
+ * @enum {string}
+ */
+var _ol_OverlayPositioning_ = {
+  BOTTOM_LEFT: 'bottom-left',
+  BOTTOM_CENTER: 'bottom-center',
+  BOTTOM_RIGHT: 'bottom-right',
+  CENTER_LEFT: 'center-left',
+  CENTER_CENTER: 'center-center',
+  CENTER_RIGHT: 'center-right',
+  TOP_LEFT: 'top-left',
+  TOP_CENTER: 'top-center',
+  TOP_RIGHT: 'top-right'
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (_ol_OverlayPositioning_);
 
 /***/ }),
 
@@ -35702,666 +36269,6 @@ _ol_style_Fill_.prototype.getChecksum = function () {
 
 /***/ }),
 
-/***/ "./node_modules/ol/style/icon.js":
-/*!***************************************!*\
-  !*** ./node_modules/ol/style/icon.js ***!
-  \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../index.js */ "./node_modules/ol/index.js");
-/* harmony import */ var _imagestate_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../imagestate.js */ "./node_modules/ol/imagestate.js");
-/* harmony import */ var _asserts_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../asserts.js */ "./node_modules/ol/asserts.js");
-/* harmony import */ var _color_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../color.js */ "./node_modules/ol/color.js");
-/* harmony import */ var _events_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../events.js */ "./node_modules/ol/events.js");
-/* harmony import */ var _events_eventtype_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../events/eventtype.js */ "./node_modules/ol/events/eventtype.js");
-/* harmony import */ var _style_iconanchorunits_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../style/iconanchorunits.js */ "./node_modules/ol/style/iconanchorunits.js");
-/* harmony import */ var _style_iconimage_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../style/iconimage.js */ "./node_modules/ol/style/iconimage.js");
-/* harmony import */ var _style_iconorigin_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../style/iconorigin.js */ "./node_modules/ol/style/iconorigin.js");
-/* harmony import */ var _style_image_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../style/image.js */ "./node_modules/ol/style/image.js");
-
-
-
-
-
-
-
-
-
-
-
-/**
- * @classdesc
- * Set icon style for vector features.
- *
- * @constructor
- * @param {olx.style.IconOptions=} opt_options Options.
- * @extends {ol.style.Image}
- * @api
- */
-var _ol_style_Icon_ = function (opt_options) {
-
-  var options = opt_options || {};
-
-  /**
-   * @private
-   * @type {Array.<number>}
-   */
-  this.anchor_ = options.anchor !== undefined ? options.anchor : [0.5, 0.5];
-
-  /**
-   * @private
-   * @type {Array.<number>}
-   */
-  this.normalizedAnchor_ = null;
-
-  /**
-   * @private
-   * @type {ol.style.IconOrigin}
-   */
-  this.anchorOrigin_ = options.anchorOrigin !== undefined ? options.anchorOrigin : _style_iconorigin_js__WEBPACK_IMPORTED_MODULE_8__["default"].TOP_LEFT;
-
-  /**
-   * @private
-   * @type {ol.style.IconAnchorUnits}
-   */
-  this.anchorXUnits_ = options.anchorXUnits !== undefined ? options.anchorXUnits : _style_iconanchorunits_js__WEBPACK_IMPORTED_MODULE_6__["default"].FRACTION;
-
-  /**
-   * @private
-   * @type {ol.style.IconAnchorUnits}
-   */
-  this.anchorYUnits_ = options.anchorYUnits !== undefined ? options.anchorYUnits : _style_iconanchorunits_js__WEBPACK_IMPORTED_MODULE_6__["default"].FRACTION;
-
-  /**
-   * @private
-   * @type {?string}
-   */
-  this.crossOrigin_ = options.crossOrigin !== undefined ? options.crossOrigin : null;
-
-  /**
-   * @type {Image|HTMLCanvasElement}
-   */
-  var image = options.img !== undefined ? options.img : null;
-
-  /**
-   * @type {ol.Size}
-   */
-  var imgSize = options.imgSize !== undefined ? options.imgSize : null;
-
-  /**
-   * @type {string|undefined}
-   */
-  var src = options.src;
-
-  _asserts_js__WEBPACK_IMPORTED_MODULE_2__["default"].assert(!(src !== undefined && image), 4); // `image` and `src` cannot be provided at the same time
-  _asserts_js__WEBPACK_IMPORTED_MODULE_2__["default"].assert(!image || image && imgSize, 5); // `imgSize` must be set when `image` is provided
-
-  if ((src === undefined || src.length === 0) && image) {
-    src = image.src || _index_js__WEBPACK_IMPORTED_MODULE_0__["default"].getUid(image).toString();
-  }
-  _asserts_js__WEBPACK_IMPORTED_MODULE_2__["default"].assert(src !== undefined && src.length > 0, 6); // A defined and non-empty `src` or `image` must be provided
-
-  /**
-   * @type {ol.ImageState}
-   */
-  var imageState = options.src !== undefined ? _imagestate_js__WEBPACK_IMPORTED_MODULE_1__["default"].IDLE : _imagestate_js__WEBPACK_IMPORTED_MODULE_1__["default"].LOADED;
-
-  /**
-   * @private
-   * @type {ol.Color}
-   */
-  this.color_ = options.color !== undefined ? _color_js__WEBPACK_IMPORTED_MODULE_3__["default"].asArray(options.color) : null;
-
-  /**
-   * @private
-   * @type {ol.style.IconImage}
-   */
-  this.iconImage_ = _style_iconimage_js__WEBPACK_IMPORTED_MODULE_7__["default"].get(image, /** @type {string} */src, imgSize, this.crossOrigin_, imageState, this.color_);
-
-  /**
-   * @private
-   * @type {Array.<number>}
-   */
-  this.offset_ = options.offset !== undefined ? options.offset : [0, 0];
-
-  /**
-   * @private
-   * @type {ol.style.IconOrigin}
-   */
-  this.offsetOrigin_ = options.offsetOrigin !== undefined ? options.offsetOrigin : _style_iconorigin_js__WEBPACK_IMPORTED_MODULE_8__["default"].TOP_LEFT;
-
-  /**
-   * @private
-   * @type {Array.<number>}
-   */
-  this.origin_ = null;
-
-  /**
-   * @private
-   * @type {ol.Size}
-   */
-  this.size_ = options.size !== undefined ? options.size : null;
-
-  /**
-   * @type {number}
-   */
-  var opacity = options.opacity !== undefined ? options.opacity : 1;
-
-  /**
-   * @type {boolean}
-   */
-  var rotateWithView = options.rotateWithView !== undefined ? options.rotateWithView : false;
-
-  /**
-   * @type {number}
-   */
-  var rotation = options.rotation !== undefined ? options.rotation : 0;
-
-  /**
-   * @type {number}
-   */
-  var scale = options.scale !== undefined ? options.scale : 1;
-
-  /**
-   * @type {boolean}
-   */
-  var snapToPixel = options.snapToPixel !== undefined ? options.snapToPixel : true;
-
-  _style_image_js__WEBPACK_IMPORTED_MODULE_9__["default"].call(this, {
-    opacity: opacity,
-    rotation: rotation,
-    scale: scale,
-    snapToPixel: snapToPixel,
-    rotateWithView: rotateWithView
-  });
-};
-
-_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].inherits(_ol_style_Icon_, _style_image_js__WEBPACK_IMPORTED_MODULE_9__["default"]);
-
-/**
- * Clones the style. The underlying Image/HTMLCanvasElement is not cloned.
- * @return {ol.style.Icon} The cloned style.
- * @api
- */
-_ol_style_Icon_.prototype.clone = function () {
-  return new _ol_style_Icon_({
-    anchor: this.anchor_.slice(),
-    anchorOrigin: this.anchorOrigin_,
-    anchorXUnits: this.anchorXUnits_,
-    anchorYUnits: this.anchorYUnits_,
-    crossOrigin: this.crossOrigin_,
-    color: this.color_ && this.color_.slice ? this.color_.slice() : this.color_ || undefined,
-    src: this.getSrc(),
-    offset: this.offset_.slice(),
-    offsetOrigin: this.offsetOrigin_,
-    size: this.size_ !== null ? this.size_.slice() : undefined,
-    opacity: this.getOpacity(),
-    scale: this.getScale(),
-    snapToPixel: this.getSnapToPixel(),
-    rotation: this.getRotation(),
-    rotateWithView: this.getRotateWithView()
-  });
-};
-
-/**
- * @inheritDoc
- * @api
- */
-_ol_style_Icon_.prototype.getAnchor = function () {
-  if (this.normalizedAnchor_) {
-    return this.normalizedAnchor_;
-  }
-  var anchor = this.anchor_;
-  var size = this.getSize();
-  if (this.anchorXUnits_ == _style_iconanchorunits_js__WEBPACK_IMPORTED_MODULE_6__["default"].FRACTION || this.anchorYUnits_ == _style_iconanchorunits_js__WEBPACK_IMPORTED_MODULE_6__["default"].FRACTION) {
-    if (!size) {
-      return null;
-    }
-    anchor = this.anchor_.slice();
-    if (this.anchorXUnits_ == _style_iconanchorunits_js__WEBPACK_IMPORTED_MODULE_6__["default"].FRACTION) {
-      anchor[0] *= size[0];
-    }
-    if (this.anchorYUnits_ == _style_iconanchorunits_js__WEBPACK_IMPORTED_MODULE_6__["default"].FRACTION) {
-      anchor[1] *= size[1];
-    }
-  }
-
-  if (this.anchorOrigin_ != _style_iconorigin_js__WEBPACK_IMPORTED_MODULE_8__["default"].TOP_LEFT) {
-    if (!size) {
-      return null;
-    }
-    if (anchor === this.anchor_) {
-      anchor = this.anchor_.slice();
-    }
-    if (this.anchorOrigin_ == _style_iconorigin_js__WEBPACK_IMPORTED_MODULE_8__["default"].TOP_RIGHT || this.anchorOrigin_ == _style_iconorigin_js__WEBPACK_IMPORTED_MODULE_8__["default"].BOTTOM_RIGHT) {
-      anchor[0] = -anchor[0] + size[0];
-    }
-    if (this.anchorOrigin_ == _style_iconorigin_js__WEBPACK_IMPORTED_MODULE_8__["default"].BOTTOM_LEFT || this.anchorOrigin_ == _style_iconorigin_js__WEBPACK_IMPORTED_MODULE_8__["default"].BOTTOM_RIGHT) {
-      anchor[1] = -anchor[1] + size[1];
-    }
-  }
-  this.normalizedAnchor_ = anchor;
-  return this.normalizedAnchor_;
-};
-
-/**
- * Get the icon color.
- * @return {ol.Color} Color.
- * @api
- */
-_ol_style_Icon_.prototype.getColor = function () {
-  return this.color_;
-};
-
-/**
- * Get the image icon.
- * @param {number} pixelRatio Pixel ratio.
- * @return {Image|HTMLCanvasElement} Image or Canvas element.
- * @override
- * @api
- */
-_ol_style_Icon_.prototype.getImage = function (pixelRatio) {
-  return this.iconImage_.getImage(pixelRatio);
-};
-
-/**
- * @override
- */
-_ol_style_Icon_.prototype.getImageSize = function () {
-  return this.iconImage_.getSize();
-};
-
-/**
- * @override
- */
-_ol_style_Icon_.prototype.getHitDetectionImageSize = function () {
-  return this.getImageSize();
-};
-
-/**
- * @override
- */
-_ol_style_Icon_.prototype.getImageState = function () {
-  return this.iconImage_.getImageState();
-};
-
-/**
- * @override
- */
-_ol_style_Icon_.prototype.getHitDetectionImage = function (pixelRatio) {
-  return this.iconImage_.getHitDetectionImage(pixelRatio);
-};
-
-/**
- * @inheritDoc
- * @api
- */
-_ol_style_Icon_.prototype.getOrigin = function () {
-  if (this.origin_) {
-    return this.origin_;
-  }
-  var offset = this.offset_;
-
-  if (this.offsetOrigin_ != _style_iconorigin_js__WEBPACK_IMPORTED_MODULE_8__["default"].TOP_LEFT) {
-    var size = this.getSize();
-    var iconImageSize = this.iconImage_.getSize();
-    if (!size || !iconImageSize) {
-      return null;
-    }
-    offset = offset.slice();
-    if (this.offsetOrigin_ == _style_iconorigin_js__WEBPACK_IMPORTED_MODULE_8__["default"].TOP_RIGHT || this.offsetOrigin_ == _style_iconorigin_js__WEBPACK_IMPORTED_MODULE_8__["default"].BOTTOM_RIGHT) {
-      offset[0] = iconImageSize[0] - size[0] - offset[0];
-    }
-    if (this.offsetOrigin_ == _style_iconorigin_js__WEBPACK_IMPORTED_MODULE_8__["default"].BOTTOM_LEFT || this.offsetOrigin_ == _style_iconorigin_js__WEBPACK_IMPORTED_MODULE_8__["default"].BOTTOM_RIGHT) {
-      offset[1] = iconImageSize[1] - size[1] - offset[1];
-    }
-  }
-  this.origin_ = offset;
-  return this.origin_;
-};
-
-/**
- * Get the image URL.
- * @return {string|undefined} Image src.
- * @api
- */
-_ol_style_Icon_.prototype.getSrc = function () {
-  return this.iconImage_.getSrc();
-};
-
-/**
- * @inheritDoc
- * @api
- */
-_ol_style_Icon_.prototype.getSize = function () {
-  return !this.size_ ? this.iconImage_.getSize() : this.size_;
-};
-
-/**
- * @override
- */
-_ol_style_Icon_.prototype.listenImageChange = function (listener, thisArg) {
-  return _events_js__WEBPACK_IMPORTED_MODULE_4__["default"].listen(this.iconImage_, _events_eventtype_js__WEBPACK_IMPORTED_MODULE_5__["default"].CHANGE, listener, thisArg);
-};
-
-/**
- * Load not yet loaded URI.
- * When rendering a feature with an icon style, the vector renderer will
- * automatically call this method. However, you might want to call this
- * method yourself for preloading or other purposes.
- * @override
- * @api
- */
-_ol_style_Icon_.prototype.load = function () {
-  this.iconImage_.load();
-};
-
-/**
- * @override
- */
-_ol_style_Icon_.prototype.unlistenImageChange = function (listener, thisArg) {
-  _events_js__WEBPACK_IMPORTED_MODULE_4__["default"].unlisten(this.iconImage_, _events_eventtype_js__WEBPACK_IMPORTED_MODULE_5__["default"].CHANGE, listener, thisArg);
-};
-/* harmony default export */ __webpack_exports__["default"] = (_ol_style_Icon_);
-
-/***/ }),
-
-/***/ "./node_modules/ol/style/iconanchorunits.js":
-/*!**************************************************!*\
-  !*** ./node_modules/ol/style/iconanchorunits.js ***!
-  \**************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/**
- * Icon anchor units. One of 'fraction', 'pixels'.
- * @enum {string}
- */
-var _ol_style_IconAnchorUnits_ = {
-  FRACTION: 'fraction',
-  PIXELS: 'pixels'
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (_ol_style_IconAnchorUnits_);
-
-/***/ }),
-
-/***/ "./node_modules/ol/style/iconimage.js":
-/*!********************************************!*\
-  !*** ./node_modules/ol/style/iconimage.js ***!
-  \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../index.js */ "./node_modules/ol/index.js");
-/* harmony import */ var _dom_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dom.js */ "./node_modules/ol/dom.js");
-/* harmony import */ var _events_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../events.js */ "./node_modules/ol/events.js");
-/* harmony import */ var _events_eventtarget_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../events/eventtarget.js */ "./node_modules/ol/events/eventtarget.js");
-/* harmony import */ var _events_eventtype_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../events/eventtype.js */ "./node_modules/ol/events/eventtype.js");
-/* harmony import */ var _imagestate_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../imagestate.js */ "./node_modules/ol/imagestate.js");
-/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../style.js */ "./node_modules/ol/style.js");
-
-
-
-
-
-
-
-
-/**
- * @constructor
- * @param {Image|HTMLCanvasElement} image Image.
- * @param {string|undefined} src Src.
- * @param {ol.Size} size Size.
- * @param {?string} crossOrigin Cross origin.
- * @param {ol.ImageState} imageState Image state.
- * @param {ol.Color} color Color.
- * @extends {ol.events.EventTarget}
- */
-var _ol_style_IconImage_ = function (image, src, size, crossOrigin, imageState, color) {
-
-  _events_eventtarget_js__WEBPACK_IMPORTED_MODULE_3__["default"].call(this);
-
-  /**
-   * @private
-   * @type {Image|HTMLCanvasElement}
-   */
-  this.hitDetectionImage_ = null;
-
-  /**
-   * @private
-   * @type {Image|HTMLCanvasElement}
-   */
-  this.image_ = !image ? new Image() : image;
-
-  if (crossOrigin !== null) {
-    this.image_.crossOrigin = crossOrigin;
-  }
-
-  /**
-   * @private
-   * @type {HTMLCanvasElement}
-   */
-  this.canvas_ = color ?
-  /** @type {HTMLCanvasElement} */document.createElement('CANVAS') : null;
-
-  /**
-   * @private
-   * @type {ol.Color}
-   */
-  this.color_ = color;
-
-  /**
-   * @private
-   * @type {Array.<ol.EventsKey>}
-   */
-  this.imageListenerKeys_ = null;
-
-  /**
-   * @private
-   * @type {ol.ImageState}
-   */
-  this.imageState_ = imageState;
-
-  /**
-   * @private
-   * @type {ol.Size}
-   */
-  this.size_ = size;
-
-  /**
-   * @private
-   * @type {string|undefined}
-   */
-  this.src_ = src;
-
-  /**
-   * @private
-   * @type {boolean}
-   */
-  this.tainting_ = false;
-  if (this.imageState_ == _imagestate_js__WEBPACK_IMPORTED_MODULE_5__["default"].LOADED) {
-    this.determineTainting_();
-  }
-};
-
-_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].inherits(_ol_style_IconImage_, _events_eventtarget_js__WEBPACK_IMPORTED_MODULE_3__["default"]);
-
-/**
- * @param {Image|HTMLCanvasElement} image Image.
- * @param {string} src Src.
- * @param {ol.Size} size Size.
- * @param {?string} crossOrigin Cross origin.
- * @param {ol.ImageState} imageState Image state.
- * @param {ol.Color} color Color.
- * @return {ol.style.IconImage} Icon image.
- */
-_ol_style_IconImage_.get = function (image, src, size, crossOrigin, imageState, color) {
-  var iconImageCache = _style_js__WEBPACK_IMPORTED_MODULE_6__["default"].iconImageCache;
-  var iconImage = iconImageCache.get(src, crossOrigin, color);
-  if (!iconImage) {
-    iconImage = new _ol_style_IconImage_(image, src, size, crossOrigin, imageState, color);
-    iconImageCache.set(src, crossOrigin, color, iconImage);
-  }
-  return iconImage;
-};
-
-/**
- * @private
- */
-_ol_style_IconImage_.prototype.determineTainting_ = function () {
-  var context = _dom_js__WEBPACK_IMPORTED_MODULE_1__["default"].createCanvasContext2D(1, 1);
-  try {
-    context.drawImage(this.image_, 0, 0);
-    context.getImageData(0, 0, 1, 1);
-  } catch (e) {
-    this.tainting_ = true;
-  }
-};
-
-/**
- * @private
- */
-_ol_style_IconImage_.prototype.dispatchChangeEvent_ = function () {
-  this.dispatchEvent(_events_eventtype_js__WEBPACK_IMPORTED_MODULE_4__["default"].CHANGE);
-};
-
-/**
- * @private
- */
-_ol_style_IconImage_.prototype.handleImageError_ = function () {
-  this.imageState_ = _imagestate_js__WEBPACK_IMPORTED_MODULE_5__["default"].ERROR;
-  this.unlistenImage_();
-  this.dispatchChangeEvent_();
-};
-
-/**
- * @private
- */
-_ol_style_IconImage_.prototype.handleImageLoad_ = function () {
-  this.imageState_ = _imagestate_js__WEBPACK_IMPORTED_MODULE_5__["default"].LOADED;
-  if (this.size_) {
-    this.image_.width = this.size_[0];
-    this.image_.height = this.size_[1];
-  }
-  this.size_ = [this.image_.width, this.image_.height];
-  this.unlistenImage_();
-  this.determineTainting_();
-  this.replaceColor_();
-  this.dispatchChangeEvent_();
-};
-
-/**
- * @param {number} pixelRatio Pixel ratio.
- * @return {Image|HTMLCanvasElement} Image or Canvas element.
- */
-_ol_style_IconImage_.prototype.getImage = function (pixelRatio) {
-  return this.canvas_ ? this.canvas_ : this.image_;
-};
-
-/**
- * @return {ol.ImageState} Image state.
- */
-_ol_style_IconImage_.prototype.getImageState = function () {
-  return this.imageState_;
-};
-
-/**
- * @param {number} pixelRatio Pixel ratio.
- * @return {Image|HTMLCanvasElement} Image element.
- */
-_ol_style_IconImage_.prototype.getHitDetectionImage = function (pixelRatio) {
-  if (!this.hitDetectionImage_) {
-    if (this.tainting_) {
-      var width = this.size_[0];
-      var height = this.size_[1];
-      var context = _dom_js__WEBPACK_IMPORTED_MODULE_1__["default"].createCanvasContext2D(width, height);
-      context.fillRect(0, 0, width, height);
-      this.hitDetectionImage_ = context.canvas;
-    } else {
-      this.hitDetectionImage_ = this.image_;
-    }
-  }
-  return this.hitDetectionImage_;
-};
-
-/**
- * @return {ol.Size} Image size.
- */
-_ol_style_IconImage_.prototype.getSize = function () {
-  return this.size_;
-};
-
-/**
- * @return {string|undefined} Image src.
- */
-_ol_style_IconImage_.prototype.getSrc = function () {
-  return this.src_;
-};
-
-/**
- * Load not yet loaded URI.
- */
-_ol_style_IconImage_.prototype.load = function () {
-  if (this.imageState_ == _imagestate_js__WEBPACK_IMPORTED_MODULE_5__["default"].IDLE) {
-    this.imageState_ = _imagestate_js__WEBPACK_IMPORTED_MODULE_5__["default"].LOADING;
-    this.imageListenerKeys_ = [_events_js__WEBPACK_IMPORTED_MODULE_2__["default"].listenOnce(this.image_, _events_eventtype_js__WEBPACK_IMPORTED_MODULE_4__["default"].ERROR, this.handleImageError_, this), _events_js__WEBPACK_IMPORTED_MODULE_2__["default"].listenOnce(this.image_, _events_eventtype_js__WEBPACK_IMPORTED_MODULE_4__["default"].LOAD, this.handleImageLoad_, this)];
-    try {
-      this.image_.src = this.src_;
-    } catch (e) {
-      this.handleImageError_();
-    }
-  }
-};
-
-/**
- * @private
- */
-_ol_style_IconImage_.prototype.replaceColor_ = function () {
-  if (this.tainting_ || this.color_ === null) {
-    return;
-  }
-
-  this.canvas_.width = this.image_.width;
-  this.canvas_.height = this.image_.height;
-
-  var ctx = this.canvas_.getContext('2d');
-  ctx.drawImage(this.image_, 0, 0);
-
-  var imgData = ctx.getImageData(0, 0, this.image_.width, this.image_.height);
-  var data = imgData.data;
-  var r = this.color_[0] / 255.0;
-  var g = this.color_[1] / 255.0;
-  var b = this.color_[2] / 255.0;
-
-  for (var i = 0, ii = data.length; i < ii; i += 4) {
-    data[i] *= r;
-    data[i + 1] *= g;
-    data[i + 2] *= b;
-  }
-  ctx.putImageData(imgData, 0, 0);
-};
-
-/**
- * Discards event handlers which listen for load completion or errors.
- *
- * @private
- */
-_ol_style_IconImage_.prototype.unlistenImage_ = function () {
-  this.imageListenerKeys_.forEach(_events_js__WEBPACK_IMPORTED_MODULE_2__["default"].unlistenByKey);
-  this.imageListenerKeys_ = null;
-};
-/* harmony default export */ __webpack_exports__["default"] = (_ol_style_IconImage_);
-
-/***/ }),
-
 /***/ "./node_modules/ol/style/iconimagecache.js":
 /*!*************************************************!*\
   !*** ./node_modules/ol/style/iconimagecache.js ***!
@@ -36470,30 +36377,6 @@ _ol_style_IconImageCache_.prototype.setSize = function (maxCacheSize) {
   this.expire();
 };
 /* harmony default export */ __webpack_exports__["default"] = (_ol_style_IconImageCache_);
-
-/***/ }),
-
-/***/ "./node_modules/ol/style/iconorigin.js":
-/*!*********************************************!*\
-  !*** ./node_modules/ol/style/iconorigin.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/**
- * Icon origin. One of 'bottom-left', 'bottom-right', 'top-left', 'top-right'.
- * @enum {string}
- */
-var _ol_style_IconOrigin_ = {
-  BOTTOM_LEFT: 'bottom-left',
-  BOTTOM_RIGHT: 'bottom-right',
-  TOP_LEFT: 'top-left',
-  TOP_RIGHT: 'top-right'
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (_ol_style_IconOrigin_);
 
 /***/ }),
 
@@ -42988,6 +42871,260 @@ module.exports = function (css) {
 
 /***/ }),
 
+/***/ "./src/js/Component/AnimationMarker/img/highlight-marker.png":
+/*!*******************************************************************!*\
+  !*** ./src/js/Component/AnimationMarker/img/highlight-marker.png ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADWUlEQVRYR7WXTUwTURDHZ0qhDUVsaA8QRMvNhERRDOrJkthe2V5kexKiN2OAg8pBBRQjiYlijCdJrKetXvq4tofCwcSQoHDQ6MkqIRDTQosUqRTGbEObsrz9aKl73Jk377cz8/5vFqGER4hKLtjGbkAQgMCOCO3yciKYB4QkEDCopinW5Y8ZDYtGHIWI5AbAYQRwG/EngGkg0yDzXpnX89cFEMLBCUTo1wvEsxPgCPP0jGqt1QTwhaVpQLxUzub5NQTAmEf0qcVQBRDCUgARrx5m8wIEQYB5xT5eLC6AEJFGEHC4EpsXZWKQecQJZcwDAEI0ZIds5jsC2CsMkASzpZV1+ZLFcQ8CGPj63/EEJJeWIZPezMWy2GrB3twER5wOTWYCGmUe/4gmgC8ixQDwhFqkpc9fIZ1Y5ZptjgZobjupCkEEMeYVW1UBhPC7dsTdT2oR4rFFWP25CFhlglpHA5u9eT/X3RdePJzcSCSu0c4uNBxvAaerRQPCdKZYH/aVQBYcBIzyVv/dykBsdi5nsjceE9/fuP222K/z+YPr6Xj8lfzO1dkBNVYLF4KAupjHP503KgFUu1+u+/KXb2Cpq019vDPObdCOJ3eXt9bXG5tPtYHNflQNYF8fGAbIp9/mdMzM9g9zJfnc03sf/qylzmuVQdmICoDgAAI846HnM2Ctr1+ZuzXWxPM5Oz4Uz6Q3HZoZQPSxyz1MrQRl98DFl2OP11d+DR2uB6IhO2Yza7qnwFxFdU7HZMZifVSD2RZIbw+m11Z9lN1BvVMQ8oj7sn5AiHzhoHy3n/4fOgAECyGvmJshuCWQXwphqRcRX2tJWkEJN9JgMpuh2moxpoREfczrD2gCyEY9NdTUW3UJ+hHy+F1KM/82NJCFUiFI0f2qJcgbKjGMFCCJZkJeP1c71AeSqOTCLMozHV/SjKcgRWZqVxtUNUcyIaIuTEb3JwDuIKJbgkIpIkFZtbqNbqjwmwp5REFrrf5UnBOnrXmtGUHl1lmgaotbOQEZOgVKp705Qb5CjfZDisjkrsh/QR5Ga1ZQAivv/EOVoHixEZUkjtpVDCAn1Rono9TN5Xi6Tcij5/20ENEb5vX3lnpaygLYu7QKf07lbl52BgqNGZYCAJhkXnGg1C/P+/8DogVyML+S9TsAAAAASUVORK5CYII="
+
+/***/ }),
+
+/***/ "./src/js/Component/AnimationMarker/ol-AnimationMarker.css":
+/*!*****************************************************************!*\
+  !*** ./src/js/Component/AnimationMarker/ol-AnimationMarker.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!./ol-AnimationMarker.css */ "./node_modules/css-loader/index.js!./src/js/Component/AnimationMarker/ol-AnimationMarker.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/js/Component/AnimationMarker/ol-AnimationMarker.js":
+/*!****************************************************************!*\
+  !*** ./src/js/Component/AnimationMarker/ol-AnimationMarker.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return AnimationMarker; });
+/* harmony import */ var _ol_AnimationMarker_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ol-AnimationMarker.css */ "./src/js/Component/AnimationMarker/ol-AnimationMarker.css");
+/* harmony import */ var _ol_AnimationMarker_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_ol_AnimationMarker_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var ol_overlay__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/overlay */ "./node_modules/ol/overlay.js");
+/* harmony import */ var ol_interaction_dragpan__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/interaction/dragpan */ "./node_modules/ol/interaction/dragpan.js");
+
+
+
+const defaultImage = __webpack_require__(/*! ./img/highlight-marker.png */ "./src/js/Component/AnimationMarker/img/highlight-marker.png");
+
+class AnimationMarker extends ol_overlay__WEBPACK_IMPORTED_MODULE_1__["default"] {
+    constructor(opt_options) {
+
+        let options = opt_options || {};
+        /* don't making the map panning*/
+        if (options.autoPan === undefined) {
+            options.autoPan = false;
+        }
+
+        let element = document.createElement('div');
+
+        options.element = element;
+        super(options);
+
+        this.container = element;
+        this.container.className = 'ol-AnimationMarker';
+
+        this.content = document.createElement('img');
+        this.content.src = options.image ? options.image : defaultImage;
+
+        this.container.appendChild(this.content);
+
+        this.timeInterval = null;
+    }
+    /**
+     * Show the AnimationMarker.
+     * @param {ol.Coordinate} coord Where to anchor the AnimationMarker.
+     * @returns {Popup} The Popup instance
+     */
+    show(point) {
+        let coord = point.getGeometry().getCoordinates();
+        this.setCoordinates(coord);
+
+        if (!this.container.classList.contains("shown")) {
+            this.container.classList.add("shown");
+        }
+
+        // this._clearAnimation();
+        // this._animationShow(coord);
+        return this;
+    }
+
+    // /**
+    //  * 动画展示
+    //  * @param coord
+    //  * @private
+    //  */
+    // _animationShow(coord){
+    //     let mapSize = this._getMapSize();
+    //     let curPixel = this._getScreenXYByCoordinate(coord);
+    //     /**
+    //      * 这里只需要修改 totalTime 的值可以改变动画的渲染时间，其他不要改动
+    //      * @type {number}
+    //      */
+    //     let totalTime = 400, //动画的总时间 单位是毫秒
+    //         heightPower = 4, //高度衰减的倍率
+    //         dValue = mapSize[1] / 10, //marker的最大高度，像素为单位
+    //         dTime = 10; //动画每一帧的时间
+    //
+    //     let totalSecondTime = totalTime/ 1000;
+    //     let acceleration = 2 * dValue / Math.pow(totalSecondTime * Math.sqrt(heightPower) /( 1 + Math.sqrt(heightPower)), 2); // 单位像素 / 秒
+    //
+    //     let iHeight = dValue,//能量衰减后的高度
+    //         iTime = totalTime;//剩余时间
+    //
+    //     //根据时间计算当前高度的方法
+    //     let getHeight = (ivalue, time)=>/* time second*/{
+    //         if(time <= 0) return 0;//如果时间已经少于0，则直接返回0
+    //         let _height = ivalue - acceleration * time * time / 2;
+    //
+    //         if( _height <= 0){
+    //             iHeight = iHeight / heightPower;
+    //             totalTime = totalTime - time * 1000;
+    //         }
+    //         return  _height;
+    //     }
+    //
+    //     let timeIntervalu = this.timeInterval = window.setInterval(()=>{
+    //         iTime = iTime - dTime;
+    //
+    //         let dHeight = getHeight(iHeight, (totalTime - iTime) / 1000);
+    //         //current piexl
+    //         let piexl = [curPixel[0], curPixel[1] - dHeight];
+    //         let coor = this._getCoordinateFromScreenXY(piexl);
+    //         this.setCoordinates(coor);
+    //
+    //         let postion = this.getPosition();
+    //         if(postion[0] != coor[0] || postion[1] != coor[1]){
+    //             timeIntervalu && window.clearInterval(timeIntervalu);
+    //         }
+    //         if(iTime <= 0) {
+    //             this.setCoordinates(coord);
+    //             timeIntervalu && window.clearInterval(timeIntervalu);
+    //         }
+    //     }, dTime)
+    // }
+    // /**
+    //  * 通过地理坐标获取屏幕坐标
+    //  * @param coor
+    //  * @private
+    //  */
+    // _getScreenXYByCoordinate(coor){
+    //     return this.getMap().getPixelFromCoordinate(coor);
+    // }
+    // /**
+    //  * 通过屏幕坐标获取地理坐标
+    //  * @param coor
+    //  * @private
+    //  */
+    // _getCoordinateFromScreenXY(piexl){
+    //     return this.getMap().getCoordinateFromPixel(piexl);
+    // }
+    // /**
+    //  * 获取地图的尺寸
+    //  * @returns {ol.Size}
+    //  */
+    // _getMapSize(){
+    //     return this.getMap().getSize();
+    // }
+    /**
+     * set the AnimationMarker Coordinates.
+     * @param {ol.Coordinate} coord Where to anchor the AnimationMarker.
+     * @returns {Popup} The Popup instance
+     */
+    setCoordinates(coord) {
+        this.setPosition(coord);
+    }
+    /**
+     * Hide the popup.
+     * @returns {Popup} The Popup instance
+     */
+    hide() {
+        if (this.container.classList.contains("shown")) {
+            this.container.classList.remove("shown");
+        }
+        // this._clearAnimation();
+
+        return this;
+    }
+    /**
+     * Indicates if the popup is in open state
+     * @returns {Boolean} Whether the popup instance is open
+     */
+    isOpened() {
+        return this.container.classList.contains("shown");
+    }
+
+    // /**
+    //  * 清除动画
+    //  * @private
+    //  */
+    // _clearAnimation(){
+    //     if(this.timeInterval){
+    //         window.clearInterval(this.timeInterval);
+    //         this.timeInterval = null;
+    //     }
+    // }
+
+    // /**
+    //  * 清除动画事件
+    //  */
+    // clearAnimation(){
+    //     this._clearAnimation();
+    // }
+    // /**
+    //  * 禁止地图拖动
+    //  * @private
+    //  */
+    // _disableMapDrag(){
+    //     this.getMap().getInteractions().forEach(function(element,index,array){
+    //         if(element instanceof DragPan)
+    //             element.setActive(false);
+    //     });
+    // }
+    //
+    // /**
+    //  * 允许地图拖动
+    //  * @private
+    //  */
+    // _enableMapDrag(){
+    //     this.getMap().getInteractions().forEach(function(element,index,array){
+    //         if(element instanceof DragPan){}
+    //         element.setActive(true);
+    //     });
+    // }
+}
+
+// OpenLayers
+if (window.ol && window.ol.Overlay) {
+    window.ol.Overlay.AnimationMarker = AnimationMarker;
+}
+
+/***/ }),
+
 /***/ "./src/js/Component/Identify/component/AttrTable/ol-Identify-FeatureAttrTable.css":
 /*!****************************************************************************************!*\
   !*** ./src/js/Component/Identify/component/AttrTable/ol-Identify-FeatureAttrTable.css ***!
@@ -43081,6 +43218,39 @@ class IdentifyFeatureAttrTable extends _ol_Identify_BaseComponent__WEBPACK_IMPOR
 
 /***/ }),
 
+/***/ "./src/js/Component/Identify/component/LayerTree/img/tree-gourp.png":
+/*!**************************************************************************!*\
+  !*** ./src/js/Component/Identify/component/LayerTree/img/tree-gourp.png ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAABC0lEQVQoU5WSwU3DQBRE3yRwBiogVBDTQTqADuIOspagChLFdGB3AB1QgqkAUwHJGeJBu44RisKBf/z7d96f2RVHKgvrSWw3ZdEeHut3IwsPMxjNJfLYt6mgq5vy/mWYUxbW52g3xwoSSfmwbFrkEo9rXRfLDejs2OCRi5tImKBdEHGNvy56a6jwuFQWVgG6Bk4a6G4lAjDdq7/alDB6gq8MaaqsWJZR3eYNEfd8hs+9l9MW7W4w0d9VpKSUkvG9us0lEd9XLvE+UJqy2ETTrc1HVG/Wd3WKVkqxYlcx0iyscvBC4qKPlS6XHOxkuoLRYw/oFj3FW1vRS7/SUIO60DwBcD1Qfh7uv1/jG1GTeV0DIceFAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "./src/js/Component/Identify/component/LayerTree/img/tree-ldashed.png":
+/*!****************************************************************************!*\
+  !*** ./src/js/Component/Identify/component/LayerTree/img/tree-ldashed.png ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAYCAYAAAAPtVbGAAAAjklEQVRIS2NkIAEYFHQ7XJhQeoAELWCljKRqIEc9SZaM+oTE4OoXuDCh8AOp8UKiJV0GFyaUXaCxJaM+ISGADQroEycKFyYUPiDBXaQXK/r5PTaMjMxPEJb8FmBgYH3AwPBbAUL/MQCVbbCSAUaTmIT7ae8TgwK6WEKfiB8tVohP9fTKjKNxQkqckNckAgAjW2YZ6zoksQAAAABJRU5ErkJggg=="
+
+/***/ }),
+
+/***/ "./src/js/Component/Identify/component/LayerTree/img/tree-maximize.png":
+/*!*****************************************************************************!*\
+  !*** ./src/js/Component/Identify/component/LayerTree/img/tree-maximize.png ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAABB0lEQVQoU22S0XGDMBBEd6EBl0A6kDugg7gEUkFEMslv/B2bQa7AKsHuwB1EHYQS3ABcRhKKhcd8Mce+m909iAeP0t8K4MqZj8v9Z+YDpXc1WGgIXJgTCjKZHAzAUlgYZ9prnPcrYNI5SNV2p7jxJry3kYNUutuCqAE5Qspz2p6gIOb4DPAFgst/BqW7BkQDwS8wHiJQvoJ4gsA6825DrNnSD1Ac/PaYh03Qi1gfeLbk4XUWOonKrTPtMIeugOkLFCaYqt0byGSd+XRK9xU4aoBVtCQDpPStDeE2LBouRTy6/u28vM1+Ey1GOAsdOt+E4L6xeDnfjAWKU2pvcelblbvavz/6Nf4AaAKHgnRmo5oAAAAASUVORK5CYII="
+
+/***/ }),
+
 /***/ "./src/js/Component/Identify/component/LayerTree/ol-Identify-FeatureLayerTree.css":
 /*!****************************************************************************************!*\
   !*** ./src/js/Component/Identify/component/LayerTree/ol-Identify-FeatureLayerTree.css ***!
@@ -43150,7 +43320,7 @@ class IdentifyFeatureLayerTree extends _ol_Identify_BaseComponent__WEBPACK_IMPOR
          * }
          */
         this._DataTreeNode = dataNode; // feature treeNode data
-        this.selectTreeNode = null;
+        this._selectTreeNode = null;
 
         //Evented Listener set Varience
         let noop = () => {}; // empty operation
@@ -43202,6 +43372,20 @@ class IdentifyFeatureLayerTree extends _ol_Identify_BaseComponent__WEBPACK_IMPOR
         }
         return this;
     }
+
+    /**
+     * @desc select the treeNode，include affect
+     * @param treeNodeData
+     */
+    selectTreeNodeByData(treeNodeData) {
+        let groupIndex = treeNodeData.groupIndex,
+            layerIndex = treeNodeData.layerIndex;
+        let _element = this.element.childNodes[0].childNodes[0];
+        let groupNode = _element.childNodes[groupIndex];
+        let layerNode = groupNode.childNodes[1].childNodes[layerIndex];
+
+        this._selectFeatureTreeNode(layerNode, treeNodeData);
+    }
     /**
      *
      * @param element
@@ -43214,17 +43398,31 @@ class IdentifyFeatureLayerTree extends _ol_Identify_BaseComponent__WEBPACK_IMPOR
             let layerGroupNode = dataNode[i];
             let li = document.createElement("li"),
                 label = document.createElement('label');
+            let ul_ChildNode = this._renderTreeNode_(layerGroupNode.layerData);
 
             li.className = 'group';
-            label.innerHTML = layerGroupNode.layerGroup;
+            label.innerHTML = layerGroupNode.layerGroup + "(" + layerGroupNode.layerData.length + ")";
+            label.onclick = e => this._treeGroupClickHandle(e, ul_ChildNode);
+
             li.appendChild(label);
-
-            let ul_ChildNode = this._renderTreeNode_(layerGroupNode.layerData);
             li.appendChild(ul_ChildNode);
-
             ul.appendChild(li);
         }
         return ul;
+    }
+    /**
+     * 树的组节点被点击处理事件
+     * @param evt
+     * @private
+     */
+    _treeGroupClickHandle(evt, ul) {
+        if (ul.classList.contains("hidden")) {
+            ul.classList.remove("hidden");
+            ul.parentNode.classList.remove("folding");
+        } else {
+            ul.classList.add("hidden");
+            ul.parentNode.classList.add("folding");
+        }
     }
     /**
      *
@@ -43241,9 +43439,12 @@ class IdentifyFeatureLayerTree extends _ol_Identify_BaseComponent__WEBPACK_IMPOR
             let li = document.createElement('li'),
                 label = document.createElement('label');
             li.className = 'layer';
+            // let icon = document.createElement("i");
+            // icon.className = "treeicon";
 
             label.htmlFor = lyrId;
-            label.innerHTML = lyrTitle;
+            label.innerText = lyrTitle;
+            // li.appendChild(icon);
             li.appendChild(label);
             //bind click、hover Event, !!! no bind this on Event !!!
             li.onclick = evt => this._FeatureTreeNodeOnClick.call(Object.assign(this, { _layer_: featureNode }), evt);
@@ -43293,8 +43494,6 @@ class IdentifyFeatureLayerTree extends _ol_Identify_BaseComponent__WEBPACK_IMPOR
         if (treeNode && !treeNode.classList.contains("select")) {
             treeNode.classList.add("select");
         }
-        //show the feature Attribute table
-        let layerCoordinate, layerGeometryType;
     }
     /**
      *
@@ -43313,7 +43512,10 @@ class IdentifyFeatureLayerTree extends _ol_Identify_BaseComponent__WEBPACK_IMPOR
                 let featureAndLayer = flCollection[i];
                 let layer = featureAndLayer[0],
                     feature = featureAndLayer[1];
-                let layerGroupTitle = layer.get("title") ? layer.get("title") : feature.id_.split(".")[0];
+                if (!layer) {
+                    continue;
+                }
+                let layerGroupTitle = layer.get("title") ? layer.get("title") : "无标题" + i;
 
                 let hasResult = result.findIndex((value, index, arr) => {
                     return value.layerGroup == layerGroupTitle && value.layerGroupSource === layer;
@@ -43330,6 +43532,21 @@ class IdentifyFeatureLayerTree extends _ol_Identify_BaseComponent__WEBPACK_IMPOR
                     let featureData = { layerName: feature.id_, layerSource: feature, groupIndex: hasResult, layerIndex: result[hasResult]["layerData"].length };
                     result[hasResult]["layerData"].push(featureData);
                 }
+            }
+        }
+        return result;
+    }
+
+    /**
+     * 获取树节点的第一个要素
+     * @param flCollection
+     */
+    static getTreeNodeFirstData(dataTreeNode) {
+        let result = null;
+        if (dataTreeNode && dataTreeNode.length > 0) {
+            let layersData = dataTreeNode[0]["layerData"];
+            if (layersData && layersData.length > 0) {
+                result = layersData[0];
             }
         }
         return result;
@@ -43411,7 +43628,51 @@ class IdentifyTitlePanel extends _ol_Identify_BaseComponent__WEBPACK_IMPORTED_MO
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABsElEQVQ4T6WUTTYDURCFv/JzDiN2IFYgVuBlB+yAFYgBeoaRDpNeQuzADvLsIFYgdtBG4ifKqZfu1mlNEt4gg66qm3urbpUAuGNtyhJrqjwyJJVVtux771LuforpM/cs0wh17zz5a+lbjdhPK1KPsq5Cwoi+LJIEwFicO9VEhKZCtxzTEW0W2BdhFxhY7gSgwrmPxdvHeZ6L9FzATQDOAzAtN0g2WXzQzftQLXInussr3ieSfotFuo/S9B1pzyzZZKEcIuxV21Ir2dm/gPexDOokZUVnFlMl8R05yvNcpDaMho+lWzA0a/DGoE5SaMm48QEwA+1nbL8RKGzz25SrgBloinLgr+S2rOrPgCW2Ey0IgNNeHcNyjSpFC2azTaWHBZhyr4Kt3IARt2a7P0tWJeWFzeogxwznsQ1ciNJGWFO48bGY5Yo3BpzRNjnAhC+hVTb7PJKLA2AkWpGaBzdsIL4j2znFr/MFOwoXtjECPUvoxTJWULPLtiF5nn5w5K8knLwvyYush2kNSVmhacFp5yzcUSNSGtBMPvzJpy7ShsCD9ZYhbZv4vwAzh9hhKHb6EwYpGyROsXicAAAAAElFTkSuQmCC"
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABr0lEQVQ4T6VUzVnCQBB9E/QsHYgVuFQgdoAdYAVuTPSqXjV82RKwAzsQK3CpwNhBPAsZv8kPLiFIwD3uzLzvvZk3QwCg9KMiOjhipk8AKRGfyv97fP22KcZMM+C7V9TNv6y5tVJDOaA/nhLQZYYBFhbUMfJv42Cg/MgApMCYuDHwQoO8EQFDBiWSuwIIzu6tuZnK5y5P6fE9CIMVwF0AtuWWkiMDziZVH+pFSkdDoDO1xk/XY+MRiJWNQ91aci4LuAKyi3pbGiUrPR4BnjBImiRJERHuJCaDsybwqzylnwaA17MmmPwy1I8KOEyaJBW2+gUsQNkCnYsmAkvb/DXlOmDJNAX40prwxVW1N2AFUm9BDrjtNTF0a9wWtLTNag8dsBmDLZgSYPEitttbMjNSwDupD7IA3M02D0SsATpi8LONw9H6UFrapgJY9WV27pq9tWT3AAijvh8lAB3LQKwJ+xVL93ydMeMByKZE3qskvMdB2ZL1XZYNqfKY4VsT5CevLJBNoS5wIKuXAnMlwW3nrLyjQmQ5oFY+3ORTpeMeUfYhvQV3tEz8X4CFQ+Keu9M/peAtJOCyBAQAAAAASUVORK5CYII="
+
+/***/ }),
+
+/***/ "./src/js/Component/Identify/component/ToolBar/img/feature-fitbound.png":
+/*!******************************************************************************!*\
+  !*** ./src/js/Component/Identify/component/ToolBar/img/feature-fitbound.png ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAB1klEQVQ4T72U0XHTUBBFz5VTgFOBRQePChAVICqIqQAZB779TeyR6MAd4FSAqcAvFUQlmO9gLbOWbRLHMDbjQV+a0XtHu/feXXHmR2fmcRAYBuMK05VE14wamnex+jg/5udrYCgmI7AYq+uZwwR9MxXQ1Ei50Huz5jXYEl30YvnhNhQ3GVIPUwqWgb7HajhqgYPJHGMOyVRq7neX6byB5AtaVbC+GB3+u1L7YSgKugbLWA6zPWAzl5Jvi3Io/4ngVQtPUqCM1fAyFGUqNTOzJI/VoN51KLIDwGcV5pBU2wr9wraj7ftfga5BGExmmPVidf2yPXyTedVm9tY1Ph1YlF1pVRtMsc4ImgXiLpbDfKudy3F0hW1V41zSVzObS7ww6wT4GeAixmqwPBnYtjWeCl25KZ5Bj5ZkfTMWoIB30MYllezS3X5mimu4a6sou/CQxupTfBzoUHwOUmdqZi5H7d/XOT7k8h4whVXYGvEEeqqGW3dRMnos/j+bci7gvSTXxsPrYxbacWOKNMd8VgfLo3PoY7Zp6c6gxmjNED6f628eI8QMo488p+v5DpIyg1vP6mbblCk8dPcdfer4KtvAc1AP2sXQLhVfccnMO/g/C/aYRfqnM78A2hZqJJgRJh0AAAAASUVORK5CYII="
+
+/***/ }),
+
+/***/ "./src/js/Component/Identify/component/ToolBar/img/table-hidden.png":
+/*!**************************************************************************!*\
+  !*** ./src/js/Component/Identify/component/ToolBar/img/table-hidden.png ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAA/klEQVQ4T+WUwVHDMBRE37oBKMFUgDrAJUAHKcEZwj13wsQlpAMowXTgVEBKIA14GXnAyGbCweYAg26aWT1p9/8v8cNLkReWmwpzOYst9s12Vb4DH2rME7TNNGgWENfN9rZIgO26qe7qKcBQ3hcoW4+AvACHKUAgR1wMgIJzw+sHMO7BudEgBuEAOoy1cf+t5dRG+uqwjHkP4zlh+bTodwAFVxML0h0zPP/3DLHPSPqQrg+Vg0fjqACOA9D3bKeVjsMMo8j6nBQ5FxS2dmmxJC8M9VgbL/9rRcGPIuvzMm3ALKSsTC3bbYXYfdGim8TypoIY9pzlpv9g52DGZ98AkCEcJIZ2xHYAAAAASUVORK5CYII="
+
+/***/ }),
+
+/***/ "./src/js/Component/Identify/component/ToolBar/img/tree-clear.png":
+/*!************************************************************************!*\
+  !*** ./src/js/Component/Identify/component/ToolBar/img/tree-clear.png ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABKklEQVQ4T+2UzVHDMBCF37Mb8BFO8ZUTKsElUAJ0II8Tzj4nZKwOSAkpwSWICnBO5OgG4mVkYwiOnJ8ZuEUXa6TVp/XqvSX+eNDHU7qIgN0rgGjkvhoIn6xJ6+H+CHCRkIERabQP2O1hZU1mvEClXx4A3gMSg5wAEkmDOwb48AGlwS3JLYh3iGwAVoC8WTNdtxl+ARWABEAsIluSN8fLKzVAV5IKQAmI/Qb2B5Ve5m5uTdZ+Tw1f/K8aDgOUnitrnq3SRdxdlFb9WvdnhwmMApVeJGCQ2yJL9g+qdFlCmtyaWXkFtm94reGPrv5BNm3HSZydnJg7YTuRO9+Hpes0F+nwlO0uccqE5OocoIg8Atjse38gm7kCw4MedxQuO+1K0cd4G+w52Y3FfAIOYTUkWlIA2wAAAABJRU5ErkJggg=="
+
+/***/ }),
+
+/***/ "./src/js/Component/Identify/component/ToolBar/img/tree-hidden.png":
+/*!*************************************************************************!*\
+  !*** ./src/js/Component/Identify/component/ToolBar/img/tree-hidden.png ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABnElEQVQ4T72UT27TQBjF35sNFULCnIBwARjfIEfIkh3ZsUM2dmGbXRGNNcMN0htk0QO4J/BwgxwhF0geGpuEKm0mAaR6Y80f//y+N28+4vdjCzci9Xo3PvXu3Oe7x/ZwN5mX87XAcAoU1wlZSZPgL9vD/feAjTpX7ccpsC2bFtrOnh4IcHxOydLWAyqTCm059wDtDkggAzQ66qvMNPhyddTDwwVbXI9BMwuuOkv1PSGPF5kC2sJl4OYDxAzUOrj6x38B87IJAtYQWlJTAW1w9XSI1JHn7afr98aYKwCLgy0ZoY+dr5/HeVt8t6RpO1dn5wC/HQIlXBiDr5J5FXy5jtaQXHSuHiWBSQ/7YOslwHhTJgBugq9m/wwcSm2iZ1HVKvhqb8tRD580NoPCmFO+g7Z3wX/ZN5W0QtAFX+cPQl82y77jgIHQWKI/6WGE9HkTOpBLxtwBkDYvSHP755TnE/Q/rt4kD2Uoy2XAtgCxv36SLkjlwV0++6scprpOXs5Xg3K0EKYgfp68KckGW7gRuCn67iQsAbOIIY/f/AKycdUVuLYeXgAAAABJRU5ErkJggg=="
 
 /***/ }),
 
@@ -43430,9 +43691,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const boxSelectImagePath = __webpack_require__(/*! ./img/box-select.png */ "./src/js/Component/Identify/component/ToolBar/img/box-select.png");
-
+const treeClearImagePath = __webpack_require__(/*! ./img/tree-clear.png */ "./src/js/Component/Identify/component/ToolBar/img/tree-clear.png");
+const treeHiddenImagePath = __webpack_require__(/*! ./img/tree-hidden.png */ "./src/js/Component/Identify/component/ToolBar/img/tree-hidden.png");
+const tableHiddenImagePath = __webpack_require__(/*! ./img/table-hidden.png */ "./src/js/Component/Identify/component/ToolBar/img/table-hidden.png");
+const featureFitImagePath = __webpack_require__(/*! ./img/feature-fitbound.png */ "./src/js/Component/Identify/component/ToolBar/img/feature-fitbound.png");
+/**
+ * OpenLayers Feature Identify Control. Toolbar Component
+ * @constructor
+ * @param {Object} element, the component renderby:
+ */
 class IdentifyToolbar extends _ol_Identify_BaseComponent__WEBPACK_IMPORTED_MODULE_0__["default"] {
-    constructor(element, options) {
+    constructor(element) {
         super(element);
 
         this.tools = [];
@@ -43441,18 +43710,19 @@ class IdentifyToolbar extends _ol_Identify_BaseComponent__WEBPACK_IMPORTED_MODUL
         //TODO 完善更多的功能
         this.defaultOptions = {
             name: null,
-            handle: null,
             image: null,
+            handle: null,
             imageUrl: null,
             imageFocus: null,
             className: ""
         };
         this.defaultImageEmun = {
             boxSelect: boxSelectImagePath,
-            clearTree: boxSelectImagePath
+            clearTree: treeClearImagePath,
+            hideTree: treeHiddenImagePath,
+            hideTable: tableHiddenImagePath,
+            fitFeature: featureFitImagePath
         };
-
-        this._options = this._extend(this._options || {}, this.defaultOptions);
     }
     initComponent() {
         let toolbarContanier = this.toolbarContanier = document.createElement("div");
@@ -43467,7 +43737,7 @@ class IdentifyToolbar extends _ol_Identify_BaseComponent__WEBPACK_IMPORTED_MODUL
      * @private
      */
     _addToolToToolbar(tool) {
-        let _tool = new _ol_Identify_Tool__WEBPACK_IMPORTED_MODULE_1__["default"](this.toolbarContanier, { iconImage: tool });
+        let _tool = new _ol_Identify_Tool__WEBPACK_IMPORTED_MODULE_1__["default"](this.toolbarContanier, tool);
         _tool.initComponent();
 
         return _tool;
@@ -43478,19 +43748,32 @@ class IdentifyToolbar extends _ol_Identify_BaseComponent__WEBPACK_IMPORTED_MODUL
      * @param options
      */
     registerExtraTool(options) {
-        let _options = options || {};
-        if (!_options.name || !_options.handle) {
+        let _options = this._extend(this.defaultOptions, options || {});
+        if (!_options.name && !_options.handle) {
             throw new Error("registerExtraTool 的参数不正确，必须有name和handle参数!");
         }
-        let handle = _options.handle;
+        let handle = _options.handle ? _options.handle : null;
         let iconImage = _options.imageUrl ? _options.imageUrl : _options.image ? this.defaultImageEmun[_options.image] : null;
         let className = _options.className ? _options.className : null;
 
-        this.tools.push(this._addToolToToolbar({
+        let _tool = this._addToolToToolbar({
             handle: handle,
             iconImage: iconImage,
-            classList: className
-        }));
+            className: className
+        });
+        this.tools.push(_tool);
+
+        return _tool;
+    }
+
+    /**
+     * @desc reset all of the tools
+     * @public
+     */
+    resetTool() {
+        for (let i = 0, length = this.tools.length; i < length; i++) {
+            this.tools[i].setActive(false);
+        }
     }
 }
 
@@ -43509,27 +43792,67 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ol_Identify_BaseComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ol-Identify-BaseComponent */ "./src/js/Component/Identify/component/ol-Identify-BaseComponent");
 
 const defaultImagePath = __webpack_require__(/*! ./img/box-select.png */ "./src/js/Component/Identify/component/ToolBar/img/box-select.png");
-
+/**
+ * OpenLayers Feature Identify Control. Tool Component
+ * @constructor
+ * @param {Object} element, the component renderby:
+ */
 class IdentifyTool extends _ol_Identify_BaseComponent__WEBPACK_IMPORTED_MODULE_0__["default"] {
     constructor(element, options) {
         super(element);
         let _options = options || {};
+        this.toolContaniner = null;
 
         this.toolClassName = _options.className ? _options.className : "toolContanier";
         this.iconImage = _options.iconImage ? _options.iconImage : defaultImagePath;
         this.handle = _options.handle ? _options.handle : function () {};
     }
     initComponent() {
-        let toolContanier;
+        ;
 
-        toolContanier = document.createElement("a");
+        let toolContanier = this.toolContaniner = document.createElement("a");
         toolContanier.className = this.toolClassName;
         toolContanier.style.backgroundImage = "url(" + this.iconImage + ")";
         toolContanier.onclick = this.handle;
 
         this.element.appendChild(toolContanier);
     }
+
+    /**
+     * 设置tool为激活状态，增加select颜色
+     * @param active
+     */
+    setActive(active) {
+        if (!active) {
+            if (this.toolContaniner.classList.contains("select")) {
+                this.toolContaniner.classList.remove("select");
+            }
+        } else {
+            if (!this.toolContaniner.classList.contains("select")) {
+                this.toolContaniner.classList.add("select");
+            }
+        }
+    }
+
+    /**
+     * 获取tool的状态
+     * @return {boolean}是否是激活状态
+     */
+    getActive() {
+        return this.toolContaniner.classList.contains("select");
+    }
 }
+
+/***/ }),
+
+/***/ "./src/js/Component/Identify/component/TypeSelect/img/icon-layer.png":
+/*!***************************************************************************!*\
+  !*** ./src/js/Component/Identify/component/TypeSelect/img/icon-layer.png ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAYAAAACsSQRAAABXUlEQVQ4T52T223CQBBFzzUFhA5CCZsKQgfQgd1B7EjJd74JCNOB6QA6IB24BKggbgBPtH6AzUOK2J+Vdlez99y5I+4sFy9HUIZgY9AOgnWeJvtbz3V56OL5FAgl+b23zGyDgixfvm+7F1URFy+HUL4BkcTonrr23Iw9shQbeHWFXDJPhXyBh5YZqVyy2AleH6oAGPw0ODOHglgo/G8xw9ZYmebpZ666CxSerfEmkiwGPV8XtIOZUgiy5n3ln16SeQF6MiODcp2nH7va7O9xrY5J/atlvTuCUCICO6h+rKhFuXS+VVOp1DHEFLcdbJFOOblEMaMANpIyM4uAqcTQ/9xFqnBcsthg/PZR5tNaHZNTNmBbG9nBJaga0ctJg/KFDbZn48oxBDsf+TtIq25iT11pUeC48i108czBwAfyJtLt2emgeHVnI/tILepVkU43/BRHiDGGn2KfjZtT/AeIMtX65+VV2AAAAABJRU5ErkJggg=="
 
 /***/ }),
 
@@ -43540,7 +43863,18 @@ class IdentifyTool extends _ol_Identify_BaseComponent__WEBPACK_IMPORTED_MODULE_0
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAmklEQVQ4T6WSURHCMBAFtw5wAhKCA3CAhCflOUACSAAHlYAEcMCkk3RS0vCR5vvt7eXuBjrf0MmxDZR0At62H/86SLmX7XEyShqBPXC2fV+DJV2AK/C0HTIYjbdoBY6xYgkX0AcIszFZc8UFvAbF/GI4RWiCgUNqbzblTqqp/sA7oIIqY67Waq/8d3OPkkIMtla07QB6zq7b+AXPQEUPXxwNoQAAAABJRU5ErkJggg=="
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAs0lEQVQoU5VRwRGCQAzcDA1QgiWkBEqwA6GDuzn1q34dGdIBWIGWYAemIYgDjAyiPi7PZDfZ3RAiiyLxiCewq1KgO6gE/+/aiGlrIPHErloRtWpGN5VQ/CKxL+8Ey8wSHiSxOzNR8jRDsySxvzQErM26TGWvkwd2ZU6E2gwnlXAcF029QiU0fe/D9BwwDMcFXiXIW+pXSqME2vQAg1212uZzXz9j7T0BlKrsHssQ4v8Q++kXzw9Hq78Z4eUAAAAASUVORK5CYII="
+
+/***/ }),
+
+/***/ "./src/js/Component/Identify/component/TypeSelect/img/tree-ldashed.png":
+/*!*****************************************************************************!*\
+  !*** ./src/js/Component/Identify/component/TypeSelect/img/tree-ldashed.png ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAiCAYAAAA3WXuFAAAA+ElEQVRYR+1YsQ3CMBB8J9CzAZkAPEJGYQJkCFCnJrLiERgFapDwCBmBnoigVwjpSOFHuiKuXnL8Ov3dn99RFLi0sbl3WR6Y5ntchSbSpki9259D83TnBQCViXebCggQGGVSlRGkDE5DI2W/VaKNXXmXnaS0JND2cBoafWhIQ3AVggME5kPagFVosba7OFbXe7m9MDilmnkbFynRxLMClWqW3T7Rc+bdwWtz1ETTB08Kn28rjoN9iAFF0evGMxEDIqqTNu4BEdW63/8zICmHFrzt4UQ9Xh1DTg1HGZgPAT6DwCgD9CG4tgebqQEpA6sQYNvjiVr0h9Ubtc2rI74qi/AAAAAASUVORK5CYII="
 
 /***/ }),
 
@@ -43589,67 +43923,327 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ol_Identify_BaseComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ol-Identify-BaseComponent */ "./src/js/Component/Identify/component/ol-Identify-BaseComponent");
 
 
+
+const LayerIconImage = __webpack_require__(/*! ./img/tree-ldashed.png */ "./src/js/Component/Identify/component/TypeSelect/img/tree-ldashed.png");
+const LayerGroupIconImage = __webpack_require__(/*! ./img/icon-layer.png */ "./src/js/Component/Identify/component/TypeSelect/img/icon-layer.png");
 /**
  * OpenLayers Feature Identify Control. LayerTypeSelect Component
  * @constructor
  * @param {Object} element, the component renderby:
  */
 class IdentifyLayerTypeSelect extends _ol_Identify_BaseComponent__WEBPACK_IMPORTED_MODULE_1__["default"] {
-        constructor(element) {
-                super(element);
-                // the option element type Enum
-                this.optionEnum = { ALLLAYER: "all", TOPMOST: "topmost", VISIBLE: "visible" };
-                this.optionTextEnum = { ALLLAYER: "所有的图层", TOPMOST: "最上面的图层", VISIBLE: "可见的图层" };
-                //select element
-                this._layerTypeSelect = null;
+    constructor(element) {
+        super(element);
+        // the option element type Enum
+        this.optionEnum = { ALLLAYER: "all", TOPMOST: "topmost", VISIBLE: "visible" };
+        this.optionTextEnum = { ALLLAYER: "所有的图层", TOPMOST: "最上面的图层", VISIBLE: "可见的图层" };
+        //select element
+        this._layerTypeSelect = null;
+        this._layerTypeSelectControl = null;
+        this._layerTypeOptionContaniner = null;
+        this.valueFieldName = "dataValue";
+
+        this._curSelected = null;
+        this._selectLiElement = null;
+
+        this.maxHeight = 200;
+
+        this.defaultImage = {
+            "layer": LayerIconImage,
+            "layergroup": LayerGroupIconImage
+        };
+    }
+
+    /**
+     * @public
+     * @desc create the Layer type condition selected element
+     * @returns {HtmlElement} select Element
+     */
+    initComponent() {
+        let selectContainer = this._layerTypeSelectControl = document.createElement("div");
+        selectContainer.className = "selectContainer";
+
+        let curSelectContent = this._createCurrentOption();
+
+        let selectContentContainer = this._layerTypeSelect = document.createElement("div");
+        selectContentContainer.className = "selectElement";
+
+        let selectContent = this._layerTypeOptionContaniner = this._createSelect();
+
+        let option_topmost = this._createOption(this.optionEnum.TOPMOST, this.optionTextEnum.TOPMOST);
+        let options_visible = this._createOption(this.optionEnum.VISIBLE, this.optionTextEnum.VISIBLE);
+        let options_all = this._createOption(this.optionEnum.ALLLAYER, this.optionTextEnum.ALLLAYER);
+
+        selectContent.appendChild(option_topmost);
+        selectContent.appendChild(options_visible);
+        selectContent.appendChild(options_all);
+        selectContainer.appendChild(curSelectContent);
+
+        selectContentContainer.appendChild(selectContent);
+        document.body.appendChild(selectContentContainer);
+
+        this.selectOption(options_all);
+
+        this.element.appendChild(selectContainer);
+        return selectContainer;
+    }
+
+    /**
+     * 选择某个选项
+     * @param optionElement
+     * @return {IdentifyLayerTypeSelect}
+     */
+    selectOption(optionElement) {
+        let copyElement = document.createElement("label");
+        copyElement.setAttribute(this.valueFieldName, optionElement.getAttribute(this.valueFieldName));
+        copyElement.innerText = optionElement.childNodes[0].innerText;
+
+        this._selectLiElement = copyElement;
+        this._curSelected = copyElement;
+
+        let citeElement = this._layerTypeSelectControl.childNodes[0];
+        let oldOptionElement = citeElement.childNodes[0];
+
+        citeElement.removeChild(oldOptionElement);
+        citeElement.appendChild(copyElement);
+
+        return this;
+    }
+
+    /**
+     * 增加选项
+     * @param value
+     * @param text
+     * @param iconName
+     */
+    addOption(value, text, iconName) {
+        let option = this._createOption(value, text, iconName);
+        this._layerTypeOptionContaniner.appendChild(option);
+    }
+
+    /**
+     * 增加树节点的选项
+     * @param treeNodes
+     * @param title 是否需要分割线，分割线的标题，有标题则有分割线
+     * treeNodes {
+     *
+     * }
+     */
+    addTreeNodeOption(treeNodes, title) {
+        if (treeNodes && treeNodes.length > 0) {
+            let option = this._addTreeNodeOption(treeNodes);
+            let separateline = this._createSeparateline(title);
+            this._layerTypeOptionContaniner.appendChild(separateline);
+            this._layerTypeOptionContaniner.appendChild(option);
+        }
+    }
+
+    /**
+     * 增加树节点的option选项
+     * @param treeNodes
+     * @param element
+     * @private
+     */
+    _addTreeNodeOption(treeNodes) {
+        let treeContainer = document.createElement("ul");
+        treeContainer.className = "TreeContainerElement";
+
+        for (let i = 0, length = treeNodes.length; i < length; i++) {
+            let treeNode = treeNodes[i];
+
+            let treeNodeElement = this._createOption(treeNode.value ? treeNode.value : treeNode.title, treeNode.title, treeNode.icon, true);
+
+            if (treeNode.childLayer) {
+                let childULElement = this._addTreeNodeOption(treeNode.childLayer);
+                treeNodeElement.appendChild(childULElement);
+            }
+            treeContainer.appendChild(treeNodeElement);
+        }
+        return treeContainer;
+    }
+
+    /**
+     * 展示和隐藏面板
+     * @param evt
+     */
+    showorhideOptionPanel(evt) {
+        if (!this._layerTypeSelect.classList.contains("selectElementshown")) {
+            this.showOptionPanel(evt);
+        } else {
+            this.hideOptionPanel(evt);
+        }
+    }
+    /**
+     * 展示选择面板
+     * @param evt
+     */
+    showOptionPanel(evt) {
+        if (!this._layerTypeSelect.classList.contains("selectElementshown")) {
+            this._layerTypeSelect.classList.add("selectElementshown");
         }
 
-        /**
-         * @public
-         * @desc create the Layer type condition selected element
-         * @returns {HtmlElement} select Element
-         */
-        initComponent() {
-                let optionsContainer = document.createElement("div");
-                optionsContainer.className = "selectContainer";
-                let selectContent = this._layerTypeSelect = document.createElement("select");
-                selectContent.setAttribute("name", "identify-layer-type");
-
-                let option_topmost, options_visible, options_all;
-                option_topmost = document.createElement("option");
-                option_topmost.value = this.optionEnum.TOPMOST;
-                option_topmost.innerText = this.optionTextEnum.TOPMOST;
-
-                options_visible = document.createElement("option");
-                options_visible.value = this.optionEnum.VISIBLE;
-                options_visible.innerText = this.optionTextEnum.VISIBLE;
-
-                options_all = document.createElement("option");
-                options_all.value = this.optionEnum.ALLLAYER;
-                options_all.innerText = this.optionTextEnum.ALLLAYER;
-                options_all.selected = true;
-
-                selectContent.appendChild(option_topmost);
-                selectContent.appendChild(options_visible);
-                selectContent.appendChild(options_all);
-                optionsContainer.appendChild(selectContent);
-
-                this.element.appendChild(optionsContainer);
-
-                return optionsContainer;
+        let div_top = this._getOffsetTopByBody(this._layerTypeSelectControl),
+            div_left = this._getOffsetLeftByBody(this._layerTypeSelectControl);
+        //自动适配位置
+        if (div_top + this._layerTypeSelectControl.offsetHeight + this.maxHeight > document.body.offsetHeight) {
+            this._layerTypeSelect.style.left = div_left + 'px';
+            this._layerTypeSelect.style.top = div_top - this._layerTypeSelect.offsetHeight + 'px';
+        } else {
+            this._layerTypeSelect.style.left = div_left + 'px';
+            this._layerTypeSelect.style.top = div_top + this._layerTypeSelectControl.offsetHeight + 'px';
         }
-        /**
-         * @public
-         * @desc get the LayerType Select Element has selectd Value
-         * @returns {string} selected options Value
-         */
-        getLayerTypeSelectValue() {
-                let select = this._layerTypeSelect;
-                let lastIndex = select.selectedIndex;
-                let lastValue = select.options[lastIndex].value;
+    }
 
-                return lastValue;
+    /**
+     * 隐藏选择面板
+     * @param evt
+     */
+    hideOptionPanel(evt) {
+        if (this._layerTypeSelect.classList.contains("selectElementshown")) {
+            this._layerTypeSelect.classList.remove("selectElementshown");
         }
+    }
+
+    /**
+     * 获取要素到body顶部的像素
+     * @param el
+     * @return {number}
+     * @private
+     */
+    _getOffsetTopByBody(el) {
+        let offsetTop = 0;
+        while (el && el.tagName !== 'BODY') {
+            offsetTop += el.offsetTop;
+            el = el.offsetParent;
+        }
+        return offsetTop;
+    }
+
+    /**
+     * 获取要素到bodu最左边的像素值
+     * @param el
+     * @return {number}
+     * @private
+     */
+    _getOffsetLeftByBody(el) {
+        let offsetLeft = 0;
+        while (el && el.tagName !== 'BODY') {
+            offsetLeft += el.offsetLeft;
+            el = el.offsetParent;
+        }
+        return offsetLeft;
+    }
+    /**
+     * 创建当前选择的内容
+     * @private
+     */
+    _createCurrentOption() {
+        let container = document.createElement("cite");
+        let lable = this._curSelected = document.createElement("lable");
+        lable.innerText = "下拉选择";
+
+        container.appendChild(lable);
+        container.onclick = e => this.showorhideOptionPanel(e);
+
+        return container;
+    }
+    /**
+     * 创建仿照Select要素
+     * @return {HTMLUListElement}
+     * @private
+     */
+    _createSelect() {
+        let selectElement = document.createElement("ul");
+
+        selectElement.onmouseleave = e => this.hideOptionPanel(e);
+
+        return selectElement;
+    }
+
+    /**
+     * 创建仿照option要素
+     * @param value
+     * @param text
+     * @return {HTMLLIElement}
+     * @private
+     */
+    _createOption(value, text, iconName, isTreeNode) {
+        let optionElement = document.createElement("li");
+        optionElement.className = !isTreeNode ? "optionElement" : "treeNodeElement";
+        optionElement.setAttribute(this.valueFieldName, value);
+        optionElement.onclick = e => {
+            this.selectOption(optionElement);
+            this.hideOptionPanel(e);
+            e.stopPropagation();
+        };
+
+        let aElement = document.createElement("a");
+
+        if (this.defaultImage[iconName]) {
+            let iconElement = document.createElement("img");
+            iconElement.src = this.defaultImage[iconName];
+            //如果是树节点，则增加折叠事件
+            isTreeNode && (iconElement.onclick = function (e) {
+                let targetElement = e.target;
+                while (targetElement.tagName != "LI") {
+                    targetElement = targetElement.parentNode;
+                }
+                for (let i = 0, length = targetElement.childElementCount; i < length; i++) {
+                    let childElement = targetElement.childNodes[i];
+                    if (childElement.tagName == "UL") {
+                        if (childElement.classList.contains("hidden")) {
+                            childElement.classList.remove("hidden");
+                        } else {
+                            childElement.classList.add("hidden");
+                        }
+                        break;
+                    }
+                }
+                e.stopPropagation();
+            });
+            aElement.appendChild(iconElement);
+        }
+
+        let textContent = document.createElement("lable");
+        textContent.innerText = text;
+        // textContent.setAttribute(this.valueFieldName, value);
+
+        aElement.appendChild(textContent);
+        optionElement.appendChild(aElement);
+
+        return optionElement;
+    }
+
+    /**
+     * 创建分割线
+     * @param text 分割线标题
+     * @return {HTMLSpanElement}
+     * @private
+     */
+    _createSeparateline(text) {
+        let separateline = document.createElement("div");
+        separateline.className = "Separateline";
+
+        if (text) {
+            let bBefore = document.createElement("b");
+            let bAfter = document.createElement("b");
+            let textContanier = document.createElement("span");
+            textContanier.innerText = text;
+            separateline.appendChild(bBefore);
+            separateline.appendChild(textContanier);
+            separateline.appendChild(bAfter);
+        }
+        return separateline;
+    }
+
+    /**
+     * @public
+     * @desc get the LayerType Select Element has selectd Value
+     * @returns {string} selected options Value
+     */
+    getLayerTypeSelectValue() {
+        return this._curSelected.getAttribute(this.valueFieldName) ? this._curSelected.getAttribute(this.valueFieldName) : null;
+    }
 }
 
 /***/ }),
@@ -43675,6 +44269,9 @@ class IdentifyBaseComponent{
     }
     initComponent(){
         return this;
+    }
+    destroyComponent(){
+        this.element.parentNode && this.element.parentNode.removeChild(this.element);
     }
     _extend(destination, source){
         for( let property in source ){
@@ -43705,28 +44302,6 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACo
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAC/0lEQVRYR+2XQVIaQRSG/zdU4QKrYk6QAVaJQ8WcIHgCyQmCJwjuhI1kM+MSTxBzAvEEkhOIhSarGSc3wKq4kCrmpXoUhaF7ugdIyoUs6e73vvnf6/deE57pj54pF17AskZmYcWu7fbGbe5uh4EaARvMtEWEjXsA7jEwJKBbGK+dFsP28J+D/bL37bFlHYBQN3fGvdyYd9+Gh6HpmUyKXZZaHRC+mBqf28fccQJvz+S8EdhD2E4AqkqNMo5E6CZrIrTKD2D0C1F+WxdeLVgMZY3OQNiSQTHjayVw28m1q3KrzsA3xZnhepQvpsFpwS7LrS6AHZX8PI62K+FhL7ke52LOulaGjdF3AveDaj0VbFBqtYlwkJYTKrAru7XFOZyn5hPjyAnchmyPEkyE8I81un4qAXIXKrCBvV+lnHWmS/TcOCrKbqsS7LLcPAbos86wBf70zvdEuGd+pmAAf3d8b670KMEGpeaQiF7pwFTJbw4GFMb518mLIAX7WW7WItCJDiqu8QvcyqRdAnY3ffd4+n8pmEnST4woFTO4OFMgp47v1vRg5WaPQB+XUSzTx4F/VHxvpnjLFcsCJjEqPigLGJhDJ/CKq1VMAZa1rzq+OyPS8oox5trLfRu7OweRbZIOYL5wAm+m5UnBdG1ozhmjL2avxwsB1FS9Vdo7jXMs240yEiV903yRlSpm1OeSnhi/mTgkFiMPvc9CK+se6pZUaoUgvDFywLznBF5nsjdbgeabSuA9jORP3lJakn6yuDcj73XG5UIxYaROF7fWqK9TbZmxh5lv1qM1WzYwps5jJiFZBgyJFNAW2OkN+kK5aCjl5ya+taO12KibzZjRqATukXHyM18UorXqUjP/xJlWOUYfxEMwiReS9OGSdlkko5BRQYg3xTnHJN6WZmVkyrRIdIuokZy7VN6NQpk8HJcCoG4EKAovcLwe5Tu6t2Sm5E/TM+4QFldF6Bh4bNgEhMwUWhG6m6HbN4+JQYFdxNgqzywUylUCrDTHXsD+hwJZffwFjMiHNpQsBNUAAAAASUVORK5CYII="
-
-/***/ }),
-
-/***/ "./src/js/Component/Identify/img/identify_icon_maxmize.png":
-/*!*****************************************************************!*\
-  !*** ./src/js/Component/Identify/img/identify_icon_maxmize.png ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAfElEQVQ4T+2U0QmAMAwFr5PpSNlA3SAjtZtJhBahodXSLzGQr5ALeeQlMDnCZB4FKCIrsAwOSKoarfcO3IFtEHioqvW7wARc0x5E3qoJLMUeUETyVj8Q8PT4NawU+M7ZmO3eWM/s13RK71q8ugu0SZYjEav3NULxeqZ/7BOeSIYV4Eo8qAAAAABJRU5ErkJggg=="
-
-/***/ }),
-
-/***/ "./src/js/Component/Identify/img/identify_icon_minimize.png":
-/*!******************************************************************!*\
-  !*** ./src/js/Component/Identify/img/identify_icon_minimize.png ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAb0lEQVQ4T+2R0QmAMBBDXzdwBTfQDRwpo2SkbqAbuIIjSP2qILRgPywYOAJ3IZBcoDFCYz9+w/eNdtahpAHYgcQ1OIDRduILt8iSJmCtcco0s+3t0TAtJS1AmhpE2zEXdvaUmowlzR+51FD5/v0OT1ABEBU/3co/AAAAAElFTkSuQmCC"
 
 /***/ }),
 
@@ -43775,13 +44350,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ol_control_control__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/control/control */ "./node_modules/ol/control/control.js");
 /* harmony import */ var ol_observable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/observable */ "./node_modules/ol/observable.js");
 /* harmony import */ var _utils_FeatureHighLight_ol_FeatureHighLight_Utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/FeatureHighLight/ol-FeatureHighLight-Utils */ "./src/js/Component/Identify/utils/FeatureHighLight/ol-FeatureHighLight-Utils.js");
-/* harmony import */ var _utils_FeatureLayerHelper_ol_FeatureLayer_Utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/FeatureLayerHelper/ol-FeatureLayer-Utils */ "./src/js/Component/Identify/utils/FeatureLayerHelper/ol-FeatureLayer-Utils.js");
+/* harmony import */ var _utils_FeatureLayer_ol_FeatureLayer_Utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/FeatureLayer/ol-FeatureLayer-Utils */ "./src/js/Component/Identify/utils/FeatureLayer/ol-FeatureLayer-Utils.js");
 /* harmony import */ var _utils_MapSelection_ol_MapSelection_Utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/MapSelection/ol-MapSelection-Utils */ "./src/js/Component/Identify/utils/MapSelection/ol-MapSelection-Utils.js");
-/* harmony import */ var _component_TypeSelect_ol_Identify_TypeSelect__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./component/TypeSelect/ol-Identify-TypeSelect */ "./src/js/Component/Identify/component/TypeSelect/ol-Identify-TypeSelect.js");
-/* harmony import */ var _component_LayerTree_ol_Identify_FeatureLayerTree__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./component/LayerTree/ol-Identify-FeatureLayerTree */ "./src/js/Component/Identify/component/LayerTree/ol-Identify-FeatureLayerTree.js");
-/* harmony import */ var _component_AttrTable_ol_Identify_FeatureAttrTable__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./component/AttrTable/ol-Identify-FeatureAttrTable */ "./src/js/Component/Identify/component/AttrTable/ol-Identify-FeatureAttrTable.js");
-/* harmony import */ var _component_ToolBar_ol_Identify_Toolbar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./component/ToolBar/ol-Identify-Toolbar */ "./src/js/Component/Identify/component/ToolBar/ol-Identify-Toolbar.js");
-/* harmony import */ var _component_TitlePanel_ol_Identify_TitlePanel__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./component/TitlePanel/ol-Identify-TitlePanel */ "./src/js/Component/Identify/component/TitlePanel/ol-Identify-TitlePanel.js");
+/* harmony import */ var _utils_MapCoordinate_ol_MapCoordinate_Utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utils/MapCoordinate/ol-MapCoordinate-Utils */ "./src/js/Component/Identify/utils/MapCoordinate/ol-MapCoordinate-Utils.js");
+/* harmony import */ var _component_TypeSelect_ol_Identify_TypeSelect__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./component/TypeSelect/ol-Identify-TypeSelect */ "./src/js/Component/Identify/component/TypeSelect/ol-Identify-TypeSelect.js");
+/* harmony import */ var _component_LayerTree_ol_Identify_FeatureLayerTree__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./component/LayerTree/ol-Identify-FeatureLayerTree */ "./src/js/Component/Identify/component/LayerTree/ol-Identify-FeatureLayerTree.js");
+/* harmony import */ var _component_AttrTable_ol_Identify_FeatureAttrTable__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./component/AttrTable/ol-Identify-FeatureAttrTable */ "./src/js/Component/Identify/component/AttrTable/ol-Identify-FeatureAttrTable.js");
+/* harmony import */ var _component_ToolBar_ol_Identify_Toolbar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./component/ToolBar/ol-Identify-Toolbar */ "./src/js/Component/Identify/component/ToolBar/ol-Identify-Toolbar.js");
+/* harmony import */ var _component_TitlePanel_ol_Identify_TitlePanel__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./component/TitlePanel/ol-Identify-TitlePanel */ "./src/js/Component/Identify/component/TitlePanel/ol-Identify-TitlePanel.js");
+
+
+
 
 
 
@@ -43816,14 +44395,12 @@ class identify extends ol_control_control__WEBPACK_IMPORTED_MODULE_1__["default"
         if (this._isTouchDevice()) {
             this.closeClassName += ' touch';
         }
-        this.minimizeClassName = "minimizeBtn";
-        this.maximizeClassName = "maxmizeBtn";
         //declare the container positon
         this.position = !!options.position ? options.position : "top";
 
         element.className = this.closeClassName + " " + this.position;
 
-        //Evented Listeners Conventent to register and unregister
+        //Map Evented Listeners Conventent to register and unregister
         this.mapListeners = [];
 
         //declare other variance
@@ -43835,6 +44412,7 @@ class identify extends ol_control_control__WEBPACK_IMPORTED_MODULE_1__["default"
         this._toolbarContanier = null; // toolbar element
         this._layerTypeSelect = null; // layer type 's select element
         this._layerFeatureTree = null; // layer feature component
+        this._featureSelected = null; // feature which feature tree has selected
         this._featureAttrTable = null; // feature Attribute table component
 
         this.featureSelectedTree = null; // the tree for feature which has selected
@@ -43842,10 +44420,21 @@ class identify extends ol_control_control__WEBPACK_IMPORTED_MODULE_1__["default"
         this.featureAttributeTable = null; // the feature Attribute table element
         this.featureAttributeContainer = null; // thre feature Attribute container element
 
+        this.featureTreeHiddenTool = null; //featureTreeHiddenTool,which control the featureTree hidden
+        this.featureAttrTableHiddenTool = null; //featureAttrTableHiddenTool, which control the featureAttrTabl hidden
+    }
+
+    /**
+     * @desc show the Identify component
+     * @public
+     * @return {identify}
+     */
+    showIdenditfy() {
         //create the entry Button
-        this._initEntryBtnElement(element);
+        this._initEntryBtnElement(this.element);
         //create the result infoWindow
-        this._initResultInfoWindow(element);
+        this._initResultInfoWindow(this.element);
+        return this;
     }
     /**
      * @private
@@ -43928,12 +44517,8 @@ class identify extends ol_control_control__WEBPACK_IMPORTED_MODULE_1__["default"
         this.highlight.startup();
         //add Map click listener for select the region for features
         // open the result infoWindows
-        this.mapListeners.push(this.map_.on("singleclick", evt => this._mapSingleClickHandle(evt)));
-        //bind draw polygon select feature
         this._mapDrawHelper = new _utils_MapSelection_ol_MapSelection_Utils__WEBPACK_IMPORTED_MODULE_5__["default"](this.map_);
-        this._mapDrawHelper.startDrawRectangle(element => {
-            console.log(element);
-        });
+        this.mapListeners.push(this.map_.on("singleclick", evt => this._mapSingleClickHandle(evt)));
     }
     /**
      * @private
@@ -43945,14 +44530,16 @@ class identify extends ol_control_control__WEBPACK_IMPORTED_MODULE_1__["default"
         mapElement.style.cursor = "default";
         //close the highlight layer
         this.highlight.close();
-        //close the DrawRectangle Event
-        this._mapDrawHelper.closeDrawRectangle();
         //remove the featureSelectedTree
         this.featureSelectedTreeContainer = this._destroySpecificContainer(this.featureSelectedTreeContainer);
         this.featureSelectedTree = this._destroySpecificContainer(this.featureSelectedTree);
         //remove the featureAttributeTable
         this.featureAttributeContainer = this._destroySpecificContainer(this.featureAttributeContainer);
         this.featureAttributeTable = this._destroySpecificContainer(this.featureAttributeTable);
+        //setUnActive toolbar
+        this._toolbarContanier.resetTool();
+
+        this._mapDrawHelper.isOpen() && this._mapDrawHelper.closeDrawRectangle();
 
         this._destroyMapListener();
     }
@@ -43962,26 +44549,34 @@ class identify extends ol_control_control__WEBPACK_IMPORTED_MODULE_1__["default"
      * @private
      */
     _mapSingleClickHandle(evt) {
-        let condition = this._layerTypeSelect.getLayerTypeSelectValue();
+        let features,
+            options = {},
+            condition = this._layerTypeSelect.getLayerTypeSelectValue();
         //According to Enum optionEnum , get the collection;
-        if (condition === this._layerTypeSelect.optionEnum.ALLLAYER) {
-            let features = this.map_.getFeaturesAtPixel(evt.pixel);
-            if (!!features) {
-                let collection = this._getLayerByFeature(features);
-                this.renderInfoWindow(collection);
-            }
-        } else if (condition === this._layerTypeSelect.optionEnum.TOPMOST) {
-            let feature = this.map_.forEachFeatureAtPixel(evt.pixel, (_feature, _layer) => {
-                return _feature;
-            });
-            let collection = this._getLayerByFeature([feature]);
+        switch (condition) {
+            case this._layerTypeSelect.optionEnum.ALLLAYER:
+                features = this.map_.getFeaturesAtPixel(evt.pixel);
+                break;
+            case this._layerTypeSelect.optionEnum.TOPMOST:
+                let _features = this.map_.forEachFeatureAtPixel(evt.pixel, _feature => {
+                    return _feature;
+                });
+                _features && (features = [_features]);
+                break;
+            case this._layerTypeSelect.optionEnum.VISIBLE:
+                features = this.map_.getFeaturesAtPixel(evt.pixel);
+                options.visible = true;
+                break;
+            default:
+                let layerHelper = new _utils_FeatureLayer_ol_FeatureLayer_Utils__WEBPACK_IMPORTED_MODULE_4__["default"](this.map_);
+                let targetLayer = layerHelper.getLayerByLayerID(condition.split("_")[1], this.map_.getLayers().array_);
+                let t_features = this.map_.getFeaturesAtPixel(evt.pixel);
+                features = layerHelper.getFeaturesByLayerFilter(t_features, targetLayer);
+                break;
+        }
+        if (!!features && features.length > 0) {
+            let collection = this._getLayerByFeature(features, options);
             this.renderInfoWindow(collection);
-        } else if (condition === this._layerTypeSelect.optionEnum.VISIBLE) {
-            let features = this.map_.getFeaturesAtPixel(evt.pixel);
-            if (!!features) {
-                let collection = this._getLayerByFeature(features, true);
-                this.renderInfoWindow(collection);
-            }
         }
     }
     /**
@@ -43991,14 +44586,21 @@ class identify extends ol_control_control__WEBPACK_IMPORTED_MODULE_1__["default"
     renderInfoWindow(flCollection) {
         let featureTreeContainer = this.featureSelectedTreeContainer = this.featureSelectedTreeContainer ? this.featureSelectedTreeContainer : this._renderContainer(this.infoWindow);
 
-        let featureTree = this.featureSelectedTree = this.featureSelectedTree ? this.featureSelectedTree : this._renderContainer(featureTreeContainer, { className: "featureTreeContainer shown" });
+        let isFeatureTreeHidden = this.featureTreeHiddenTool.getActive();
+        let featureTreeClassName = isFeatureTreeHidden ? "featureTreeContainer" : "featureTreeContainer shown";
 
-        this._renderSizeMizeButton(featureTreeContainer, featureTree);
+        let featureTree = this.featureSelectedTree = this.featureSelectedTree ? this.featureSelectedTree : this._renderContainer(featureTreeContainer, { className: featureTreeClassName });
 
-        let dataTreeNode = _component_LayerTree_ol_Identify_FeatureLayerTree__WEBPACK_IMPORTED_MODULE_7__["default"].createTreeNodeData(flCollection);
-        this._layerFeatureTree = new _component_LayerTree_ol_Identify_FeatureLayerTree__WEBPACK_IMPORTED_MODULE_7__["default"](featureTree, dataTreeNode);
+        let dataTreeNode = _component_LayerTree_ol_Identify_FeatureLayerTree__WEBPACK_IMPORTED_MODULE_8__["default"].createTreeNodeData(flCollection);
+        this._layerFeatureTree = new _component_LayerTree_ol_Identify_FeatureLayerTree__WEBPACK_IMPORTED_MODULE_8__["default"](featureTree, dataTreeNode);
         this._layerFeatureTree.initComponent().bindEvent("treeclick", (evt, layer) => this._featureTreeNodeClickHandle(layer));
-
+        // In default, select the fitst one on  dataTreeNode
+        // let firstNodeData = IdentifyFeatureLayerTree.getTreeNodeFirstData(dataTreeNode);
+        //
+        // if(firstNodeData !== null){
+        //     this._layerFeatureTree.selectTreeNodeByData(firstNodeData);
+        //     this._featureTreeNodeClickHandle(firstNodeData);
+        // }
         return this;
     }
 
@@ -44008,16 +44610,17 @@ class identify extends ol_control_control__WEBPACK_IMPORTED_MODULE_1__["default"
      * @private
      */
     _featureTreeNodeClickHandle(item) {
+        this._featureSelected = item;
         //highligh feature on map
         this.highlight.highlightSpecificFeature(item.layerSource);
         //create feature attribute table
         let attrTableContainer = this.featureAttributeContainer = this.featureAttributeContainer ? this.featureAttributeContainer : this._renderContainer(this.infoWindow);
 
-        let attrTable = this.featureAttributeTable = this.featureAttributeTable ? this.featureAttributeTable : this._renderContainer(attrTableContainer, { className: "featureAttrTable shown" });
+        let isFeatureAttrTableHidden = this.featureAttrTableHiddenTool.getActive();
+        let featureAttrTableClassName = isFeatureAttrTableHidden ? "featureAttrTable" : "featureAttrTable shown";
+        let attrTable = this.featureAttributeTable = this.featureAttributeTable ? this.featureAttributeTable : this._renderContainer(attrTableContainer, { className: featureAttrTableClassName });
 
-        this._renderSizeMizeButton(attrTableContainer, attrTable);
-
-        let featureAttrTable = this._featureAttrTable = new _component_AttrTable_ol_Identify_FeatureAttrTable__WEBPACK_IMPORTED_MODULE_8__["default"](attrTable);
+        let featureAttrTable = this._featureAttrTable = new _component_AttrTable_ol_Identify_FeatureAttrTable__WEBPACK_IMPORTED_MODULE_9__["default"](attrTable);
         featureAttrTable.initComponent(item.layerSource);
     }
 
@@ -44038,45 +44641,6 @@ class identify extends ol_control_control__WEBPACK_IMPORTED_MODULE_1__["default"
         return _Contanier;
     }
 
-    /**
-     *  render the maxmize or minimize button on contanier ,target on targetElement
-     * @param { HtmlElement} container
-     * @param { HtmlElement} targetElement
-     * @private
-     */
-    _renderSizeMizeButton(container, targetElement) {
-        /* remenber inverted order*/
-        let childs = container.childNodes;
-        for (let i = childs.length - 1; i >= 0; i--) {
-            let element = childs[i];
-            if (element.classList.contains(this.minimizeClassName) || element.classList.contains(this.maximizeClassName)) {
-                return;
-            }
-        }
-
-        let minimizeBtn = document.createElement("span");
-        minimizeBtn.className = this.minimizeClassName;
-        minimizeBtn.onclick = evt => this._minimizeOrMaxmineContaner(targetElement, minimizeBtn);
-
-        container.insertBefore(minimizeBtn, targetElement);
-    }
-
-    /**
-     *
-     * @param element
-     * @private
-     */
-    _minimizeOrMaxmineContaner(container, btnElement) {
-        if (btnElement.classList.contains(this.minimizeClassName)) {
-            this._hideSpecificContainer(container);
-            btnElement.classList.remove(this.minimizeClassName);
-            btnElement.classList.add(this.maximizeClassName);
-        } else if (btnElement.classList.contains(this.maximizeClassName)) {
-            this._showSpecificContainer(container);
-            btnElement.classList.remove(this.maximizeClassName);
-            btnElement.classList.add(this.minimizeClassName);
-        }
-    }
     /**
      * @desc make the specific element display shown
      * @param element
@@ -44113,11 +44677,13 @@ class identify extends ol_control_control__WEBPACK_IMPORTED_MODULE_1__["default"
      * @desc get the layer which own by specific feature
      * @return
      */
-    _getLayerByFeature(features, isVisible) {
-        let flCollection = [];
+    _getLayerByFeature(features, options) {
+        let flCollection = [],
+            _options = options || {};
+        let layerHelper = new _utils_FeatureLayer_ol_FeatureLayer_Utils__WEBPACK_IMPORTED_MODULE_4__["default"](this.map_);
+
         for (let i = 0, length = features.length; i < length; i++) {
-            let layerHelper = new _utils_FeatureLayerHelper_ol_FeatureLayer_Utils__WEBPACK_IMPORTED_MODULE_4__["default"](this.map_);
-            let layer = !isVisible ? layerHelper.getLayerByFeature(features[i]) : layerHelper.getVisibleLayerByFeature(features[i]);
+            let layer = !_options.visible ? layerHelper.getLayerByFeature(features[i]) : layerHelper.getVisibleLayerByFeature(features[i]);
             flCollection.push([layer, features[i]]);
         }
         return flCollection;
@@ -44129,16 +44695,50 @@ class identify extends ol_control_control__WEBPACK_IMPORTED_MODULE_1__["default"
     _renderInfoWindowBase(element) {
         let mainContainer = element;
         //create Title
-        let titlepanelContainer = new _component_TitlePanel_ol_Identify_TitlePanel__WEBPACK_IMPORTED_MODULE_10__["default"](mainContainer, { title: "Identify" });
+        let titlepanelContainer = new _component_TitlePanel_ol_Identify_TitlePanel__WEBPACK_IMPORTED_MODULE_11__["default"](mainContainer, { title: "Identify" });
         titlepanelContainer.initComponent();
         //create layer type selected options
-        let optionsContainer = this._layerTypeSelect = new _component_TypeSelect_ol_Identify_TypeSelect__WEBPACK_IMPORTED_MODULE_6__["default"](mainContainer);
+        let optionsContainer = this._layerTypeSelect = new _component_TypeSelect_ol_Identify_TypeSelect__WEBPACK_IMPORTED_MODULE_7__["default"](mainContainer);
         optionsContainer.initComponent();
+        this._addLayerInfoOnTypeSelect(optionsContainer);
         //create toolbar
-        let toolbarContanier = this._toolbarContanier = new _component_ToolBar_ol_Identify_Toolbar__WEBPACK_IMPORTED_MODULE_9__["default"](mainContainer);
+        let toolbarContanier = this._toolbarContanier = new _component_ToolBar_ol_Identify_Toolbar__WEBPACK_IMPORTED_MODULE_10__["default"](mainContainer);
         toolbarContanier.initComponent();
-        toolbarContanier.registerExtraTool({
-            name: "boxSelect", handle: this._boxSelectHandler.bind(this), image: "boxSelect"
+        this._regiserToolonToolbar(toolbarContanier);
+    }
+
+    /**
+     * add layer info on the typeSelectComponent
+     * @param optionsContainer
+     * @private
+     */
+    _addLayerInfoOnTypeSelect(optionsContainer) {
+        let layerHelper = new _utils_FeatureLayer_ol_FeatureLayer_Utils__WEBPACK_IMPORTED_MODULE_4__["default"](this.map_);
+        let layerInfo = layerHelper.getVectorLayerInfo(this.map_.getLayers());
+
+        this._layerTypeSelect.addTreeNodeOption(layerInfo, "图层列表");
+    }
+    /**
+     * regiser default Tool on Toolbar
+     * @param toolbarContanier
+     * @private
+     */
+    _regiserToolonToolbar(toolbarContanier) {
+        //bind draw polygon select feature
+        let boxSelectTool = toolbarContanier.registerExtraTool({
+            name: "boxSelect", handle: () => this._boxSelectHandler(boxSelectTool), image: "boxSelect"
+        });
+        let treeHiddenTool = this.featureTreeHiddenTool = toolbarContanier.registerExtraTool({
+            name: "treeHidden", handle: () => this._containerHiddenHandle(treeHiddenTool, this.featureSelectedTree), image: "hideTree"
+        });
+        let tableHiddenTool = this.featureAttrTableHiddenTool = toolbarContanier.registerExtraTool({
+            name: "tableHidden", handle: () => this._containerHiddenHandle(tableHiddenTool, this.featureAttributeTable), image: "hideTable"
+        });
+        let featureFitTool = toolbarContanier.registerExtraTool({
+            name: "featureFit", handle: () => this._fitFeatureHandle(featureFitTool, this._featureSelected ? this._featureSelected.layerSource : null), image: "fitFeature"
+        });
+        let treeClearTool = toolbarContanier.registerExtraTool({
+            name: "clearTree", handle: () => this._treeClearHandle(treeClearTool), image: "clearTree"
         });
     }
 
@@ -44146,14 +44746,97 @@ class identify extends ol_control_control__WEBPACK_IMPORTED_MODULE_1__["default"
      * boxSelect tool handler
      * @private
      */
-    _boxSelectHandler() {
+    _boxSelectHandler(tool) {
         if (this._mapDrawHelper.isOpen()) {
             this._mapDrawHelper.closeDrawRectangle();
+            tool.setActive(false);
         } else {
-            this._mapDrawHelper.startDrawRectangle();
+            this._mapDrawHelper.startDrawRectangle(element => {
+                let mapCoordinateHelper = new _utils_MapCoordinate_ol_MapCoordinate_Utils__WEBPACK_IMPORTED_MODULE_6__["default"](this.map_);
+                let extent = mapCoordinateHelper.getExtendByElement(element);
+
+                if (extent !== null) {
+                    let targetLayer,
+                        layers = this.map_.getLayers();
+                    let layerHelper = new _utils_FeatureLayer_ol_FeatureLayer_Utils__WEBPACK_IMPORTED_MODULE_4__["default"](this.map_);
+                    let options = {},
+                        condition = this._layerTypeSelect.getLayerTypeSelectValue();
+                    //According to Enum optionEnum , get the collection;
+                    if (condition === this._layerTypeSelect.optionEnum.ALLLAYER) {
+                        targetLayer = layers.array_;
+                    } else if (condition === this._layerTypeSelect.optionEnum.TOPMOST) {
+                        targetLayer = layers.array_;
+                        options.topmost = true;
+                    } else if (condition === this._layerTypeSelect.optionEnum.VISIBLE) {
+                        targetLayer = layers.array_;
+                        options.visible = true;
+                    } else {
+                        let _targetLayer = layerHelper.getLayerByLayerID(condition.split("_")[1], this.map_.getLayers().array_);
+                        _targetLayer && (targetLayer = [_targetLayer]);
+                    }
+                    let features = layerHelper.getFeatureByExtent(targetLayer, extent, options);
+
+                    if (!!features && features.length > 0) {
+                        let collection = this._getLayerByFeature(features, true);
+                        this.renderInfoWindow(collection);
+                    }
+                }
+            });
+            tool.setActive(true);
         }
     }
 
+    /**
+     * treeClear tool handler
+     * @param tool
+     * @private
+     */
+    _treeClearHandle(tool) {
+        if (this.featureSelectedTreeContainer) {
+            this._layerFeatureTree.destroyComponent();
+            this.featureSelectedTreeContainer = null;
+            this.featureSelectedTree = null;
+            this._layerFeatureTree = null;
+            this._featureSelected = null;
+        }
+        if (this.featureAttributeContainer) {
+            this._featureAttrTable.destroyComponent();
+            this.featureAttributeContainer = null;
+            this.featureAttributeTable = null;
+            this._featureAttrTable = null;
+        }
+        //clear the highlightfeature
+        this.highlight.clearhighlightFeature();
+    }
+
+    /**
+     * hide the specific container
+     * @param tool
+     * @param container
+     * @private
+     */
+    _containerHiddenHandle(tool, container) {
+        if (!container) return;
+
+        if (tool.getActive()) {
+            this._showSpecificContainer(container);
+            tool.setActive(false);
+        } else {
+            this._hideSpecificContainer(container);
+            tool.setActive(true);
+        }
+    }
+
+    /**
+     * 缩放至图层工具的处理事件
+     * @param tool
+     * @private
+     */
+    _fitFeatureHandle(tool, feature) {
+        if (!!feature) {
+            this.map_.getView().fit(feature.getGeometry().getExtent(), { maxZoom: 17, duration: 400 });
+        }
+    }
     /**
      * @private
      * @desc destroy the Event Added on Map
@@ -44201,17 +44884,6 @@ if (window.ol && window.ol.control) {
 
 /***/ }),
 
-/***/ "./src/js/Component/Identify/utils/FeatureHighLight/highlight-marker.png":
-/*!*******************************************************************************!*\
-  !*** ./src/js/Component/Identify/utils/FeatureHighLight/highlight-marker.png ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADWUlEQVRYR7WXTUwTURDHZ0qhDUVsaA8QRMvNhERRDOrJkthe2V5kexKiN2OAg8pBBRQjiYlijCdJrKetXvq4tofCwcSQoHDQ6MkqIRDTQosUqRTGbEObsrz9aKl73Jk377cz8/5vFqGER4hKLtjGbkAQgMCOCO3yciKYB4QkEDCopinW5Y8ZDYtGHIWI5AbAYQRwG/EngGkg0yDzXpnX89cFEMLBCUTo1wvEsxPgCPP0jGqt1QTwhaVpQLxUzub5NQTAmEf0qcVQBRDCUgARrx5m8wIEQYB5xT5eLC6AEJFGEHC4EpsXZWKQecQJZcwDAEI0ZIds5jsC2CsMkASzpZV1+ZLFcQ8CGPj63/EEJJeWIZPezMWy2GrB3twER5wOTWYCGmUe/4gmgC8ixQDwhFqkpc9fIZ1Y5ZptjgZobjupCkEEMeYVW1UBhPC7dsTdT2oR4rFFWP25CFhlglpHA5u9eT/X3RdePJzcSCSu0c4uNBxvAaerRQPCdKZYH/aVQBYcBIzyVv/dykBsdi5nsjceE9/fuP222K/z+YPr6Xj8lfzO1dkBNVYLF4KAupjHP503KgFUu1+u+/KXb2Cpq019vDPObdCOJ3eXt9bXG5tPtYHNflQNYF8fGAbIp9/mdMzM9g9zJfnc03sf/qylzmuVQdmICoDgAAI846HnM2Ctr1+ZuzXWxPM5Oz4Uz6Q3HZoZQPSxyz1MrQRl98DFl2OP11d+DR2uB6IhO2Yza7qnwFxFdU7HZMZifVSD2RZIbw+m11Z9lN1BvVMQ8oj7sn5AiHzhoHy3n/4fOgAECyGvmJshuCWQXwphqRcRX2tJWkEJN9JgMpuh2moxpoREfczrD2gCyEY9NdTUW3UJ+hHy+F1KM/82NJCFUiFI0f2qJcgbKjGMFCCJZkJeP1c71AeSqOTCLMozHV/SjKcgRWZqVxtUNUcyIaIuTEb3JwDuIKJbgkIpIkFZtbqNbqjwmwp5REFrrf5UnBOnrXmtGUHl1lmgaotbOQEZOgVKp705Qb5CjfZDisjkrsh/QR5Ga1ZQAivv/EOVoHixEZUkjtpVDCAn1Rono9TN5Xi6Tcij5/20ENEb5vX3lnpaygLYu7QKf07lbl52BgqNGZYCAJhkXnGg1C/P+/8DogVyML+S9TsAAAAASUVORK5CYII="
-
-/***/ }),
-
 /***/ "./src/js/Component/Identify/utils/FeatureHighLight/ol-FeatureHighLight-Utils.js":
 /*!***************************************************************************************!*\
   !*** ./src/js/Component/Identify/utils/FeatureHighLight/ol-FeatureHighLight-Utils.js ***!
@@ -44221,19 +44893,17 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABz
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _highlight_marker_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./highlight-marker.png */ "./src/js/Component/Identify/utils/FeatureHighLight/highlight-marker.png");
-/* harmony import */ var _highlight_marker_png__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_highlight_marker_png__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var ol_layer_vector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/layer/vector */ "./node_modules/ol/layer/vector.js");
-/* harmony import */ var ol_source_vector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/source/vector */ "./node_modules/ol/source/vector.js");
-/* harmony import */ var ol_style_style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/style/style */ "./node_modules/ol/style/style.js");
-/* harmony import */ var ol_style_circle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/style/circle */ "./node_modules/ol/style/circle.js");
-/* harmony import */ var ol_style_stroke__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ol/style/stroke */ "./node_modules/ol/style/stroke.js");
-/* harmony import */ var ol_style_fill__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/style/fill */ "./node_modules/ol/style/fill.js");
-/* harmony import */ var _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../ol-Base-Utils */ "./src/js/Component/Identify/utils/ol-Base-Utils.js");
-/* harmony import */ var ol_observable__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol/observable */ "./node_modules/ol/observable.js");
-/* harmony import */ var ol_style_icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/style/icon */ "./node_modules/ol/style/icon.js");
-/* harmony import */ var ol_geom_point__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ol/geom/point */ "./node_modules/ol/geom/point.js");
-/* harmony import */ var ol_feature__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ol/feature */ "./node_modules/ol/feature.js");
+/* harmony import */ var ol_layer_vector__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/layer/vector */ "./node_modules/ol/layer/vector.js");
+/* harmony import */ var ol_source_vector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/source/vector */ "./node_modules/ol/source/vector.js");
+/* harmony import */ var ol_style_style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/style/style */ "./node_modules/ol/style/style.js");
+/* harmony import */ var ol_style_circle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/style/circle */ "./node_modules/ol/style/circle.js");
+/* harmony import */ var ol_style_stroke__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/style/stroke */ "./node_modules/ol/style/stroke.js");
+/* harmony import */ var ol_style_fill__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ol/style/fill */ "./node_modules/ol/style/fill.js");
+/* harmony import */ var _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../ol-Base-Utils */ "./src/js/Component/Identify/utils/ol-Base-Utils.js");
+/* harmony import */ var ol_observable__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/observable */ "./node_modules/ol/observable.js");
+/* harmony import */ var ol_geom_point__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol/geom/point */ "./node_modules/ol/geom/point.js");
+/* harmony import */ var ol_feature__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/feature */ "./node_modules/ol/feature.js");
+/* harmony import */ var _AnimationMarker_ol_AnimationMarker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../AnimationMarker/ol-AnimationMarker */ "./src/js/Component/AnimationMarker/ol-AnimationMarker.js");
 
 
 
@@ -44246,8 +44916,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-const markerUrl = __webpack_require__(/*! ./highlight-marker.png */ "./src/js/Component/Identify/utils/FeatureHighLight/highlight-marker.png");
 
 /**
  * OpenLayers Feature HighLighg Utils. convenent to highlight feature;
@@ -44255,36 +44923,35 @@ const markerUrl = __webpack_require__(/*! ./highlight-marker.png */ "./src/js/Co
  * @extends {ol.Base.Utils}
  * @param {lo.map} map
  */
-class FeatureFeatureHighLightUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_7__["default"] {
+class FeatureFeatureHighLightUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_6__["default"] {
     constructor(map) {
         super(map);
-        this.originalStyle = new ol_style_style__WEBPACK_IMPORTED_MODULE_3__["default"]({
-            image: new ol_style_circle__WEBPACK_IMPORTED_MODULE_4__["default"]({
+        this.originalStyle = new ol_style_style__WEBPACK_IMPORTED_MODULE_2__["default"]({
+            image: new ol_style_circle__WEBPACK_IMPORTED_MODULE_3__["default"]({
                 radius: 7,
-                fill: new ol_style_fill__WEBPACK_IMPORTED_MODULE_6__["default"]({ color: 'blue' }),
-                stroke: new ol_style_stroke__WEBPACK_IMPORTED_MODULE_5__["default"]({ color: 'red', width: 2 })
+                fill: new ol_style_fill__WEBPACK_IMPORTED_MODULE_5__["default"]({ color: 'blue' }),
+                stroke: new ol_style_stroke__WEBPACK_IMPORTED_MODULE_4__["default"]({ color: 'red', width: 2 })
             }),
-            stroke: new ol_style_stroke__WEBPACK_IMPORTED_MODULE_5__["default"]({
+            stroke: new ol_style_stroke__WEBPACK_IMPORTED_MODULE_4__["default"]({
                 width: 2,
                 color: 'red'
             }),
-            fill: new ol_style_fill__WEBPACK_IMPORTED_MODULE_6__["default"]({
+            fill: new ol_style_fill__WEBPACK_IMPORTED_MODULE_5__["default"]({
                 color: 'blue'
             })
         });
-        this.highlightlayer = new ol_layer_vector__WEBPACK_IMPORTED_MODULE_1__["default"]({
-            source: new ol_source_vector__WEBPACK_IMPORTED_MODULE_2__["default"](),
+        this.highlightlayer = new ol_layer_vector__WEBPACK_IMPORTED_MODULE_0__["default"]({
+            source: new ol_source_vector__WEBPACK_IMPORTED_MODULE_1__["default"](),
             map: map,
             style: this.originalStyle
         });
-        this.highlightlayerforspecific = new ol_layer_vector__WEBPACK_IMPORTED_MODULE_1__["default"]({
-            source: new ol_source_vector__WEBPACK_IMPORTED_MODULE_2__["default"](),
+        this.highlightlayerforspecific = new ol_layer_vector__WEBPACK_IMPORTED_MODULE_0__["default"]({
+            source: new ol_source_vector__WEBPACK_IMPORTED_MODULE_1__["default"](),
             map: map,
             style: this.originalStyle
         });
         this.highlighfeature = null;
-        this.highlightPointFeature = null;
-        this.highlightPointFeatureInterval = null;
+        this.animationMarker = null;
         this.highlightOtherFeature = null;
     }
     startup() {
@@ -44332,7 +44999,7 @@ class FeatureFeatureHighLightUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODU
      * @private
      */
     _highlightOtherFeature(feature) {
-        this._clearhighlightFeature();
+        this.clearhighlightFeature();
         this._highlightOtherFeaturetWithAnimate(feature);
     }
 
@@ -44342,23 +45009,23 @@ class FeatureFeatureHighLightUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODU
      * @private
      */
     _highlightOtherFeaturetWithAnimate(feature) {
-        let copyFeature = this.highlightOtherFeature = new ol_feature__WEBPACK_IMPORTED_MODULE_11__["default"]({
+        let copyFeature = this.highlightOtherFeature = new ol_feature__WEBPACK_IMPORTED_MODULE_9__["default"]({
             geometry: feature.getGeometry(),
             labelPoint: feature.getGeometry()
         });
         this.highlightlayerforspecific.getSource().addFeature(copyFeature);
         //高亮的样式
-        let highlightStyle = new ol_style_style__WEBPACK_IMPORTED_MODULE_3__["default"]({
-            image: new ol_style_circle__WEBPACK_IMPORTED_MODULE_4__["default"]({
+        let highlightStyle = new ol_style_style__WEBPACK_IMPORTED_MODULE_2__["default"]({
+            image: new ol_style_circle__WEBPACK_IMPORTED_MODULE_3__["default"]({
                 radius: 7,
-                fill: new ol_style_fill__WEBPACK_IMPORTED_MODULE_6__["default"]({ color: 'yellow' }),
-                stroke: new ol_style_stroke__WEBPACK_IMPORTED_MODULE_5__["default"]({ color: 'red', width: 2 })
+                fill: new ol_style_fill__WEBPACK_IMPORTED_MODULE_5__["default"]({ color: 'yellow' }),
+                stroke: new ol_style_stroke__WEBPACK_IMPORTED_MODULE_4__["default"]({ color: 'red', width: 2 })
             }),
-            stroke: new ol_style_stroke__WEBPACK_IMPORTED_MODULE_5__["default"]({
+            stroke: new ol_style_stroke__WEBPACK_IMPORTED_MODULE_4__["default"]({
                 width: 6,
                 color: 'yellow'
             }),
-            fill: new ol_style_fill__WEBPACK_IMPORTED_MODULE_6__["default"]({
+            fill: new ol_style_fill__WEBPACK_IMPORTED_MODULE_5__["default"]({
                 color: 'yellow'
             })
         });
@@ -44384,7 +45051,7 @@ class FeatureFeatureHighLightUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODU
      * @private
      */
     _highlightPointFeature(point) {
-        this._clearhighlightFeature();
+        this.clearhighlightFeature();
         this._highlightPointWithAnimate(point);
     }
 
@@ -44392,11 +45059,10 @@ class FeatureFeatureHighLightUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODU
      * 清除高亮的要素
      * @private
      */
-    _clearhighlightFeature() {
-        if (!!this.highlightPointFeature) {
-            this.highlightlayerforspecific.getSource().removeFeature(this.highlightPointFeature);
-            this.highlightPointFeatureInterval && window.clearInterval(this.highlightPointFeatureInterval);
-            this.highlightPointFeature = null;
+    clearhighlightFeature() {
+        if (this.animationMarker && this.animationMarker.isOpened()) {
+            this.map.removeOverlay(this.animationMarker);
+            this.animationMarker = null;
         }
         if (!!this.highlightOtherFeature) {
             this.highlightlayerforspecific.getSource().removeFeature(this.highlightOtherFeature);
@@ -44410,103 +45076,13 @@ class FeatureFeatureHighLightUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODU
      * @private
      */
     _highlightPointWithAnimate(point) {
-        let centerPoint = point.getGeometry().getCoordinates();
         //this.map.getView().fit(point.getGeometry(), { duration: 500, maxZoom: 17 });
+        let animationMarker = this.animationMarker = new _AnimationMarker_ol_AnimationMarker__WEBPACK_IMPORTED_MODULE_10__["default"]();
+        this.map.addOverlay(animationMarker);
 
-        let copyPoint = new ol_geom_point__WEBPACK_IMPORTED_MODULE_10__["default"](centerPoint);
-        let copyFeature = this.highlightPointFeature = new ol_feature__WEBPACK_IMPORTED_MODULE_11__["default"]({
-            geometry: copyPoint,
-            labelPoint: copyPoint
-        });
-        //create Animation Marker
-        let iconStyle = new ol_style_style__WEBPACK_IMPORTED_MODULE_3__["default"]({
-            image: new ol_style_icon__WEBPACK_IMPORTED_MODULE_9__["default"]( /** @type {olx.style.IconOptions} */{
-                anchor: [0.5, 1],
-                src: markerUrl
-            })
-        });
-        copyFeature.setStyle(iconStyle);
-        this.highlightlayerforspecific.getSource().addFeature(copyFeature);
-
-        let mapSize = this._getMapSize();
-        let curPixel = this._getScreenXYByCoordinate(centerPoint);
-        /**
-         * 这里只需要修改 totalTime 的值可以改变动画的渲染时间，其他不要改动
-         * @type {number}
-         */
-        let totalTime = 600,
-            //动画的总时间 单位是毫秒
-        heightPower = 4,
-            //高度衰减的倍率
-        dValue = mapSize[1] / 10,
-            //marker的最大高度，像素为单位
-        dTime = 10; //动画每一帧的时间
-
-        let totalSecondTime = totalTime / 1000;
-        let acceleration = 2 * dValue / Math.pow(totalSecondTime * Math.sqrt(heightPower) / (1 + Math.sqrt(heightPower)), 2); // 单位像素 / 秒
-
-        let iHeight = dValue,
-            //能量衰减后的高度
-        iTime = totalTime; //剩余时间
-
-        //根据时间计算当前高度的方法
-        let getHeight = (ivalue, time) => /* time second*/{
-            if (time <= 0) return 0; //如果时间已经少于0，则直接返回0
-            let _height = ivalue - acceleration * time * time / 2;
-
-            if (_height <= 0) {
-                iHeight = iHeight / heightPower;
-                totalTime = totalTime - time * 1000;
-            }
-            return _height;
-        };
-        let timeIntervalu = this.highlightPointFeatureInterval = window.setInterval(() => {
-            iTime = iTime - dTime;
-
-            let dHeight = getHeight(iHeight, (totalTime - iTime) / 1000);
-
-            let piexl = [curPixel[0], curPixel[1] - dHeight];
-            let coor = this._getCoordinateFromScreenXY(piexl);
-            copyPoint.setCoordinates(coor);
-
-            if (point.getGeometry().getCoordinates()[0] != centerPoint[0]) {
-                copyPoint.setCoordinates(centerPoint);
-                window.clearInterval(timeIntervalu);
-            }
-
-            if (iTime <= 0) {
-                copyPoint.setCoordinates(centerPoint);
-                timeIntervalu && window.clearInterval(timeIntervalu);
-            }
-        }, dTime);
+        animationMarker.show(point);
     }
 
-    /**
-     * 通过地理坐标获取屏幕坐标
-     * @param coor
-     * @private
-     */
-    _getScreenXYByCoordinate(coor) {
-        return this.map.getPixelFromCoordinate(coor);
-    }
-
-    /**
-     * 从屏幕坐标获取地理坐标
-     * @param pixel
-     * @returns {ol.Coordinate}
-     * @private
-     */
-    _getCoordinateFromScreenXY(pixel) {
-        return this.map.getCoordinateFromPixel(pixel);
-    }
-
-    /**
-     * 获取地图的尺寸
-     * @returns {ol.Size}
-     */
-    _getMapSize() {
-        return this.map.getSize();
-    }
     /**
      * 高亮鼠标经过的要素
      * @param evt {MouseEvent}
@@ -44545,16 +45121,11 @@ class FeatureFeatureHighLightUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODU
      */
     _highlightClose() {
         for (let i = 0, key; i < this.mapListeners.length; i++) {
-            ol_observable__WEBPACK_IMPORTED_MODULE_8__["default"].unByKey(this.mapListeners[i]);
+            ol_observable__WEBPACK_IMPORTED_MODULE_7__["default"].unByKey(this.mapListeners[i]);
         }
         this.mapListeners.length = 0;
 
-        if (!!this.highlightOtherFeature) {
-            this.highlightlayerforspecific.getSource().removeFeature(this.highlightOtherFeature);
-        }
-        if (!!this.highlightPointFeature) {
-            this.highlightlayerforspecific.getSource().removeFeature(this.highlightPointFeature);
-        }
+        this.clearhighlightFeature();
     }
 }
 
@@ -44562,10 +45133,10 @@ class FeatureFeatureHighLightUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODU
 
 /***/ }),
 
-/***/ "./src/js/Component/Identify/utils/FeatureLayerHelper/ol-FeatureLayer-Utils.js":
-/*!*************************************************************************************!*\
-  !*** ./src/js/Component/Identify/utils/FeatureLayerHelper/ol-FeatureLayer-Utils.js ***!
-  \*************************************************************************************/
+/***/ "./src/js/Component/Identify/utils/FeatureLayer/ol-FeatureLayer-Utils.js":
+/*!*******************************************************************************!*\
+  !*** ./src/js/Component/Identify/utils/FeatureLayer/ol-FeatureLayer-Utils.js ***!
+  \*******************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -44573,9 +45144,10 @@ class FeatureFeatureHighLightUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODU
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ol-Base-Utils */ "./src/js/Component/Identify/utils/ol-Base-Utils.js");
 /* harmony import */ var ol_source_vector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/source/vector */ "./node_modules/ol/source/vector.js");
-/* harmony import */ var ol_layer_tile__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/layer/tile */ "./node_modules/ol/layer/tile.js");
-/* harmony import */ var ol_layer_group__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/layer/group */ "./node_modules/ol/layer/group.js");
-/* harmony import */ var ol_layer_image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/layer/image */ "./node_modules/ol/layer/image.js");
+/* harmony import */ var ol_layer_vector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/layer/vector */ "./node_modules/ol/layer/vector.js");
+/* harmony import */ var ol_layer_tile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/layer/tile */ "./node_modules/ol/layer/tile.js");
+/* harmony import */ var ol_layer_group__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/layer/group */ "./node_modules/ol/layer/group.js");
+/* harmony import */ var ol_layer_image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ol/layer/image */ "./node_modules/ol/layer/image.js");
 
 
 
@@ -44591,6 +45163,33 @@ __webpack_require__.r(__webpack_exports__);
 class FeatureIdentifyUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_0__["default"] {
     constructor(map) {
         super(map);
+    }
+
+    /**
+     *
+     */
+    getVectorLayerInfo(layers) {
+        let result = [];
+        for (let i = 0, length = layers.array_.length; i < length; i++) {
+            let layer = layers.array_[i];
+            if (!(layer instanceof ol_layer_vector__WEBPACK_IMPORTED_MODULE_2__["default"] || layer instanceof ol_layer_group__WEBPACK_IMPORTED_MODULE_4__["default"])) continue;
+
+            let layerinfo = {};
+            layerinfo.oid = layer.ol_uid;
+            layerinfo.title = this.getVectorLayerTitle(layer);
+            layerinfo.layerdata = layer;
+            layerinfo.icon = "layer";
+            layerinfo.value = "layer_" + layerinfo.oid;
+            if (layer instanceof ol_layer_group__WEBPACK_IMPORTED_MODULE_4__["default"]) {
+                let childlayer = this.getVectorLayerInfo(layer.getLayers());
+                layerinfo.childLayer = childlayer;
+                layerinfo.icon = "layergroup";
+                layerinfo.value = "layergroup_" + layerinfo.oid;
+            }
+
+            result.push(layerinfo);
+        }
+        return result;
     }
 
     /**
@@ -44631,8 +45230,9 @@ class FeatureIdentifyUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_0__["
                 // filter the propertity
                 if (this._filterLayer(layer, filterOtions)) break;
                 //indincate the layer type
-                if (layer instanceof ol_layer_group__WEBPACK_IMPORTED_MODULE_3__["default"]) {
+                if (layer instanceof ol_layer_group__WEBPACK_IMPORTED_MODULE_4__["default"]) {
                     result = this._getLayerByFeature(layer.getLayers(), feature);
+                    if (result) break;
                 } else {
                     let source = layer.getSource && layer.getSource();
                     if (source instanceof ol_source_vector__WEBPACK_IMPORTED_MODULE_1__["default"]) {
@@ -44640,9 +45240,9 @@ class FeatureIdentifyUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_0__["
                         if (hasFeatures) {
                             result = layer;break;
                         }
-                    } else if (source instanceof ol_layer_image__WEBPACK_IMPORTED_MODULE_4__["default"]) {
+                    } else if (source instanceof ol_layer_image__WEBPACK_IMPORTED_MODULE_5__["default"]) {
                         //TODO ImageLayer process
-                    } else if (source instanceof ol_layer_tile__WEBPACK_IMPORTED_MODULE_2__["default"]) {
+                    } else if (source instanceof ol_layer_tile__WEBPACK_IMPORTED_MODULE_3__["default"]) {
                         //TODO TileLayer process
                     }
                 }
@@ -44681,14 +45281,204 @@ class FeatureIdentifyUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_0__["
             rIndex = -1;
         if (features && features.length > 0) {
             for (let i = 0, length = features.length; i < length; i++) {
-                if (features[i] === feature) rIndex = i;
+                if (features[i].ol_uid === feature.ol_uid) {
+                    rIndex = i;
+                    break;
+                }
             }
         }
         return isIndex == true ? rIndex : rIndex === -1 ? false : true;
     }
 
+    /**
+     * 查找是否在给定的图层上
+     * @param layer
+     * @param feature
+     * @return {boolean}
+     */
+    isFeatureInLayer(layer, feature) {
+        let result = false;
+        if (layer instanceof ol_layer_group__WEBPACK_IMPORTED_MODULE_4__["default"]) {
+            let _layers = layer.getLayers().array_;
+            for (let i = 0, length = _layers.length; i < length; i++) {
+                let _result = this.isFeatureInLayer(_layers[i], feature);
+                if (_result) {
+                    result = _result;
+                    break;
+                }
+            }
+        } else if (layer instanceof ol_layer_vector__WEBPACK_IMPORTED_MODULE_2__["default"]) {
+            result = this._isFeatureInVectorSource(layer.getSource(), feature);
+        }
+        return result;
+    }
+
+    /**
+     * 要素集中获取指定图层的要素
+     * @param features
+     * @param layer
+     * @return {Array}
+     */
+    getFeaturesByLayerFilter(features, layer) {
+        let result = [];
+        if (!!features && features.length > 0) {
+            for (let i = 0, length = features.length; i < length; i++) {
+                let feature = features[i];
+                if (this.isFeatureInLayer(layer, feature)) result.push(feature);
+            }
+        }
+        return result;
+    }
+    /**
+     *
+     * search all of the features inside extent in all layers
+     * @param layers
+     * @param extent
+     * @return {Array}
+     */
+    getFeatureByExtent(layers, extent, options) {
+        let features = [],
+            _options = options || {};
+        for (let i = layers.length - 1; i >= 0; i--) {
+            let layer = layers[i];
+            if (_options.visible && !layer.getVisible()) continue;
+
+            if (layer instanceof ol_layer_group__WEBPACK_IMPORTED_MODULE_4__["default"]) {
+                let _features = this.getFeatureByExtent(layer.getLayers().array_, extent, _options);
+                features = features.concat(_features);
+                if (_options.topmost && features.length > 0) break;
+            } else {
+                let source = layer.getSource && layer.getSource();
+                if (source instanceof ol_source_vector__WEBPACK_IMPORTED_MODULE_1__["default"]) {
+                    let _features = source.getFeaturesInExtent(extent);
+                    features = features.concat(_features);
+                    if (_options.topmost && features.length > 0) break;
+                }
+            }
+        }
+        return features;
+    }
+
+    /**
+     *
+     */
+    getVectorLayerTitle(layer) {
+        let title = "无标题";
+        if (!!layer) {
+            if (layer instanceof ol_layer_vector__WEBPACK_IMPORTED_MODULE_2__["default"] || layer instanceof ol_layer_group__WEBPACK_IMPORTED_MODULE_4__["default"]) {
+                if (layer.get("title")) {
+                    title = layer.get("title");
+                }
+            }
+        }
+        return title;
+    }
+
+    /**
+     * 根据Layer的OL_OID返回对应的Layer对象
+     * @param oid
+     */
+    getLayerByLayerID(oid, layers) {
+        let result = null;
+        if (layers) {
+            for (let i = 0, length = layers.length; i < length; i++) {
+                let layer = layers[i];
+
+                if (layer.ol_uid == oid) {
+                    result = layer;
+                    break;
+                }
+                if (layer instanceof ol_layer_group__WEBPACK_IMPORTED_MODULE_4__["default"]) {
+                    let _layer = this.getLayerByLayerID(oid, layer.getLayers().array_);
+                    if (_layer) {
+                        result = _layer;
+                        break;
+                    };
+                }
+            }
+        }
+        return result;
+    }
+    /**
+     * get the topmost layer from all of the layer
+     * @param layers
+     * @return {ol/layer/layer}
+     */
+    geTopMostLayer(layers) {
+        let _layer = null;
+        for (let i = layers.length - 1; i >= 0; i--) {
+            let layer = layers[i];
+            if (layer instanceof ol_layer_group__WEBPACK_IMPORTED_MODULE_4__["default"]) {
+                _layer = this.geTopMostLayer(layer.getLayers().array_);
+            } else {
+                let source = layer.getSource && layer.getSource();
+                if (source instanceof ol_source_vector__WEBPACK_IMPORTED_MODULE_1__["default"]) {
+                    _layer = layer;
+                    break;
+                }
+            }
+        }
+        return _layer;
+    }
 }
 /* harmony default export */ __webpack_exports__["default"] = (FeatureIdentifyUtils);
+
+/***/ }),
+
+/***/ "./src/js/Component/Identify/utils/MapCoordinate/ol-MapCoordinate-Utils.js":
+/*!*********************************************************************************!*\
+  !*** ./src/js/Component/Identify/utils/MapCoordinate/ol-MapCoordinate-Utils.js ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MapzCoordinateUtils; });
+/* harmony import */ var _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ol-Base-Utils */ "./src/js/Component/Identify/utils/ol-Base-Utils.js");
+/* harmony import */ var ol_geom_polygon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/geom/polygon */ "./node_modules/ol/geom/polygon.js");
+
+
+
+class MapzCoordinateUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    constructor(map) {
+        super(map);
+    }
+
+    /**
+     * 通过一个屏幕要素，获取地图上的extent
+     * @param element
+     */
+    getExtendByElement(element) {
+        let extent = null;
+
+        let div_top = element.offsetTop,
+            div_left = element.offsetLeft;
+        let div_right = div_left + element.offsetWidth,
+            div_bottom = div_top + element.offsetHeight;
+
+        let mapElement = this.map.getTargetElement();
+        let map_top = mapElement.offsetTop,
+            map_left = mapElement.offsetLeft;
+
+        let left = div_left - map_left,
+            right = div_right - map_left;
+        let top = div_top - map_top,
+            bottom = div_bottom - map_top;
+
+        if (Math.abs(left - right) > 4 || Math.abs(top - bottom) > 4) {
+            let topleft = this.map.getCoordinateFromPixel([left, top]);
+            let bottomright = this.map.getCoordinateFromPixel([right, bottom]);
+            let topright = this.map.getCoordinateFromPixel([right, top]);
+            let bottomleft = this.map.getCoordinateFromPixel([left, bottom]);
+
+            let polygon = new ol_geom_polygon__WEBPACK_IMPORTED_MODULE_1__["default"]([[topleft, topright, bottomright, bottomleft, topleft]]);
+            extent = polygon.getExtent();
+        }
+
+        return extent;
+    }
+}
 
 /***/ }),
 
@@ -44805,7 +45595,7 @@ class MapSelectionUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_1__["def
      * @return {boolean}
      */
     isOpen() {
-        return mainContanier.onmousedown !== null;
+        return this.targetElement.onmousedown !== null;
     }
 
     /**
@@ -44814,7 +45604,7 @@ class MapSelectionUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_1__["def
      */
     _disableMapDrag() {
         this.map.getInteractions().forEach(function (element, index, array) {
-            if (element instanceof ol_interaction_dragpan__WEBPACK_IMPORTED_MODULE_2__["default"]) element.setActive(false);
+            if (element instanceof ol_interaction_dragpan__WEBPACK_IMPORTED_MODULE_2__["default"]) element.getActive() && element.setActive(false);
         });
     }
 
@@ -44825,7 +45615,7 @@ class MapSelectionUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_1__["def
     _enableMapDrag() {
         this.map.getInteractions().forEach(function (element, index, array) {
             if (element instanceof ol_interaction_dragpan__WEBPACK_IMPORTED_MODULE_2__["default"]) {}
-            element.setActive(true);
+            !element.getActive() && element.setActive(true);
         });
     }
 
@@ -44855,6 +45645,7 @@ class MapSelectionUtils extends _ol_Base_Utils__WEBPACK_IMPORTED_MODULE_1__["def
 
         this.selectRegionElement = this._renderDynamicDiv(posx, posy);
         mainContanier.appendChild(this.selectRegionElement);
+
         //注册容器点击时的鼠标移动事件
         mainContanier.onmousemove = ev => {
             //计算div的尺寸

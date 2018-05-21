@@ -5,7 +5,7 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     devServer: {
-        contentBase: path.join(__dirname, "dist"),
+        contentBase: path.join(__dirname, "dist/identify"),
         watchContentBase: true,
         port: 8088
     },
@@ -14,8 +14,8 @@ module.exports = {
         ol_Identify: path.join(__dirname, "src/js/Component/Identify/ol-Identify.js")
     },
     output:{
-        path: path.join(__dirname, "dist"),
-        publicPath: '/assets/',
+        path: path.join(__dirname, "dist/identify"),
+        publicPath: './',
         filename: '[name].js',
         chunkFilename: '[chunkhash].js'
     },
